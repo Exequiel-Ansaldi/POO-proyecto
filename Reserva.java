@@ -8,54 +8,26 @@ package com.mycompany.tallerpoo;
  *
  * @author Exequiel
  */
+import java.sql.Time;
+import java.time.LocalDate;
 import java.util.Scanner;
-import java.util.Date;
-import java.time.LocalTime;
 public class Reserva {
-    private Date dia;
-    private LocalTime hora;
-    private Mesa mesa;
-    private Cliente cliente;
+    private LocalDate fecha;
+    private Time hora;
     private Asistencia asistencia;
 
-    public Reserva(Date dia, LocalTime hora, Mesa mesa, Cliente cliente, Asistencia asistencia) {
-        this.dia = dia;
-        this.hora = hora;
-        this.mesa = mesa;
-        this.cliente = cliente;
+    public Reserva(LocalDate f, Asistencia asistencia, Time h) {
+        this.fecha = f;
+        this.hora = h;
         this.asistencia = asistencia;
     }
 
-    public Date getDia() {
-        return dia;
-    }
-
-    public void setDia(Date dia) {
-        this.dia = dia;
-    }
-
-    public LocalTime getHora() {
+    public Time getHora() {
         return hora;
     }
 
-    public void setHora(LocalTime hora) {
+    public void setHora(Time hora) {
         this.hora = hora;
-    }
-
-    public Mesa getMesa() {
-        return mesa;
-    }
-
-    public void setMesa(Mesa mesa) {
-        this.mesa = mesa;
-    }
-
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
     }
 
     public Asistencia getAsistencia() {
@@ -65,6 +37,15 @@ public class Reserva {
     public void setAsistencia(Asistencia asistencia) {
         this.asistencia = asistencia;
     }
+
+    public LocalDate getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(LocalDate fecha) {
+        this.fecha = fecha;
+    }
+
     public String hacerComentario(){
         Scanner lectura = new Scanner(System.in);
         String comentario = lectura.nextLine();
@@ -72,9 +53,10 @@ public class Reserva {
     }
     public void confirmarReserva(){
     }
-    public void modificarReserva(Date fecha, LocalTime hora, Mesa mesa ){
+    public void modificarReserva(LocalDate fecha, Time hora, Mesa mesa ){
     }
     public void cancelarReserva(Reserva reserva){
     }
-    //CORREGIR RECORDATORIO//
+
+    //+enviarRecordatorioReserva(correo:String): Reserva
 }

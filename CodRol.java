@@ -9,7 +9,7 @@ package com.mycompany.tallerpoo;
  * @author Exequiel
  */
 public enum CodRol{
-    Aministrador,
+    Administrador,
     Maitre,
     Mesero;
 }

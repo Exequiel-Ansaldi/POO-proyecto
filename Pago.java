@@ -10,14 +10,11 @@ package com.mycompany.tallerpoo;
  */
 public class Pago {
     private float monto;
-    //ACA VA EL ATRIBUTO reserva: RESERVA//
-    private TarjetaDeCredito tarjeta;
 
-    public Pago(float monto, TarjetaDeCredito tarjeta) { // AGREGAR RESERVA//
+    public Pago(float monto) {
         this.monto = monto;
-        this.tarjeta = tarjeta;
     }
-//AGREGAR RESERVA//
+
     public float getMonto() {
         return monto;
     }
@@ -26,13 +23,11 @@ public class Pago {
         this.monto = monto;
     }
 
-    public TarjetaDeCredito getTarjeta() {
-        return tarjeta;
+    //tarjetadecredito:TarjetaDeCredito): float      ¿que es este metodo?
+
+    //Corregir
+    public float Descontar(float monto, TarjetaDeCredito tarjeta){
+        return 0;
     }
 
-    public void setTarjeta(TarjetaDeCredito tarjeta) {
-        this.tarjeta = tarjeta;
-    }
-    public float Descontar(float monto, TarjetaDeCredito tarjeta){ //ASISTENCIA CLASE ENUMERACION AGREGAR//
-    }
 }

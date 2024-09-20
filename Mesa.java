@@ -11,10 +11,12 @@ package com.mycompany.tallerpoo;
 public class Mesa {
     private int capacidad;
     private String ubicacion;
+    private EstadoMesa estado;
 
-    public Mesa(int capacidad, String ubicacion) {
-        this.capacidad = capacidad;
-        this.ubicacion = ubicacion;
+    public Mesa(int c, String u, EstadoMesa estadoM) {
+        this.capacidad = c;
+        this.ubicacion = u;
+        this.estado = estadoM;
     }
 
     public int getCapacidad() {
@@ -32,5 +34,14 @@ public class Mesa {
     public void setUbicacion(String ubicacion) {
         this.ubicacion = ubicacion;
     }
-    
+
+    public EstadoMesa getEstado() {
+        return estado;
+    }
+
+    public void setEstado(EstadoMesa estado) {
+        this.estado = estado;
+    }
+
+    //+filtrarMesa(capacidad: int, ubicacion: String)
 }
