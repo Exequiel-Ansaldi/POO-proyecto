@@ -8,7 +8,7 @@ package com.mycompany.tallerpoo;
  *
  * @author Exequiel
  */
-import java.util.Date;
+
 import java.time.LocalTime;
 public class Resto {
      private String mapa;
@@ -38,5 +38,11 @@ public class Resto {
         this.cierre = cierre;
     }
 
+    public String getMapa() {
+        return mapa;
+    }
 
+    public void setMapa(String mapa) {
+        this.mapa = mapa;
+    }
 }

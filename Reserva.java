@@ -8,25 +8,25 @@ package com.mycompany.tallerpoo;
  *
  * @author Exequiel
  */
-import java.sql.Time;
+import java.time.LocalTime;
 import java.time.LocalDate;
 import java.util.Scanner;
 public class Reserva {
     private LocalDate fecha;
-    private Time hora;
+    private LocalTime hora;
     private Asistencia asistencia;
 
-    public Reserva(LocalDate f, Asistencia asistencia, Time h) {
+    public Reserva(LocalDate f, Asistencia asistencia, LocalTime h) {
         this.fecha = f;
         this.hora = h;
         this.asistencia = asistencia;
     }
 
-    public Time getHora() {
+    public LocalTime getHora() {
         return hora;
     }
 
-    public void setHora(Time hora) {
+    public void setHora(LocalTime hora) {
         this.hora = hora;
     }
 
@@ -53,7 +53,7 @@ public class Reserva {
     }
     public void confirmarReserva(){
     }
-    public void modificarReserva(LocalDate fecha, Time hora, Mesa mesa ){
+    public void modificarReserva(LocalDate fecha, LocalTime hora, Mesa mesa ){
     }
     public void cancelarReserva(Reserva reserva){
     }
