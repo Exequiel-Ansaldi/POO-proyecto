@@ -15,14 +15,19 @@ import java.time.LocalTime;
 import java.time.LocalDate;
 import java.util.Scanner;
 public class Reserva {
+    
     private LocalDate fecha;
     private LocalTime hora;
     private Asistencia asistencia;
+    private Mesa mesa;
+    private Cliente cliente;
 
-    public Reserva(LocalDate f, Asistencia asistencia, LocalTime h) {
+    public Reserva(LocalDate f, Asistencia asistencia, LocalTime h, Mesa m, Cliente c) {
         this.fecha = f;
         this.hora = h;
         this.asistencia = asistencia;
+        this.mesa = m;
+        this.cliente = c;
     }
 
     public LocalTime getHora() {
