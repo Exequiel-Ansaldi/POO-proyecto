@@ -2,32 +2,36 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.tallerpoo.com.resto;
+package com.mycompany.tallerpoo;
 
 /**
  *
  * @author Exequiel
  */
-import com.mycompany.tallerpoo.com.resto.finanza.Asistencia;
-import com.mycompany.tallerpoo.com.resto.mesa.Mesa;
-
-import java.time.LocalTime;
-import java.time.LocalDate;
 import java.util.Scanner;
+import java.util.Date;
+import java.time.LocalTime;
 public class Reserva {
-    
-    private LocalDate fecha;
+    private Date dia;
     private LocalTime hora;
-    private Asistencia asistencia;
     private Mesa mesa;
     private Cliente cliente;
+    private Asistencia asistencia;
 
-    public Reserva(LocalDate f, Asistencia asistencia, LocalTime h, Mesa m, Cliente c) {
-        this.fecha = f;
-        this.hora = h;
+    public Reserva(Date dia, LocalTime hora, Asistencia asistencia, Mesa m, Cliente c) {
+        this.dia = dia;
+        this.hora = hora;
         this.asistencia = asistencia;
         this.mesa = m;
         this.cliente = c;
+    }
+
+    public Date getDia() {
+        return dia;
+    }
+
+    public void setDia(Date dia) {
+        this.dia = dia;
     }
 
     public LocalTime getHora() {
@@ -38,6 +42,22 @@ public class Reserva {
         this.hora = hora;
     }
 
+    public Mesa getMesa() {
+        return mesa;
+    }
+
+    public void setMesa(Mesa mesa) {
+        this.mesa = mesa;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
     public Asistencia getAsistencia() {
         return asistencia;
     }
@@ -45,15 +65,6 @@ public class Reserva {
     public void setAsistencia(Asistencia asistencia) {
         this.asistencia = asistencia;
     }
-
-    public LocalDate getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(LocalDate fecha) {
-        this.fecha = fecha;
-    }
-
     public String hacerComentario(){
         Scanner lectura = new Scanner(System.in);
         String comentario = lectura.nextLine();
@@ -61,10 +72,9 @@ public class Reserva {
     }
     public void confirmarReserva(){
     }
-    public void modificarReserva(LocalDate fecha, LocalTime hora, Mesa mesa ){
+    public void modificarReserva(Date fecha, LocalTime hora, Mesa mesa ){
     }
     public void cancelarReserva(Reserva reserva){
     }
-
-    //+enviarRecordatorioReserva(correo:String): Reserva
+    //CORREGIR RECORDATORIO//
 }
