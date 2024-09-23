@@ -9,6 +9,9 @@ package com.mycompany.tallerpoo;
  * @author Exequiel
  */
 import java.util.Scanner;
+
+import com.mycompany.tallerpoo.com.resto.finanza.Asistencia;
+
 import java.util.Date;
 import java.time.LocalTime;
 public class Reserva {
@@ -27,7 +30,7 @@ public class Reserva {
     }
 
     public Date getDia() {
-        return dia;
+        return this.dia;
     }
 
     public void setDia(Date dia) {
@@ -35,7 +38,7 @@ public class Reserva {
     }
 
     public LocalTime getHora() {
-        return hora;
+        return this.hora;
     }
 
     public void setHora(LocalTime hora) {
@@ -43,7 +46,7 @@ public class Reserva {
     }
 
     public Mesa getMesa() {
-        return mesa;
+        return this.mesa;
     }
 
     public void setMesa(Mesa mesa) {
@@ -51,7 +54,7 @@ public class Reserva {
     }
 
     public Cliente getCliente() {
-        return cliente;
+        return this.cliente;
     }
 
     public void setCliente(Cliente cliente) {
@@ -59,7 +62,7 @@ public class Reserva {
     }
 
     public Asistencia getAsistencia() {
-        return asistencia;
+        return this.asistencia;
     }
 
     public void setAsistencia(Asistencia asistencia) {

@@ -31,7 +31,7 @@ public class Cliente {
     }
 
     public String getNombre() {
-        return nombre;
+        return this.nombre;
     }
 
     public void setNombre(String nombre) {
@@ -39,7 +39,7 @@ public class Cliente {
     }
 
     public String getCorreo() {
-        return correo;
+        return this.correo;
     }
 
     public void setCorreo(String correo) {
@@ -47,7 +47,7 @@ public class Cliente {
     }
 
     public String getContrasenia() {
-        return contrasenia;
+        return this.contrasenia;
     }
 
     public void setContrasenia(String contrasenia) {
@@ -55,7 +55,7 @@ public class Cliente {
     }
 
     public int getNumero() {
-        return numero;
+        return this.numero;
     }
 
     public void setNumero(int numero) {

@@ -27,7 +27,7 @@ public class Evento {
     }
 
     public String getNombre() {
-        return nombre;
+        return this.nombre;
     }
 
     public void setNombre(String nombre) {
@@ -35,7 +35,7 @@ public class Evento {
     }
 
     public String getDescripcion() {
-        return descripcion;
+        return this.descripcion;
     }
 
     public void setDescripcion(String descripcion) {
@@ -43,7 +43,7 @@ public class Evento {
     }
 
     public Date getDia() {
-        return dia;
+        return this.dia;
     }
 
     public void setDia(Date dia) {
@@ -51,7 +51,7 @@ public class Evento {
     }
 
     public LocalTime getHorainicio() {
-        return horainicio;
+        return this.horainicio;
     }
 
     public void setHorainicio(LocalTime horainicio) {
@@ -59,7 +59,7 @@ public class Evento {
     }
 
     public LocalTime getHorafin() {
-        return horafin;
+        return this.horafin;
     }
 
     public void setHorafin(LocalTime horafin) {

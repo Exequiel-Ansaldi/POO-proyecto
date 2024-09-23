@@ -26,7 +26,7 @@ public class Mesa {
     }
 
     public int getCapacidad() {
-        return capacidad;
+        return this.capacidad;
     }
 
     public void setCapacidad(int capacidad) {
@@ -34,7 +34,7 @@ public class Mesa {
     }
 
     public String getUbicacion() {
-        return ubicacion;
+        return this.ubicacion;
     }
 
     public void setUbicacion(String ubicacion) {

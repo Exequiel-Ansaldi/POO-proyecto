@@ -11,7 +11,7 @@ public class Personal {
     }
 
     public CodRol getRol() {
-        return rol;
+        return this.rol;
     }
 
     public void setRol(CodRol rol) {
@@ -19,7 +19,7 @@ public class Personal {
     }
 
     public int getIdPersonal() {
-        return idPersonal;
+        return this.idPersonal;
     }
 
     public void setIdPersonal(int idPersonal) {

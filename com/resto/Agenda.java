@@ -28,7 +28,7 @@ public class Agenda {
     }
 
     public Date getFecha() {
-        return fecha;
+        return this.fecha;
     }
 
     public void setFecha(Date fecha) {
@@ -36,7 +36,7 @@ public class Agenda {
     }
 
     public LocalTime getHorainicio() {
-        return horainicio;
+        return this.horainicio;
     }
 
     public void setHorainicio(LocalTime horainicio) {
@@ -44,7 +44,7 @@ public class Agenda {
     }
 
     public LocalTime getHorafin() {
-        return horafin;
+        return this.horafin;
     }
 
     public void setHorafin(LocalTime horafin) {

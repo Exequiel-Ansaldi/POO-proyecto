@@ -23,7 +23,7 @@ public class Resto {
 
 
     public LocalTime getApertura() {
-        return apertura;
+        return this.apertura;
     }
 
     public void setApertura(LocalTime apertura) {
@@ -31,7 +31,7 @@ public class Resto {
     }
 
     public LocalTime getCierre() {
-        return cierre;
+        return this.cierre;
     }
 
     public void setCierre(LocalTime cierre) {
@@ -39,7 +39,7 @@ public class Resto {
     }
 
     public String getMapa() {
-        return mapa;
+        return this.mapa;
     }
 
     public void setMapa(String mapa) {
