@@ -2,7 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.tallerpoo.com.resto.cliente;
+package com.mycompany.tallerpoo;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -13,12 +16,18 @@ public class Cliente {
     private String correo;
     private String contrasenia;
     private int numero;
+    private List<Reserva> reservas;
+    
+    public Cliente(){
+        this.reservas = new ArrayList<Reserva>();
+    }
 
-    public Cliente(String nombre, String correo, String contrasenia, int numero) {
+    public Cliente(String nombre, String correo, String contrasenia, int numero, List<Reserva> reservas) {
         this.nombre = nombre;
         this.correo = correo;
         this.contrasenia = contrasenia;
         this.numero = numero;
+        this.reservas = reservas;
     }
 
     public String getNombre() {
@@ -52,6 +61,16 @@ public class Cliente {
     public void setNumero(int numero) {
         this.numero = numero;
     }
+
+    public void setReservas(List<Reserva> reservas) {
+        this.reservas = reservas;
+    }
+    
+    public void agregarReserva(Reserva r){
+        this.reservas.add(r);
+    }
+    
+    
     public void registrarse(){
     }
     public void iniciarSesion(String c, String contra){
