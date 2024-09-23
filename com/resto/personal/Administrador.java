@@ -1,6 +1,6 @@
-package com.mycompany.tallerpoo;
+package com.mycompany.tallerpoo.com.resto.personal;
 
-public class Administrador extends Personal{
+public class Administrador extends Personal {
 
     /*
         GestionHorario(apertura:Time, cierre: Time dia:Date): void

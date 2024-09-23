@@ -1,6 +1,8 @@
-package com.mycompany.tallerpoo;
+package com.mycompany.tallerpoo.com.resto.personal;
 
-public class Empleado extends Personal{
+import com.mycompany.tallerpoo.com.resto.Reserva;
+
+public class Empleado extends Personal {
 
     public void accederReserva(Reserva reserva){
         System.out.println("Accediendo a la reserva");

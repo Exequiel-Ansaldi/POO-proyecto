@@ -1,4 +1,4 @@
-package com.mycompany.tallerpoo;
+package com.mycompany.tallerpoo.com.resto.personal;
 
 public class Personal {
     private int idPersonal;
