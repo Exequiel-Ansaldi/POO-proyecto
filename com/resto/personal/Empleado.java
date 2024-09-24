@@ -18,6 +18,18 @@ public class Empleado extends Personal {
         this.reservas = reservas;
     }
 
+    public List<Reserva> getReservas() {
+        return this.reservas;
+    }
+
+    public void setReservas(List<Reserva> reservas) {
+        this.reservas = reservas;
+    }
+
+    public void agregarReservas(Reserva r){
+        this.reserva.add(r);
+    }
+
     public void accederReserva(Reserva reserva){
         System.out.println("Accediendo a la reserva");
         System.out.println("Fecha: "+reserva.getFecha());
