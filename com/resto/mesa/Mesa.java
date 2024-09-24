@@ -19,13 +19,12 @@ public class Mesa {
     private List<Reserva> reservas;
     private Evento evento;
     
-    public Mesa(){
-        this.reservas = new ArrayList<Reserva>();
-    }
 
-    public Mesa(int capacidad, String ubicacion, Evento evento) {
+    public Mesa(int capacidad, String ubicacion, Evento evento, List<Reserva> reservas) {
         this.capacidad = capacidad;
         this.ubicacion = ubicacion;
+        this.evento = evento;
+        this.reservas = reservas;
     }
 
     public int getCapacidad() {

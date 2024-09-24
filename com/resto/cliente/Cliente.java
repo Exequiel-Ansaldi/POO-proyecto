@@ -19,14 +19,7 @@ public class Cliente {
     private String contrasenia;
     private int numero;
     private List<Reserva> reservas;
-    
-    public Cliente(){
-        this.reservas = new ArrayList<Reserva>();
-        this.nombre = null;
-        this.correo = null;
-        this.contrasenia = null;
-        this.numero = 0;
-    }
+
 
     public Cliente(String nombre, String correo, String contrasenia, int numero, List<Reserva> reservas) {
         this.nombre = nombre;

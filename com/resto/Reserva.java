@@ -14,11 +14,12 @@ import com.mycompany.tallerpoo.com.resto.finanza.Asistencia;
 import com.mycompany.tallerpoo.com.resto.mesa.Mesa;
 import com.mycompany.tallerpoo.com.resto.personal.Empleado;
 import com.mycompany.tallerpoo.com.resto.cliente.Cliente;
-import com.mycompany.tallerpoo.com.resto.finanza.TarjetaDeCredito;
+import com.mycompany.tallerpoo.com.resto.finanza.Pago;
 
 
 import java.time.LocalTime;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -29,23 +30,24 @@ public class Reserva {
     private Cliente cliente;
     private Mesa mesa;
     private List<Empleado> empleados;
-    private TarjetaDeCredito tarjeta;
+    private List<Pago> pagos;
 
-    public Reserva(LocalDate f, Asistencia asistencia, LocalTime h, Mesa m, Cliente c, List<Empleado> e, TarjetaDeCredito t) {
+    public Reserva(LocalDate f, Asistencia asistencia, LocalTime h, Mesa m, Cliente c, List<Empleado> e, List <Pago> p) {
         this.fecha = f;
         this.hora = h;
         this.asistencia = asistencia;
         this.mesa = m;
         this.cliente = c;
         this.empleados = e;
-        this.tarjeta = t;
-    }
-    public TarjetaDeCredito getTarjeta(){
-        return this.tarjeta;
+        this.pagos = p;
     }
 
-    public void setTarjeta(TarjetaDeCredito tarjeta){
-        this.tarjeta = tarjeta;
+    public void setPagos( List<Pago> pagos){
+        this.pagos = pagos;
+    }
+
+    public void agregarPagos(Pago p){
+        this.pagos.add(p);
     }
 
     public List<Empleado> getEmpleados() {
