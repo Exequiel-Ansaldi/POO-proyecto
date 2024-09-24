@@ -4,15 +4,17 @@
  */
 package com.mycompany.tallerpoo.com.resto;
 
-/**
- *
- * @author Exequiel
- */
 import com.mycompany.tallerpoo.com.resto.mesa.Mesa;
+
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Date;
 import java.time.LocalTime;
+
+/**
+ *
+ * @author Exequiel
+ */
 
 public class Evento {
     private String nombre;

@@ -8,10 +8,10 @@ package com.mycompany.tallerpoo.com.resto;
  *
  * @author Exequiel
  */
-import com.mycompany.tallerpoo.com.resto.mesa.EstadoMesa;
 
 import java.util.Date;
 import java.time.LocalTime;
+
 public class Agenda {
 
     private Date fecha;
@@ -20,11 +20,9 @@ public class Agenda {
 
 
     public Agenda(Date fecha, LocalTime horainicio, LocalTime horafin) {
-
         this.fecha = fecha;
         this.horainicio = horainicio;
         this.horafin = horafin;
-
     }
 
     public Date getFecha() {

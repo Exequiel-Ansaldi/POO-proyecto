@@ -9,10 +9,12 @@ package com.mycompany.tallerpoo.com.resto;
  * @author Exequiel
  */
 
-import com.mycompany.tallerpoo.Cliente;
+
 import com.mycompany.tallerpoo.com.resto.finanza.Asistencia;
 import com.mycompany.tallerpoo.com.resto.mesa.Mesa;
 import com.mycompany.tallerpoo.com.resto.personal.Empleado;
+import com.mycompany.tallerpoo.com.resto.cliente.Cliente;
+
 
 import java.time.LocalTime;
 import java.time.LocalDate;

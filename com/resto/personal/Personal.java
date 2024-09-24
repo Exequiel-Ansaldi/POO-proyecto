@@ -5,6 +5,7 @@ public class Personal {
     private CodRol rol;
 
     Personal(){}
+
     Personal(int id, CodRol r){
         this.idPersonal = id;
         this.rol = r;

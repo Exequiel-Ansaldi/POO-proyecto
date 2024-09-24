@@ -4,31 +4,33 @@
  */
 package com.mycompany.tallerpoo.com.resto;
 
+
+import com.mycompany.tallerpoo.com.resto.cliente.Cliente;
+
 import java.util.ArrayList;
+import java.util.List;
+import java.time.LocalTime;
+
 /**
  *
  * @author Exequiel
  */
-import java.util.List;
 
-import com.mycompany.tallerpoo.Cliente;
-
-import java.time.LocalTime;
 public class Resto {
      private String mapa;
      private LocalTime apertura;
      private LocalTime cierre;
-     private List <Cliente> clientes;
+     private List<Cliente> clientes;
 
-     public Resto(){
+    public Resto(){
         this.clientes = new ArrayList<Cliente>();
-     }
+    }
 
     public Resto(String mapa, LocalTime apertura, LocalTime cierre, List <Cliente> clientes) {
         this.mapa = mapa;
         this.apertura = apertura;
         this.cierre = cierre;
-        this.cliente = clientes;
+        this.clientes = clientes;
     }
 
 
@@ -60,7 +62,7 @@ public class Resto {
        this.clientes.add(c);
     }
 
-    public void setCliente(List <Clientes> clientes){
+    public void setCliente(List <Cliente> clientes){
         this.clientes = clientes;
     }
 }

@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.tallerpoo;
+package com.mycompany.tallerpoo.com.resto.cliente;
 
 import com.mycompany.tallerpoo.com.resto.Reserva;
 
@@ -73,7 +73,7 @@ public class Cliente {
     }
 
     public void getReservas(){
-        return this.reservas;
+        //VER COMO DEVOLVER LAS RESERVAS
     }
 
     public void agregarReserva(Reserva r){
