@@ -8,22 +8,29 @@ package com.mycompany.tallerpoo.com.resto;
  *
  * @author Exequiel
  */
+import java.uti.List;
+import java.util.ArrayList;
 import java.util.Date;
 import java.time.LocalTime;
 public class Evento {
     private String nombre;
     private String descripcion;
-    //ATRIBUTO LISTA DE MESAS BLOQUEADAS//
     private Date dia;
     private LocalTime horainicio;
     private LocalTime horafin;
+    private List<Mesa> mesas;
 
-    public Evento(String nombre, String descripcion, Date dia, LocalTime horainicio, LocalTime horafin) {
+    public Evento(){
+        this.mesas = new ArrayList<Mesa>();
+    }
+
+    public Evento(String nombre, String descripcion, Date dia, LocalTime horainicio, LocalTime horafin, List<Mesa> mesas) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.dia = dia;
         this.horainicio = horainicio;
         this.horafin = horafin;
+        this.mesas = mesas;
     }
 
     public String getNombre() {
@@ -66,4 +73,7 @@ public class Evento {
         this.horafin = horafin;
     }
     
+    public void agregarMesa(Mesa m){
+        this.mesas.add(m);
+    }
 }

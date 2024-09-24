@@ -15,12 +15,13 @@ public class Mesa {
     private int capacidad;
     private String ubicacion;
     private List<Reserva> reservas;
+    private Evento evento;
     
     public Mesa(){
         this.reservas = new ArrayList<Reserva>();
     }
 
-    public Mesa(int capacidad, String ubicacion) {
+    public Mesa(int capacidad, String ubicacion, Evento evento) {
         this.capacidad = capacidad;
         this.ubicacion = ubicacion;
     }
@@ -44,7 +45,16 @@ public class Mesa {
     public void setReservas(List<Reserva> reservas) {
         this.reservas = reservas;
     }
+
      public void agregarReservas(Reserva r){
          this.reservas.add(r);
+     }
+
+     public Evento getEvento(){
+        return this.evento;
+     }
+
+     public void setEvento(Evento evento){
+        this.evento = evento;
      }
 }
