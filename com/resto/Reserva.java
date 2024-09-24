@@ -6,23 +6,36 @@ package com.mycompany.tallerpoo.com.resto;
 
 /**
  *
- * @author Exequiel
+ * @author Santiago
  */
+
 import com.mycompany.tallerpoo.com.resto.finanza.Asistencia;
 import com.mycompany.tallerpoo.com.resto.mesa.Mesa;
+import com.mycompany.tallerpoo.com.resto.personal.Empleado;
 
 import java.time.LocalTime;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+
 public class Reserva {
     private LocalDate fecha;
     private LocalTime hora;
     private Asistencia asistencia;
+    private List<Empleado> empleados;
 
     public Reserva(LocalDate f, Asistencia asistencia, LocalTime h) {
         this.fecha = f;
         this.hora = h;
         this.asistencia = asistencia;
+    }
+
+    public Reserva() {
+        this.fecha = LocalDate.parse("2000-01-01");
+        this.hora = LocalTime.parse("00:00");
+        this.asistencia = null;
+        this.empleados = new ArrayList<Empleado>();
     }
 
     public LocalTime getHora() {
@@ -49,17 +62,31 @@ public class Reserva {
         this.fecha = fecha;
     }
 
+    public List<Empleado> getEmpleados() {
+        return empleados;
+    }
+
+    public void setEmpleados(List<Empleado> empleados) {
+        this.empleados = empleados;
+    }
+
+    public void agregarEmpleado(Empleado empleado){
+        this.empleados.add(empleado);
+    }
+
     public String hacerComentario(){
         Scanner lectura = new Scanner(System.in);
         String comentario = lectura.nextLine();
         return comentario;
     }
+
     public void confirmarReserva(){
     }
     public void modificarReserva(LocalDate fecha, LocalTime hora, Mesa mesa ){
     }
     public void cancelarReserva(Reserva reserva){
     }
+    public void enviarRecordatorioReserva(String correo){
+    }
 
-    //+enviarRecordatorioReserva(correo:String): Reserva
 }

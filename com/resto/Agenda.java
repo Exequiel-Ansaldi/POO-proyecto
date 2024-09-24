@@ -19,7 +19,7 @@ public class Agenda {
     private LocalTime horafin;
 
 
-    public Agenda(Date fecha, LocalTime horainicio, LocalTime horafin, EstadoMesa estado) {
+    public Agenda(Date fecha, LocalTime horainicio, LocalTime horafin) {
 
         this.fecha = fecha;
         this.horainicio = horainicio;

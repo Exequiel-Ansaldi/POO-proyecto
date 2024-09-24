@@ -6,7 +6,7 @@ package com.mycompany.tallerpoo.com.resto.finanza;
 
 /**
  *
- * @author GAMER
+ * @author Exequiel
  */
 public class Pago {
     private float monto;
@@ -22,8 +22,6 @@ public class Pago {
     public void setMonto(float monto) {
         this.monto = monto;
     }
-
-    //tarjetadecredito:TarjetaDeCredito): float      ¿que es este metodo?
 
     //Corregir
     public float Descontar(float monto, TarjetaDeCredito tarjeta){
