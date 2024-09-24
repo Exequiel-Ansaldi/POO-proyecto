@@ -6,6 +6,8 @@ package com.mycompany.tallerpoo.com.resto.mesa;
 
 import java.util.ArrayList;
 import java.util.List;
+import com.mycompany.tallerpoo.com.resto.Reserva;
+import com.mycompany.tallerpoo.com.resto.Evento;
 
 /**
  *
@@ -14,28 +16,20 @@ import java.util.List;
 public class Mesa {
     private int capacidad;
     private String ubicacion;
-    private EstadoMesa estado;
-
-    private static List<Mesa> mesas = new ArrayList<>();
-    public static void addMesas(Mesa mesa){
-        mesas.add(mesa);
+    private List<Reserva> reservas;
+    private Evento evento;
+    
+    public Mesa(){
+        this.reservas = new ArrayList<Reserva>();
     }
 
-    //Constructores
-    public Mesa(int c, String u, EstadoMesa estadoM) {
-        this.capacidad = c;
-        this.ubicacion = u;
-        this.estado = estadoM;
-    }
-    public Mesa(Mesa objeto){
-        this.capacidad = objeto.capacidad;
-        this.estado = objeto.estado;
-        this.ubicacion = objeto.ubicacion;
+    public Mesa(int capacidad, String ubicacion, Evento evento) {
+        this.capacidad = capacidad;
+        this.ubicacion = ubicacion;
     }
 
-    //Getters & Setters
     public int getCapacidad() {
-        return capacidad;
+        return this.capacidad;
     }
 
     public void setCapacidad(int capacidad) {
@@ -43,31 +37,26 @@ public class Mesa {
     }
 
     public String getUbicacion() {
-        return ubicacion;
+        return this.ubicacion;
     }
 
     public void setUbicacion(String ubicacion) {
         this.ubicacion = ubicacion;
     }
 
-    public EstadoMesa getEstado() {
-        return estado;
+    public void setReservas(List<Reserva> reservas) {
+        this.reservas = reservas;
     }
 
-    public void setEstado(EstadoMesa estado) {
-        this.estado = estado;
-    }
+     public void agregarReservas(Reserva r){
+         this.reservas.add(r);
+     }
 
-    //Métodos de Clase
-    public static List<Mesa> filtrarMesa(int capacidad, String ubicacion){
-        List<Mesa>filteredMesa = new ArrayList<>();
+     public Evento getEvento(){
+        return this.evento;
+     }
 
-        for (Mesa mesa : mesas){
-            if (capacidad == mesa.getCapacidad() && ubicacion.equals(mesa.getUbicacion())){
-                addMesas(mesa);
-            }
-        }
-
-    return filteredMesa;
-    }
+     public void setEvento(Evento evento){
+        this.evento = evento;
+     }
 }

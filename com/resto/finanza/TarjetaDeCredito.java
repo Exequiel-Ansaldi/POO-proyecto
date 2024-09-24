@@ -21,7 +21,7 @@ public class TarjetaDeCredito {
     }
 
     public String getNombre() {
-        return nombre;
+        return this.nombre;
     }
 
     public void setNombre(String nombre) {
@@ -29,7 +29,7 @@ public class TarjetaDeCredito {
     }
 
     public String getEmisor() {
-        return emisor;
+        return this.emisor;
     }
 
     public void setEmisor(String emisor) {
@@ -37,7 +37,7 @@ public class TarjetaDeCredito {
     }
 
     public String getMotivo() {
-        return motivo;
+        return this.motivo;
     }
 
     public void setMotivo(String motivo) {
@@ -45,7 +45,7 @@ public class TarjetaDeCredito {
     }
 
     public int getNrotarjeta() {
-        return nrotarjeta;
+        return this.nrotarjeta;
     }
 
     public void setNrotarjeta(int nrotarjeta) {

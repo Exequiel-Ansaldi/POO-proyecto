@@ -4,26 +4,36 @@
  */
 package com.mycompany.tallerpoo.com.resto;
 
+import java.util.ArrayList;
 /**
  *
  * @author Exequiel
  */
+import java.util.List;
+
+import com.mycompany.tallerpoo.Cliente;
 
 import java.time.LocalTime;
 public class Resto {
      private String mapa;
      private LocalTime apertura;
      private LocalTime cierre;
+     private List <Cliente> clientes;
 
-    public Resto(String mapa, LocalTime apertura, LocalTime cierre) {
+     public Resto(){
+        this.clientes = new ArrayList<Cliente>();
+     }
+
+    public Resto(String mapa, LocalTime apertura, LocalTime cierre, List <Cliente> clientes) {
         this.mapa = mapa;
         this.apertura = apertura;
         this.cierre = cierre;
+        this.cliente = clientes;
     }
 
 
     public LocalTime getApertura() {
-        return apertura;
+        return this.apertura;
     }
 
     public void setApertura(LocalTime apertura) {
@@ -31,7 +41,7 @@ public class Resto {
     }
 
     public LocalTime getCierre() {
-        return cierre;
+        return this.cierre;
     }
 
     public void setCierre(LocalTime cierre) {
@@ -39,10 +49,18 @@ public class Resto {
     }
 
     public String getMapa() {
-        return mapa;
+        return this.mapa;
     }
 
     public void setMapa(String mapa) {
         this.mapa = mapa;
+    }
+
+    public void agregarCliente(Cliente c){
+       this.clientes.add(c);
+    }
+
+    public void setCliente(List <Clientes> clientes){
+        this.clientes = clientes;
     }
 }

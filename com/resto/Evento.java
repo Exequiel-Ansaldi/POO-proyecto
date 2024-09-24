@@ -8,26 +8,35 @@ package com.mycompany.tallerpoo.com.resto;
  *
  * @author Exequiel
  */
+import com.mycompany.tallerpoo.com.resto.mesa.Mesa;
+import java.util.List;
+import java.util.ArrayList;
 import java.util.Date;
 import java.time.LocalTime;
+
 public class Evento {
     private String nombre;
     private String descripcion;
-    //ATRIBUTO LISTA DE MESAS BLOQUEADAS//
     private Date dia;
     private LocalTime horainicio;
     private LocalTime horafin;
+    private List<Mesa> mesas;
 
-    public Evento(String nombre, String descripcion, Date dia, LocalTime horainicio, LocalTime horafin) {
+    public Evento(){
+        this.mesas = new ArrayList<Mesa>();
+    }
+
+    public Evento(String nombre, String descripcion, Date dia, LocalTime horainicio, LocalTime horafin, List<Mesa> mesas) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.dia = dia;
         this.horainicio = horainicio;
         this.horafin = horafin;
+        this.mesas = mesas;
     }
 
     public String getNombre() {
-        return nombre;
+        return this.nombre;
     }
 
     public void setNombre(String nombre) {
@@ -35,7 +44,7 @@ public class Evento {
     }
 
     public String getDescripcion() {
-        return descripcion;
+        return this.descripcion;
     }
 
     public void setDescripcion(String descripcion) {
@@ -43,7 +52,7 @@ public class Evento {
     }
 
     public Date getDia() {
-        return dia;
+        return this.dia;
     }
 
     public void setDia(Date dia) {
@@ -51,7 +60,7 @@ public class Evento {
     }
 
     public LocalTime getHorainicio() {
-        return horainicio;
+        return this.horainicio;
     }
 
     public void setHorainicio(LocalTime horainicio) {
@@ -59,11 +68,14 @@ public class Evento {
     }
 
     public LocalTime getHorafin() {
-        return horafin;
+        return this.horafin;
     }
 
     public void setHorafin(LocalTime horafin) {
         this.horafin = horafin;
     }
     
+    public void agregarMesa(Mesa m){
+        this.mesas.add(m);
+    }
 }

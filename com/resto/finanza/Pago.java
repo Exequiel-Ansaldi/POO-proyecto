@@ -16,7 +16,7 @@ public class Pago {
     }
 
     public float getMonto() {
-        return monto;
+        return this.monto;
     }
 
     public void setMonto(float monto) {

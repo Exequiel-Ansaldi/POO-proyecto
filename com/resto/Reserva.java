@@ -6,16 +6,16 @@ package com.mycompany.tallerpoo.com.resto;
 
 /**
  *
- * @author Santiago
+ * @author Exequiel
  */
 
+import com.mycompany.tallerpoo.Cliente;
 import com.mycompany.tallerpoo.com.resto.finanza.Asistencia;
 import com.mycompany.tallerpoo.com.resto.mesa.Mesa;
 import com.mycompany.tallerpoo.com.resto.personal.Empleado;
 
 import java.time.LocalTime;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -23,43 +23,17 @@ public class Reserva {
     private LocalDate fecha;
     private LocalTime hora;
     private Asistencia asistencia;
+    private Cliente cliente;
+    private Mesa mesa;
     private List<Empleado> empleados;
 
-    public Reserva(LocalDate f, Asistencia asistencia, LocalTime h) {
+    public Reserva(LocalDate f, Asistencia asistencia, LocalTime h, Mesa m, Cliente c, List<Empleado> e) {
         this.fecha = f;
         this.hora = h;
         this.asistencia = asistencia;
-    }
-
-    public Reserva() {
-        this.fecha = LocalDate.parse("2000-01-01");
-        this.hora = LocalTime.parse("00:00");
-        this.asistencia = null;
-        this.empleados = new ArrayList<Empleado>();
-    }
-
-    public LocalTime getHora() {
-        return hora;
-    }
-
-    public void setHora(LocalTime hora) {
-        this.hora = hora;
-    }
-
-    public Asistencia getAsistencia() {
-        return asistencia;
-    }
-
-    public void setAsistencia(Asistencia asistencia) {
-        this.asistencia = asistencia;
-    }
-
-    public LocalDate getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(LocalDate fecha) {
-        this.fecha = fecha;
+        this.mesa = m;
+        this.cliente = c;
+        this.empleados = e;
     }
 
     public List<Empleado> getEmpleados() {
@@ -70,8 +44,44 @@ public class Reserva {
         this.empleados = empleados;
     }
 
-    public void agregarEmpleado(Empleado empleado){
-        this.empleados.add(empleado);
+    public LocalTime getHora() {
+        return this.hora;
+    }
+
+    public void setHora(LocalTime hora) {
+        this.hora = hora;
+    }
+
+    public Asistencia getAsistencia() {
+        return this.asistencia;
+    }
+
+    public void setAsistencia(Asistencia asistencia) {
+        this.asistencia = asistencia;
+    }
+
+    public LocalDate getFecha() {
+        return this.fecha;
+    }
+
+    public void setFecha(LocalDate fecha) {
+        this.fecha = fecha;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public Mesa getMesa() {
+        return mesa;
+    }
+
+    public void setMesa(Mesa mesa) {
+        this.mesa = mesa;
     }
 
     public String hacerComentario(){
@@ -79,14 +89,11 @@ public class Reserva {
         String comentario = lectura.nextLine();
         return comentario;
     }
-
     public void confirmarReserva(){
     }
     public void modificarReserva(LocalDate fecha, LocalTime hora, Mesa mesa ){
     }
     public void cancelarReserva(Reserva reserva){
     }
-    public void enviarRecordatorioReserva(String correo){
-    }
-
+    public void enviarRecordatorioReserva(String correo){}
 }

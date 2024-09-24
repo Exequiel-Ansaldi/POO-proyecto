@@ -2,7 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.tallerpoo.com.resto.cliente;
+package com.mycompany.tallerpoo;
+
+import com.mycompany.tallerpoo.com.resto.Reserva;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -13,16 +18,26 @@ public class Cliente {
     private String correo;
     private String contrasenia;
     private int numero;
+    private List<Reserva> reservas;
+    
+    public Cliente(){
+        this.reservas = new ArrayList<Reserva>();
+        this.nombre = null;
+        this.correo = null;
+        this.contrasenia = null;
+        this.numero = 0;
+    }
 
-    public Cliente(String nombre, String correo, String contrasenia, int numero) {
+    public Cliente(String nombre, String correo, String contrasenia, int numero, List<Reserva> reservas) {
         this.nombre = nombre;
         this.correo = correo;
         this.contrasenia = contrasenia;
         this.numero = numero;
+        this.reservas = reservas;
     }
 
     public String getNombre() {
-        return nombre;
+        return this.nombre;
     }
 
     public void setNombre(String nombre) {
@@ -30,7 +45,7 @@ public class Cliente {
     }
 
     public String getCorreo() {
-        return correo;
+        return this.correo;
     }
 
     public void setCorreo(String correo) {
@@ -38,7 +53,7 @@ public class Cliente {
     }
 
     public String getContrasenia() {
-        return contrasenia;
+        return this.contrasenia;
     }
 
     public void setContrasenia(String contrasenia) {
@@ -46,12 +61,25 @@ public class Cliente {
     }
 
     public int getNumero() {
-        return numero;
+        return this.numero;
     }
 
     public void setNumero(int numero) {
         this.numero = numero;
     }
+
+    public void setReservas(List<Reserva> reservas) {
+        this.reservas = reservas;
+    }
+
+    public void getReservas(){
+        return this.reservas;
+    }
+
+    public void agregarReserva(Reserva r){
+        this.reservas.add(r);
+    }
+
     public void registrarse(){
     }
     public void iniciarSesion(String c, String contra){
