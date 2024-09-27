@@ -8,6 +8,7 @@ import com.mycompany.tallerpoo.com.resto.Reserva;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  *
@@ -74,6 +75,31 @@ public class Cliente {
     }
 
     public void registrarse(){
+
+        Scanner lectura = new Scanner(System.in);
+        System.out.println("Ingrese su nombre: ");
+        this.nombre = lectura.nextLine();
+        System.out.println("Ingrese su correo: ");
+        while (!(this.correo.contains("@") && this.correo.contains(".com"))){
+            System.out.println("Ingrese nuevamente el correo");
+            this.correo = lectura.nextLine();
+        }
+
+        
+        while (true){
+            System.out.println("Ingrese su contraseña: ");
+            this.contrasenia = lectura.nextLine();
+            System.out.println("Confirme su contraseña");
+            String confirmarcontrasenia = lectura.nextLine();
+            if (!(this.contrasenia.equals(confirmarcontrasenia))){
+                System.out.println("Las contraseñas no coinciden, ingrese nuevamente");
+            }else{
+                break;
+            }
+        }
+
+        System.out.println("Registro exitoso");
+
     }
     public void iniciarSesion(String c, String contra){
     }
