@@ -104,6 +104,7 @@ public class Reserva {
     public String hacerComentario(){
         Scanner lectura = new Scanner(System.in);
         String comentario = lectura.nextLine();
+        lectura.close();
         return comentario;
     }
     public void confirmarReserva(){

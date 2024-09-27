@@ -84,6 +84,10 @@ public class Resto {
         this.clientes = clientes;
     }
 
+    public List <Cliente> getClientes(){
+        return this.clientes;
+    }
+
     public Agenda getAgenda() {
         return this.agenda;
     }
@@ -100,12 +104,20 @@ public class Resto {
         this.eventos = eventos;
     }
 
+    public List<Evento> getEventos(){
+        return this.eventos;
+    }
+
     public void agregarAdmin(Administrador c){
         this.admins.add(c);
     }
  
     public void setAdmin(List <Administrador> admins){
         this.admins = admins;
+    }
+
+    public List<Administrador> geAdministradores(){
+        return this.admins;
     }
 
     public void agregarMesa(Mesa c){
@@ -116,12 +128,20 @@ public class Resto {
         this.mesas = mesas;
     }
 
+    public List<Mesa> getMesas(){
+        return this.mesas;
+    }
+
     public void agregarReserva(Reserva c){
         this.reservas.add(c);
     }
  
     public void setReserva(List <Reserva> reservas){
         this.reservas = reservas;
+    }
+
+    public List<Reserva> getReservas(){
+        return this.reservas;
     }
 
     //Métodos de Clase

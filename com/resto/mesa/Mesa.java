@@ -49,13 +49,20 @@ public class Mesa {
 
      public void agregarReservas(Reserva r){
          this.reservas.add(r);
-     }
+    }
+
+    public List<Reserva> getReservas(){
+        return this.reservas;
+    }
 
      public Evento getEvento(){
         return this.evento;
-     }
+    }
 
      public void setEvento(Evento evento){
         this.evento = evento;
-     }
+    }
+
+    public void filtrarMesas(){ //PODRIA HACRESE UNA CLASE ENUMERACION PARA CAPACIDAD Y UBICACION
+    }
 }

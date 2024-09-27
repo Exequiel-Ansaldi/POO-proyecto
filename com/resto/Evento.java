@@ -78,9 +78,17 @@ public class Evento {
     public void setHorafin(LocalTime horafin) {
         this.horafin = horafin;
     }
+
+    public void setMesa(List<Mesa> mesas){
+        this.mesas = mesas;
+    }
     
     public void agregarMesa(Mesa m){
         this.mesas.add(m);
+    }
+
+    public List<Mesa> getMesas(){
+        return this.mesas;
     }
 
 }
