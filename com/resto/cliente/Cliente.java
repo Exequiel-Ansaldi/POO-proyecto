@@ -68,8 +68,8 @@ public class Cliente {
         this.reservas = reservas;
     }
 
-    public void getReservas(){
-        //VER COMO DEVOLVER LAS RESERVAS
+    public List<Reserva> getReservas(){
+        return this.reservas;
     }
 
     public void agregarReserva(Reserva r){
@@ -111,8 +111,15 @@ public class Cliente {
         lectura.close();
 
     }
+
     public void iniciarSesion(String c, String contra){
+        if (this.correo.equals(correo) && this.contrasenia.equals(contrasenia)) {
+            System.out.println("Inicio de sesión exitoso.");
+        } else {
+            System.out.println("Correo o contraseña incorrectos. Inténtelo de nuevo.");
+        }
     }
+
     public void actualizarInfo(){
     }
     public void historialReserva(){ //DEVUELVE UNA LISTA DE RESERVAS//
