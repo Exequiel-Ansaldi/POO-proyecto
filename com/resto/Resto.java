@@ -9,6 +9,7 @@ import com.mycompany.tallerpoo.com.resto.cliente.Cliente;
 import com.mycompany.tallerpoo.com.resto.mesa.Mesa;
 import com.mycompany.tallerpoo.com.resto.personal.Administrador;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalTime;
@@ -29,6 +30,7 @@ public class Resto {
      private List<Mesa> mesas;
      private List<Reserva> reservas;
 
+    //Constructores
     public Resto(){
         this.clientes = new ArrayList<Cliente>();
         this.eventos = new ArrayList<Evento>();
@@ -49,7 +51,7 @@ public class Resto {
         this.reservas = reservas;
     }
 
-
+    //Getters & Setters
     public LocalTime getApertura() {
         return this.apertura;
     }
@@ -94,7 +96,7 @@ public class Resto {
         this.eventos.add(c);
     }
  
-     public void setEvento(List <Evento> eventos){
+    public void setEvento(List <Evento> eventos){
         this.eventos = eventos;
     }
 
@@ -102,7 +104,7 @@ public class Resto {
         this.admins.add(c);
     }
  
-     public void setAdmin(List <Administrador> admins){
+    public void setAdmin(List <Administrador> admins){
         this.admins = admins;
     }
 
@@ -110,7 +112,7 @@ public class Resto {
         this.mesas.add(c);
     }
  
-     public void setMesa(List <Mesa> mesas){
+    public void setMesa(List <Mesa> mesas){
         this.mesas = mesas;
     }
 
@@ -118,7 +120,13 @@ public class Resto {
         this.reservas.add(c);
     }
  
-     public void setReserva(List <Reserva> reservas){
+    public void setReserva(List <Reserva> reservas){
         this.reservas = reservas;
     }
+
+    //Métodos de Clase
+    public boolean verificarDisponibilidad(List<Mesa> mesas, LocalDate fecha, LocalTime hora_inicio, LocalTime hora_final){
+        return true;
+    }
+
 }

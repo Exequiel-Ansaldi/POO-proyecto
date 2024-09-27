@@ -24,6 +24,7 @@ public class Evento {
     private LocalTime horafin;
     private List<Mesa> mesas;
 
+    //Constructores
     public Evento(){
         this.mesas = new ArrayList<Mesa>();
     }
@@ -37,6 +38,7 @@ public class Evento {
         this.mesas = mesas;
     }
 
+    //Getters & Setters
     public String getNombre() {
         return this.nombre;
     }
@@ -80,4 +82,5 @@ public class Evento {
     public void agregarMesa(Mesa m){
         this.mesas.add(m);
     }
+
 }

@@ -32,6 +32,7 @@ public class Reserva {
     private List<Empleado> empleados;
     private List<Pago> pagos;
 
+    //Constructores
     public Reserva(LocalDate f, Asistencia asistencia, LocalTime h, Mesa m, Cliente c, List<Empleado> e, List <Pago> p) {
         this.fecha = f;
         this.hora = h;
@@ -42,6 +43,7 @@ public class Reserva {
         this.pagos = p;
     }
 
+    //Getters & Setters
     public void setPagos( List<Pago> pagos){
         this.pagos = pagos;
     }
@@ -98,6 +100,7 @@ public class Reserva {
         this.mesa = mesa;
     }
 
+    //Métodos de Clase
     public String hacerComentario(){
         Scanner lectura = new Scanner(System.in);
         String comentario = lectura.nextLine();

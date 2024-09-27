@@ -13,18 +13,19 @@ import java.util.Date;
 import java.time.LocalTime;
 
 public class Agenda {
-
     private Date fecha;
     private LocalTime horainicio;
     private LocalTime horafin;
 
-
+    //Constructores
     public Agenda(Date fecha, LocalTime horainicio, LocalTime horafin) {
         this.fecha = fecha;
         this.horainicio = horainicio;
         this.horafin = horafin;
     }
+    public Agenda(){}
 
+    //Getters & Setters
     public Date getFecha() {
         return this.fecha;
     }

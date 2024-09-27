@@ -6,15 +6,12 @@ package com.mycompany.tallerpoo;
 
 /**
  *
- * @author GAMER
+ * @author Gamer
  */
 
 public class MainTaller {
 
     public static void main(String[] args) {
         System.out.println("Hello World!");
-
-
-
     }
 }
