@@ -9,6 +9,8 @@ import com.mycompany.tallerpoo.com.resto.Reserva;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  *
@@ -80,11 +82,18 @@ public class Cliente {
         System.out.println("Ingrese su nombre: ");
         this.nombre = lectura.nextLine();
         System.out.println("Ingrese su correo: ");
-        while (!(this.correo.contains("@") && this.correo.contains(".com"))){
-            System.out.println("Ingrese nuevamente el correo");
+        this.correo = lectura.nextLine();
+        //patron email son los valores validos que puede tomar una direcccion de correo
+        String patronemail = "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$";
+        //pattern compila a patronemail
+        Pattern patron = Pattern.compile(patronemail);
+        //a partir del pattern se crea un matcher para verificar coincidencias
+        Matcher matcheo = patron.matcher(this.correo);
+        while (!matcheo.matches()){
+            System.out.println("Ingrese nuevamente su correo");
             this.correo = lectura.nextLine();
+            matcheo = patron.matcher(this.correo);
         }
-
         
         while (true){
             System.out.println("Ingrese su contraseña: ");
@@ -99,6 +108,7 @@ public class Cliente {
         }
 
         System.out.println("Registro exitoso");
+        lectura.close();
 
     }
     public void iniciarSesion(String c, String contra){
