@@ -121,6 +121,49 @@ public class Cliente {
     }
 
     public void actualizarInfo(){
+        Scanner lectura = new Scanner(System.in);
+        System.out.println("Pulse según la información a actualizar: ");
+        System.out.println("1: Nombre");
+        System.out.println("2: Correo");
+        System.out.println("3: Contraseña");
+        System.out.println("4: Numero de telofono");
+        switch (lectura) {
+            case 1:
+                String nuevonombre = lectura.nextLine();
+                this.nombre = nuevonombre;
+                System.out.println("Nombre actualizado");
+                break;
+            case 2:
+                String nuevocorreo = lectura.nextLine();
+                String patronemail = "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$";
+                Pattern patron = Pattern.compile(patronemail);
+                Matcher matcheo = patron.matcher(nuevocorreo);
+                while (!matcheo.matches()){
+                    System.out.println("Ingrese nuevamente su correo");
+                    nuevocorreo = lectura.nextLine();
+                    matcheo = patron.matcher(nuevocorreo);
+                }
+                this.correo = nuevocorreo;
+                System.out.println("Correo actualizado");
+                break;
+            
+            case 3:
+                System.out.print("Ingrese la nueva contraseña: ");
+                String nuevaContrasenia = lectura.nextLine();
+                this.contrasenia = nuevaContrasenia;
+                System.out.println("Contraseña actualizada correctamente.");
+                break;
+
+            case 4: 
+                System.out.println("Ingrese su nuevo numero de telefono: ");
+                int nuevotelefono = lectura.nextInt();
+                this.numero = nuevotelefono;
+                System.out.println("Telefono actualizado");
+                break;
+
+            default:
+                break;
+        }
     }
     public void historialReserva(){ //DEVUELVE UNA LISTA DE RESERVAS//
     }
