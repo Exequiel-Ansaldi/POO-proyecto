@@ -6,6 +6,7 @@ package com.mycompany.tallerpoo.com.resto.mesa;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 import com.mycompany.tallerpoo.com.resto.Reserva;
 import com.mycompany.tallerpoo.com.resto.Evento;
 
@@ -63,6 +64,13 @@ public class Mesa {
         this.evento = evento;
     }
 
-    public void filtrarMesas(){ //PODRIA HACRESE UNA CLASE ENUMERACION PARA CAPACIDAD Y UBICACION
+    public List<Mesa> filtrarMesas(List<Mesa> mesas, int capacidad, String ubicacion){ //PODRIA HACRESE UNA CLASE ENUMERACION PARA CAPACIDAD Y UBICACION
+        List<Mesa> mesasFiltradas = new ArrayList<>();
+        for (Mesa mesa : mesas) {
+            if (mesa.getCapacidad() >= capacidad && mesa.getUbicacion().equalsIgnoreCase(ubicacion)) {
+                mesasFiltradas.add(mesa);
+            }
+        }
+        return mesasFiltradas;
     }
 }

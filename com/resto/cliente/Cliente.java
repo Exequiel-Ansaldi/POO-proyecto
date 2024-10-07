@@ -167,7 +167,7 @@ public class Cliente {
     }
     public void historialReserva(){ //DEVUELVE UNA LISTA DE RESERVAS//
     }
-    public void reservarMesa(){ // PARAMETROS FECHA: DATE, HORA: TIME Y MESA: MESA//
+    public void reservarMesa(){ // PARAMETROS FECHA: DATE, HORA: TIME
     }
     public void recuperarContrasenia(String c){
     }
