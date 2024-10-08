@@ -128,7 +128,9 @@ public class Cliente {
         System.out.println("2: Correo");
         System.out.println("3: Contraseña");
         System.out.println("4: Numero de telofono");
-        switch (lectura) {
+        int opcion = lectura.nextInt();
+        lectura.nextLine();
+        switch (opcion) {
             case 1:
                 String nuevonombre = lectura.nextLine();
                 this.nombre = nuevonombre;
@@ -165,8 +167,9 @@ public class Cliente {
             default:
                 break;
         }
+        lectura.close();
     }
-    public List<List<Reserva>> historialReserva(){
+    public List<Reserva> historialReserva(){
 
         List<Reserva> reservasPasadas = new ArrayList<>();
         List<Reserva> reservasFuturas = new ArrayList<>();
@@ -180,10 +183,7 @@ public class Cliente {
                 reservasFuturas.add(reserva);
             }
         }
-        List<List<Reserva>> historial = new ArrayList<>();
-        historial.add(reservasPasadas);
-        historial.add(reservasFuturas);  
-        return historial;
+        return reservasPasadas;
     }
     public void reservarMesa(){ // PARAMETROS FECHA: DATE, HORA: TIME
     }
