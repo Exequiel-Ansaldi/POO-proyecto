@@ -46,7 +46,17 @@ public class Pago {
 
     //Corregir
     public float Descontar(float monto, TarjetaDeCredito tarjeta){
-        return 0;
+        int asistencia;
+        switch (asistencia) {
+            case 1:
+                monto = 50;
+            case 2:
+                return monto;
+            case 3:
+                break;
+            default: 
+                break;
+        }
     }
 
 }
