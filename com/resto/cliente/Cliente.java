@@ -8,6 +8,7 @@ import com.mycompany.tallerpoo.com.resto.Reserva;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -169,22 +170,27 @@ public class Cliente {
         }
         lectura.close();
     }
-    public List<Reserva> historialReserva(){
+   public List<Reserva> historialReserva() {
+    // Crear una copia de la lista de reservas
+    List<Reserva> historial = new ArrayList<>(reservas);
 
-        List<Reserva> reservasPasadas = new ArrayList<>();
-        List<Reserva> reservasFuturas = new ArrayList<>();
-        LocalDateTime ahora = LocalDateTime.now();
-
-        for (Reserva reserva : reservas) {
-            LocalDateTime fechaReserva = LocalDateTime.of(reserva.getFecha(), reserva.getHora());
-            if (fechaReserva.isBefore(ahora)) {
-                reservasPasadas.add(reserva);
-            } else {
-                reservasFuturas.add(reserva);
-            }
+    // Ordenar las reservas por fecha y hora de forma legible
+    historial.sort(new Comparator<Reserva>() {
+        @Override
+        public int compare(Reserva r1, Reserva r2) {
+            // Obtener la fecha y hora de cada reserva
+            LocalDateTime fechaHora1 = LocalDateTime.of(r1.getFecha(), r1.getHora());
+            LocalDateTime fechaHora2 = LocalDateTime.of(r2.getFecha(), r2.getHora());
+            
+            // Comparar las fechas y horas
+            return fechaHora1.compareTo(fechaHora2);
         }
-        return reservasPasadas;
-    }
+    });
+
+    // Devolver la lista de reservas ordenada
+    return historial;
+}
+
     public void reservarMesa(){ // PARAMETROS FECHA: DATE, HORA: TIME
     }
     public void recuperarContrasenia(String c){
