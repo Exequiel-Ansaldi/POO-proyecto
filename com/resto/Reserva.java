@@ -30,9 +30,17 @@ public class Reserva {
     private Mesa mesa;
     private List<Empleado> empleados;
     private List<Pago> pagos;
+    private List<Reserva> listaReservas;
 
     //Constructores
-    public Reserva(LocalDate f, Asistencia asistencia, LocalTime h, Mesa m, Cliente c, List<Empleado> e, List <Pago> p) {
+    public Reserva(LocalDate f, Asistencia asistencia, LocalTime h, Mesa m, Cliente c){
+        this.fecha = f;
+        this.hora = h;
+        this.asistencia = asistencia;
+        this.mesa = m;
+        this.cliente = c;
+    }
+    public Reserva(LocalDate f, Asistencia asistencia, LocalTime h, Mesa m, Cliente c, List<Empleado> e, List <Pago> p, List<Reserva> lR) {
         this.fecha = f;
         this.hora = h;
         this.asistencia = asistencia;
@@ -40,11 +48,20 @@ public class Reserva {
         this.cliente = c;
         this.empleados = e;
         this.pagos = p;
+        this.listaReservas = lR;
     }
-    public Reserva(){}
+    public Reserva(){
+        this.empleados = new ArrayList<Empleado>();
+        this.pagos = new ArrayList<Pago>();
+        this.listaReservas = new ArrayList<Reserva>();
+    }
 
     //Getters & Setters
-    public void setPagos( List<Pago> pagos){
+    public List<Pago> getPagos() {
+        return pagos;
+    }
+
+    public void setPagos(List<Pago> pagos){
         this.pagos = pagos;
     }
 
@@ -108,12 +125,33 @@ public class Reserva {
         return comentario;
     }
     public void confirmarReserva(){
+        // Verificar si la mesa está disponible en la fecha y hora
+        boolean mesaDisponible = true;
 
+        for (Reserva reserva : listaReservas) {
+            if (reserva.getMesa().equals(this.mesa) &&
+                    reserva.getFecha().equals(this.fecha) &&
+                    reserva.getHora().equals(this.hora)) {
+                mesaDisponible = false;
+                break;
+            }
+        }
+
+        if (mesaDisponible) {
+            // Si la mesa está disponible, agregar la reserva a la lista
+            listaReservas.add(this);
+            System.out.println("Reserva confirmada para " + cliente.getNombre() + " el " + fecha + " a las " + hora);
+        } else {
+            System.out.println("La mesa no está disponible en la fecha y hora seleccionadas.");
+        }
     }
+
     public void modificarReserva(LocalDate fecha, LocalTime hora, Mesa mesa ){
     }
+
     public void cancelarReserva(Reserva reserva){
     }
+
     public void enviarRecordatorioReserva(String correo){
         // Configuración del servidor de correo
         String smtpHost = "smtp.gmail.com";
