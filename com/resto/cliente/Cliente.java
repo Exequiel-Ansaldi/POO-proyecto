@@ -6,6 +6,7 @@ package com.mycompany.tallerpoo.com.resto.cliente;
 
 import com.mycompany.tallerpoo.com.resto.Reserva;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -165,7 +166,24 @@ public class Cliente {
                 break;
         }
     }
-    public void historialReserva(){ //DEVUELVE UNA LISTA DE RESERVAS//
+    public List<List<Reserva>> historialReserva(){
+
+        List<Reserva> reservasPasadas = new ArrayList<>();
+        List<Reserva> reservasFuturas = new ArrayList<>();
+        LocalDateTime ahora = LocalDateTime.now();
+
+        for (Reserva reserva : reservas) {
+            LocalDateTime fechaReserva = LocalDateTime.of(reserva.getFecha(), reserva.getHora());
+            if (fechaReserva.isBefore(ahora)) {
+                reservasPasadas.add(reserva);
+            } else {
+                reservasFuturas.add(reserva);
+            }
+        }
+        List<List<Reserva>> historial = new ArrayList<>();
+        historial.add(reservasPasadas);
+        historial.add(reservasFuturas);  
+        return historial;
     }
     public void reservarMesa(){ // PARAMETROS FECHA: DATE, HORA: TIME
     }

@@ -12,13 +12,15 @@ public class TarjetaDeCredito {
     private String emisor;
     private String motivo;
     private int nrotarjeta;
+    private int cantidad;
     private Pago pago;
 
-    public TarjetaDeCredito(String nombre, String emisor, String motivo, int nrotarjeta, Pago p) {
+    public TarjetaDeCredito(String nombre, String emisor, String motivo, int nrotarjeta, int cantidad, Pago p) {
         this.nombre = nombre;
         this.emisor = emisor;
         this.motivo = motivo;
         this.nrotarjeta = nrotarjeta;
+        this.cantidad = cantidad;
         this.pago = p;
     }
 
@@ -54,6 +56,16 @@ public class TarjetaDeCredito {
         this.nrotarjeta = nrotarjeta;
     }
 
+
+    public int getCantidad() {
+        return this.cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+
     public Pago getPago(){
         return this.pago;
     }
@@ -61,4 +73,17 @@ public class TarjetaDeCredito {
     public void setPago(Pago p){
         this.pago = p;
     }
+
+
+    @Override
+    public String toString() {
+        return
+            " Nombre: " + getNombre() + " " +
+            ", Emisor: " + getEmisor() + " " +
+            ", Motivo: " + getMotivo() + " " +
+            ", Numero de Tarjeta: " + getNrotarjeta() + " " +
+            ", Cantidad: " + getCantidad() + " " +
+            ", Pago: " + getPago();
+    }
+
 }
