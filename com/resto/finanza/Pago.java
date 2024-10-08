@@ -45,18 +45,19 @@ public class Pago {
     }
 
     //Corregir
-    public float Descontar(float monto, TarjetaDeCredito tarjeta){
-        int asistencia;
-        switch (asistencia) {
-            case 1:
-                monto = 50;
-            case 2:
-                return monto;
-            case 3:
-                break;
-            default: 
-                break;
+    public float Descontar(float monto, TarjetaDeCredito tarjeta, Asistencia a) {
+        float totalDescontado = 0;
+        switch (a) {
+            case Noasiste:
+                tarjeta.setCantidad(tarjeta.getCantidad() - 50);
+                System.out.println("Se descontaron $50 por Inasistencia");
+                totalDescontado = 50;
+            case Asiste:
+                tarjeta.setCantidad(tarjeta.getCantidad() - monto);
+                System.out.println("Se desconto: $" + monto);
+                totalDescontado = monto;
+            case Otro:
         }
+        return totalDescontado;
     }
-
 }

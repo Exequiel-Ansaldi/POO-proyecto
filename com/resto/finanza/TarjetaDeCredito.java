@@ -12,10 +12,10 @@ public class TarjetaDeCredito {
     private String emisor;
     private String motivo;
     private int nrotarjeta;
-    private int cantidad;
+    private float cantidad;
     private Pago pago;
 
-    public TarjetaDeCredito(String nombre, String emisor, String motivo, int nrotarjeta, int cantidad, Pago p) {
+    public TarjetaDeCredito(String nombre, String emisor, String motivo, int nrotarjeta, float cantidad, Pago p) {
         this.nombre = nombre;
         this.emisor = emisor;
         this.motivo = motivo;
@@ -57,11 +57,11 @@ public class TarjetaDeCredito {
     }
 
 
-    public int getCantidad() {
+    public float getCantidad() {
         return this.cantidad;
     }
 
-    public void setCantidad(int cantidad) {
+    public void setCantidad(float cantidad) {
         this.cantidad = cantidad;
     }
 
