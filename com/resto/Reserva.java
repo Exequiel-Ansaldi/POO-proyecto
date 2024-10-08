@@ -124,6 +124,7 @@ public class Reserva {
         lectura.close();
         return comentario;
     }
+
     public void confirmarReserva(){
         // Verificar si la mesa está disponible en la fecha y hora
         boolean mesaDisponible = true;
@@ -146,10 +147,34 @@ public class Reserva {
         }
     }
 
-    public void modificarReserva(LocalDate fecha, LocalTime hora, Mesa mesa ){
+    public void modificarReserva(Reserva reserva, LocalDate fecha, LocalTime hora, Mesa mesa ){
+        boolean reservaEncontrada = false;
+        for(Reserva x : listaReservas){
+            if(x.equals(reserva)){
+                x.setFecha(fecha);
+                x.setHora(hora);
+                x.setMesa(mesa);
+                reservaEncontrada = true;
+                System.out.println("La reserva fue modificada exitosamente");
+            }
+            if (!reservaEncontrada){
+                System.out.println("Reserva no encontrada");
+            }
+        }
     }
 
     public void cancelarReserva(Reserva reserva){
+        boolean reservaEliminada = false;
+        for(Reserva x : listaReservas){
+            if(x.equals(reserva)){
+                listaReservas.remove(x);
+                reservaEliminada = true;
+                System.out.println("La reserva fue eliminada exitosamente");
+            }
+            if (!reservaEliminada){
+                System.out.println("Reserva no encontrada");
+            }
+        }
     }
 
     public void enviarRecordatorioReserva(String correo){
