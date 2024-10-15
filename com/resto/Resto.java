@@ -148,25 +148,31 @@ public class Resto {
     public boolean verificarDisponibilidad(List<Mesa> mesasSolicitadas, LocalDate fecha, LocalTime horaInicio, int duracionHoras) {
         // Calcular la hora final basándose en la duración especificada por el cliente
         LocalTime horaFinal = horaInicio.plusHours(duracionHoras);
-    
+
+        // Comprobar que las horas de inicio y fin estén dentro del horario de apertura y cierre
+        if (horaInicio.isBefore(apertura) || horaFinal.isAfter(cierre)) {
+            return false; // No está disponible dentro del horario
+        }
+
         // Recorrer todas las reservas existentes
         for (Reserva reserva : reservas) {
             // Verificar si la fecha de la reserva coincide con la fecha solicitada
             if (reserva.getFecha().isEqual(fecha)) {
                 // Verificar si hay alguna mesa en común entre las solicitadas y las de la reserva
-                for (Mesa mesaSolicitada : mesasSolicitadas) {
-                    if (reserva.getMesas().contains(mesaSolicitada)) {
-                        // Verificar si el rango de tiempo solicitado se superpone con la reserva existente
-                        LocalTime inicioReserva = reserva.getHora();
-                        LocalTime finReserva = reserva.getHora().plusHours(reserva.getDuracionHoras());
-    
-                        // Verificar superposición de horarios
-                        boolean horarioEnConflicto = 
+                Mesa mesaReserva = reserva.getMesa(); // Obtener la mesa de la reserva
+
+                // Comprobar si la mesa de la reserva está en la lista de mesas solicitadas
+                if (mesasSolicitadas.contains(mesaReserva)) {
+                    // Obtener la hora de inicio de la reserva existente
+                    LocalTime inicioReserva = reserva.getHora();
+                    LocalTime finReserva = inicioReserva.plusHours(duracionHoras); // Puedes ajustar esto si hay un tiempo estándar
+
+                    // Verificar superposición de horarios
+                    boolean horarioEnConflicto =
                             (horaInicio.isBefore(finReserva) && horaFinal.isAfter(inicioReserva));
-    
-                        if (horarioEnConflicto) {
-                            return false; // La mesa no está disponible en el horario solicitado
-                        }
+
+                    if (horarioEnConflicto) {
+                        return false; // La mesa no está disponible en el horario solicitado
                     }
                 }
             }
@@ -174,7 +180,5 @@ public class Resto {
         // Si no hay conflictos, las mesas están disponibles
         return true;
     }
-    
-    
-
 }
+
