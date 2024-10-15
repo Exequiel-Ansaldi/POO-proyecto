@@ -115,7 +115,7 @@ public class Cliente {
     }
 
     public void iniciarSesion(String c, String contra){
-        if (this.correo.equals(correo) && this.contrasenia.equals(contrasenia)) {
+        if (this.correo.equals(c) && this.contrasenia.equals(contra)) {
             System.out.println("Inicio de sesión exitoso.");
         } else {
             System.out.println("Correo o contraseña incorrectos. Inténtelo de nuevo.");
