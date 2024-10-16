@@ -5,8 +5,13 @@
 package com.mycompany.tallerpoo.com.resto.cliente;
 
 import com.mycompany.tallerpoo.com.resto.Reserva;
+import com.mycompany.tallerpoo.com.resto.Resto;
+import com.mycompany.tallerpoo.com.resto.finanza.Asistencia;
+import com.mycompany.tallerpoo.com.resto.mesa.Mesa;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -85,7 +90,7 @@ public class Cliente {
         this.nombre = lectura.nextLine();
         System.out.println("Ingrese su correo: ");
         this.correo = lectura.nextLine();
-        //patron email son los valores validos que puede tomar una direcccion de correo
+        //Patron email son los valores validos que puede tomar una direcccion de correo
         String patronemail = "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$";
         //pattern compila a patronemail
         Pattern patron = Pattern.compile(patronemail);
@@ -174,7 +179,7 @@ public class Cliente {
     // Crear una copia de la lista de reservas
     List<Reserva> historial = new ArrayList<>(reservas);
 
-    // Ordenar las reservas por fecha y hora de forma legible
+    // Ordenar las reservas por fecha y hora
     historial.sort(new Comparator<Reserva>() {
         @Override
         public int compare(Reserva r1, Reserva r2) {
@@ -191,8 +196,17 @@ public class Cliente {
     return historial;
 }
 
-    public void reservarMesa(){ // PARAMETROS FECHA: DATE, HORA: TIME
+    public void reservarMesa(Resto resto, List<Mesa> mesasSolicitadas, LocalDate fecha, LocalTime horaInicio, int duracionHoras){
+        boolean disponibles = resto.verificarDisponibilidad(mesasSolicitadas, fecha, horaInicio, duracionHoras);
+        if (disponibles) {
+            for (Mesa mesa : mesasSolicitadas) {
+                // Crear una nueva reserva para cada mesa
+                Reserva nuevaReserva = new Reserva(fecha, Asistencia.Asiste, horaInicio, mesa, this);
+                this.reservas.add(nuevaReserva);
+            }
+        }
     }
+
     public void recuperarContrasenia(String c){
     }
 }
