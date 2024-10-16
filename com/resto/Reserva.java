@@ -16,8 +16,8 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 import java.time.LocalTime;
-import java.net.Authenticator;
-import java.net.PasswordAuthentication;
+import javax.mail.Authenticator;
+import javax.mail.PasswordAuthentication;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
