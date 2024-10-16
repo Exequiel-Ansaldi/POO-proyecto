@@ -6,7 +6,6 @@ package com.mycompany.tallerpoo.com.resto.mesa;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 import com.mycompany.tallerpoo.com.resto.Reserva;
 import com.mycompany.tallerpoo.com.resto.Evento;
 
@@ -19,13 +18,15 @@ public class Mesa {
     private String ubicacion;
     private List<Reserva> reservas;
     private Evento evento;
+    private EstadoMesa estado;
     
 
-    public Mesa(int capacidad, String ubicacion, Evento evento, List<Reserva> reservas) {
+    public Mesa(int capacidad, String ubicacion, Evento evento, List<Reserva> reservas, EstadoMesa estado) {
         this.capacidad = capacidad;
         this.ubicacion = ubicacion;
         this.evento = evento;
         this.reservas = reservas;
+        this.estado = estado;
     }
 
     public int getCapacidad() {
@@ -62,6 +63,14 @@ public class Mesa {
 
      public void setEvento(Evento evento){
         this.evento = evento;
+    }
+
+    public EstadoMesa getEstado(){
+        return this.estado;
+    }
+
+    public void setEstado(EstadoMesa estado){
+        this.estado = estado;
     }
 
     public List<Mesa> filtrarMesas(List<Mesa> mesas, int capacidad, String ubicacion){ //PODRIA HACRESE UNA CLASE ENUMERACION PARA CAPACIDAD Y UBICACION

@@ -1,10 +1,11 @@
 package com.mycompany.tallerpoo.com.resto.personal;
 
-import java.sql.Time;
 import java.time.LocalTime;
 import java.util.Scanner;
 
 import com.mycompany.tallerpoo.com.resto.Resto;
+import com.mycompany.tallerpoo.com.resto.mesa.Mesa;
+import com.mycompany.tallerpoo.com.resto.mesa.EstadoMesa;
 
 public class Administrador extends Personal {
     private Resto resto;
@@ -61,6 +62,11 @@ public class Administrador extends Personal {
 
         
     public void BloquearMesa(){
+//TERMINAR METODO
+    }
+
+    public void desbloquearMesa(){
+//TERMINAR METODO
     }
 
     
@@ -68,9 +74,21 @@ public class Administrador extends Personal {
         super.setRol(rol); 
     }
 
-    //Ver que onda este metodo
-        /* 
-        CrearCuenta(empleado:Empleado): void
-        */
+    public void CrearCuenta() {
+        Scanner scanner = new Scanner(System.in);
 
+        // Pedir al administrador que ingrese los datos del nuevo empleado
+        System.out.println("Ingrese el ID del nuevo empleado:");
+        int id = scanner.nextInt();
+
+        // Consumir la línea siguiente para evitar problemas con la lectura de cadenas
+        scanner.nextLine();
+
+        System.out.println("Ingrese el rol del empleado (Administrador, Maitre, Mesero):");
+        String rolString = scanner.nextLine().toUpperCase();
+        CodRol rol;
+        rol = CodRol.valueOf(rolString);
+        Empleado empleado_nuevo = new Empleado(id, rol);
+
+    }
 }

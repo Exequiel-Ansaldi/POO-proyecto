@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc35265b-e20e-47ec-ab1c-2b6d08796871" name="Changes" comment="" />
+    <list default="true" id="fc35265b-e20e-47ec-ab1c-2b6d08796871" name="Changes" comment="Metodo reservarMesa en cliente" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +13,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Exequiel-Ansaldi"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Programacion-orientada-a-objetos-UNER/CLASES-POO.git",
+    "accountId": "a6a10552-bc3c-4458-98c6-8b74d0099e25"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -57,10 +69,37 @@
       <workItem from="1729027334767" duration="37000" />
       <workItem from="1729030868018" duration="81000" />
       <workItem from="1729031137139" duration="11000" />
+      <workItem from="1729031152894" duration="103000" />
+      <workItem from="1729089546489" duration="372000" />
+      <workItem from="1729091319857" duration="2663000" />
     </task>
+    <task id="LOCAL-00001" summary="Metodo reservarMesa en cliente">
+      <option name="closed" value="true" />
+      <created>1729094136189</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1729094136189</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Metodo reservarMesa en cliente" />
+    <option name="LAST_COMMIT_MESSAGE" value="Metodo reservarMesa en cliente" />
   </component>
 </project>

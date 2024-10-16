@@ -17,6 +17,9 @@ public class Empleado extends Personal {
         super(id, r);
         this.reservas = reservas;
     }
+    public Empleado(int id, CodRol r){
+        super(id, r);
+    }
 
     //Setters & Getters
     public List<Reserva> getReservas() {
