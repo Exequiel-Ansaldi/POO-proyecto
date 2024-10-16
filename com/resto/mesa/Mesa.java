@@ -7,6 +7,7 @@ package com.mycompany.tallerpoo.com.resto.mesa;
 import java.util.ArrayList;
 import java.util.List;
 import com.mycompany.tallerpoo.com.resto.Reserva;
+import com.mycompany.tallerpoo.com.resto.mesa.EstadoMesa;
 import com.mycompany.tallerpoo.com.resto.Evento;
 
 /**
@@ -78,6 +79,24 @@ public class Mesa {
         this.estado = estado;
     }
 
+    /**
+    * La función filtra una lista de mesas según su capacidad y ubicación.
+    * 
+    * @param mesas El parámetro `mesas` es una lista de objetos `Mesa`, que representa una colección de
+    * mesas. El método `filtrarMesas` toma esta lista de mesas como entrada y las filtra basándose en los
+    * criterios de capacidad y ubicación proporcionados. Luego devuelve una nueva lista que contiene solo las mesas
+    * que cumplen con estos criterios.
+    * @param capacidad El parámetro `capacidad` representa la capacidad mínima que un objeto `Mesa`
+    * debe tener para ser incluido en la lista filtrada. Solo los objetos `Mesa` con una capacidad
+    * mayor o igual a este valor se agregarán a la lista `mesasFiltradas`.
+    * @param ubicacion El parámetro "ubicacion" en el método "filtrarMesas" representa la ubicación
+    * o área donde se encuentra la mesa. Es un parámetro de tipo String que se utiliza para filtrar la
+    * lista de mesas según su ubicación. El método filtra las mesas según los criterios de capacidad y
+    * ubicación antes de devolver la lista filtrada.
+    * @return El método `filtrarMesas` devuelve una Lista de objetos `Mesa` que cumplen con los criterios
+    * especificados de tener una capacidad mayor o igual al valor de capacidad proporcionado y estar
+    * ubicadas en la ubicación especificada.
+    */
     public List<Mesa> filtrarMesas(List<Mesa> mesas, int capacidad, String ubicacion){ //PODRIA HACRESE UNA CLASE ENUMERACION PARA CAPACIDAD Y UBICACION
         List<Mesa> mesasFiltradas = new ArrayList<>();
         for (Mesa mesa : mesas) {

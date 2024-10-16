@@ -198,6 +198,24 @@ public class Cliente {
     return historial;
 }
 
+    /**
+     * El método `reservarMesa` en Java verifica la disponibilidad de las mesas solicitadas en un
+     * restaurante para una fecha y hora dadas, y crea reservas si las mesas están disponibles.
+     * 
+     * @param resto El parámetro "resto" es un objeto de tipo "Resto", que probablemente representa un
+     * restaurante o un establecimiento de comida donde se está haciendo la reserva.
+     * @param mesasSolicitadas El parámetro `mesasSolicitadas` es una lista de objetos Mesa que 
+     * representan las mesas que han sido solicitadas para la reserva.
+     * @param fecha La variable "fecha" representa la fecha en la que se desea reservar la mesa. Es de
+     * tipo LocalDate, que es una clase en Java que representa una fecha sin zona horaria. Se utiliza
+     * para almacenar fechas como "2022-10-31".
+     * @param horaInicio El parámetro `horaInicio` representa la hora de inicio de la reserva. Es de
+     * tipo `LocalTime`, que es una clase en Java que representa una hora sin fecha ni zona horaria.
+     * Almacena la hora, minuto, segundo y fracción de segundo.
+     * @param duracionHoras El parámetro "duracionHoras" representa la duración en horas para la cual
+     * se están reservando las mesas. Especifica cuánto tiempo durará la reserva, comenzando desde la
+     * "horaInicio" (hora de inicio) proporcionada en el método.
+     */
     public void reservarMesa(Resto resto, List<Mesa> mesasSolicitadas, LocalDate fecha, LocalTime horaInicio, int duracionHoras){
         boolean disponibles = resto.verificarDisponibilidad(mesasSolicitadas, fecha, horaInicio, duracionHoras);
         if (disponibles) {
