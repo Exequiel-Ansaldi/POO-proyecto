@@ -9,8 +9,8 @@ package com.mycompany.tallerpoo.com.resto;
  * @author Exequiel
  */
 
-import java.util.Date;
 import java.time.LocalTime;
+import java.util.Date;
 
 public class Agenda {
     private Date fecha;

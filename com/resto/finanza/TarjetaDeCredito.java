@@ -77,6 +77,8 @@ public class TarjetaDeCredito {
 
 
     @Override
+    // El método `public String toString()` en la clase `TarjetaDeCredito` está sobrescribiendo el método predeterminado
+    // `toString()` proporcionado por la clase `Object` en Java.
     public String toString() {
         return
             " Nombre: " + getNombre() + " " +

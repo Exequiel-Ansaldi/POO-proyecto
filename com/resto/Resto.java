@@ -144,7 +144,22 @@ public class Resto {
         return this.reservas;
     }
 
-    //Métodos de Clase
+    /**
+     * La función `verificarDisponibilidad` comprueba si un conjunto de mesas solicitadas está disponible en una
+     * fecha y hora determinadas para una duración especificada, teniendo en cuenta el horario de apertura y las reservas existentes.
+     *
+     * @param mesasSolicitadas La lista de mesas solicitadas por el cliente.
+     * @param fecha La variable `fecha` representa la fecha en la que se desea verificar la
+     * disponibilidad de mesas para realizar una reserva.
+     * @param horaInicio El parámetro `horaInicio` representa la hora de inicio de la reserva. 
+     * Es un objeto `LocalTime` que indica la hora a la que se programa el inicio de la reserva.
+     * @param duracionHoras El parámetro `duracionHoras` representa la duración en horas para la que se solicitan
+     * las mesas por parte del cliente. Se utiliza para calcular la hora de finalización en función de la hora de inicio proporcionada por el cliente.
+     * Esta duración se utiliza para verificar la disponibilidad y los conflictos con las reservas existentes.
+     * @return El método `verificarDisponibilidad` devuelve un valor booleano. Devuelve `true` si las mesas solicitadas están disponibles para reservar
+     * en la fecha y hora especificadas sin ningún conflicto de programación, y `false` si hay conflictos con las reservas existentes o si la hora solicitada
+     * está fuera del horario de apertura del establecimiento.
+     */
     public boolean verificarDisponibilidad(List<Mesa> mesasSolicitadas, LocalDate fecha, LocalTime horaInicio, int duracionHoras) {
         // Calcular la hora final basándose en la duración especificada por el cliente
         LocalTime horaFinal = horaInicio.plusHours(duracionHoras);
@@ -154,7 +169,7 @@ public class Resto {
             return false; // No está disponible dentro del horario
         }
 
-        // Recorrer todas las reservas existentes
+        
         for (Reserva reserva : reservas) {
             // Verificar si la fecha de la reserva coincide con la fecha solicitada
             if (reserva.getFecha().isEqual(fecha)) {
@@ -172,12 +187,11 @@ public class Resto {
                             (horaInicio.isBefore(finReserva) && horaFinal.isAfter(inicioReserva));
 
                     if (horarioEnConflicto) {
-                        return false; // La mesa no está disponible en el horario solicitado
+                        return false; 
                     }
                 }
             }
         }
-        // Si no hay conflictos, las mesas están disponibles
         return true;
     }
 }

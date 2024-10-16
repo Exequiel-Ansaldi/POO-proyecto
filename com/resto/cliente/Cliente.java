@@ -84,10 +84,22 @@ public class Cliente {
         return this.reservas;
     }
 
+    /**
+     * La función "agregarReserva" agrega un objeto de reserva a una lista de reservas.
+     *
+     * @param r El parámetro `r` en el método `agregarReserva` es un objeto de tipo `Reserva`, que
+     * representa una reserva. Este método agrega el objeto de reserva `r` a una lista de reservas
+     * (`reservas`).
+     */
     public void agregarReserva(Reserva r){
         this.reservas.add(r);
     }
 
+    /**
+     * El método `registrarse` en Java solicita al usuario que ingrese su nombre, correo electrónico y contraseña,
+     * valida el formato del correo electrónico y asegura la confirmación de la contraseña antes de registrar
+     * con éxito al usuario.
+     */
     public void registrarse(){
 
         Scanner lectura = new Scanner(System.in);
@@ -124,6 +136,16 @@ public class Cliente {
 
     }
 
+    /**
+     * La función `iniciarSesion` verifica si el correo electrónico y la contraseña proporcionados coinciden con los valores almacenados
+     * e imprime un mensaje de éxito si lo hacen, de lo contrario imprime un mensaje de error.
+     *
+     * @param c El parámetro `c` en el método `iniciarSesion` representa la dirección de correo electrónico ingresada por
+     * el usuario para iniciar sesión.
+     * @param contra El parámetro "contra" en el método "iniciarSesion" representa la contraseña que
+     * es proporcionada por el usuario al intentar iniciar sesión. El método compara esta contraseña con la almacenada
+     * contraseña (this.contrasenia) para determinar si el intento de inicio de sesión es exitoso.
+     */
     public void iniciarSesion(String c, String contra){
         if (this.correo.equals(c) && this.contrasenia.equals(contra)) {
             System.out.println("Inicio de sesión exitoso.");
@@ -132,6 +154,10 @@ public class Cliente {
         }
     }
 
+    /**
+     * El método `actualizarInfo` en Java permite al usuario actualizar diferentes partes de la información
+     * como el nombre, el correo electrónico, la contraseña y el número de teléfono con verificaciones de validación.
+     */
     public void actualizarInfo(){
         Scanner lectura = new Scanner(System.in);
         System.out.println("Pulse según la información a actualizar: ");
@@ -177,26 +203,34 @@ public class Cliente {
         }
         lectura.close();
     }
-   public List<Reserva> historialReserva() {
-    // Crear una copia de la lista de reservas
-    List<Reserva> historial = new ArrayList<>(reservas);
+    /**
+     * La función `historialReserva` crea una copia ordenada de una lista de reservas basada en la fecha
+     * y la hora.
+     *
+     * @return El método `historialReserva()` está devolviendo una lista ordenada de reservas
+     * (`List<Reserva>`) basada en su fecha y hora. Las reservas se ordenan en orden ascendente,
+     * con la fecha y hora más temprana primero.
+     */
+    public List<Reserva> historialReserva() {
+        // Crear una copia de la lista de reservas
+        List<Reserva> historial = new ArrayList<>(reservas);
 
-    // Ordenar las reservas por fecha y hora
-    historial.sort(new Comparator<Reserva>() {
-        @Override
-        public int compare(Reserva r1, Reserva r2) {
-            // Obtener la fecha y hora de cada reserva
-            LocalDateTime fechaHora1 = LocalDateTime.of(r1.getFecha(), r1.getHora());
-            LocalDateTime fechaHora2 = LocalDateTime.of(r2.getFecha(), r2.getHora());
+        // Ordenar las reservas por fecha y hora
+        historial.sort(new Comparator<Reserva>() {
+            @Override
+            public int compare(Reserva r1, Reserva r2) {
+                // Obtener la fecha y hora de cada reserva
+                LocalDateTime fechaHora1 = LocalDateTime.of(r1.getFecha(), r1.getHora());
+                LocalDateTime fechaHora2 = LocalDateTime.of(r2.getFecha(), r2.getHora());
             
-            // Comparar las fechas y horas
-            return fechaHora1.compareTo(fechaHora2);
-        }
-    });
+                // Comparar las fechas y horas
+                return fechaHora1.compareTo(fechaHora2);
+            }
+        });
 
-    // Devolver la lista de reservas ordenada
-    return historial;
-}
+        // Devolver la lista de reservas ordenada
+        return historial;
+    }
 
     /**
      * El método `reservarMesa` en Java verifica la disponibilidad de las mesas solicitadas en un
@@ -227,6 +261,14 @@ public class Cliente {
         }
     }
 
+    /**
+     * El método `recuperarContrasenia` en Java permite a un usuario restablecer su contraseña si proporciona
+     * la dirección de correo electrónico correcta.
+     *
+     * @param c El parámetro `c` en el método `recuperarContrasenia` es una cadena que representa la
+     * dirección de correo electrónico ingresada por el usuario. El método verifica si esta dirección de correo electrónico coincide con la almacenada
+     * dirección de correo electrónico (`this.correo`) en el objeto. Si coinciden, se le solicita al usuario que ingrese
+     */
     public void recuperarContrasenia(String c){
         if(this.correo.equals(c)){
             Scanner sc = new Scanner(System.in);

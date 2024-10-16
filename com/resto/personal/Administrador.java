@@ -74,6 +74,10 @@ public class Administrador extends Personal {
         super.setRol(rol); 
     }
 
+    /**
+     * La función "CrearCuenta" en Java solicita al administrador que ingrese el ID y el rol de un nuevo
+     * empleado, crea un objeto empleado con la información proporcionada.
+     */
     public void CrearCuenta() {
         Scanner scanner = new Scanner(System.in);
 

@@ -50,7 +50,20 @@ public class Pago {
         this.monto = monto;
     }
 
-    //Corregir
+    
+    /**
+     * La función "Descontar" deduce un monto especificado de una tarjeta de crédito en función del tipo de
+     * asistencia proporcionada.
+     *
+     * @param monto El parámetro `monto` representa el monto que se descontará de la tarjeta de crédito.
+     * @param tarjeta El parámetro `tarjeta` parece ser un objeto de la clase `TarjetaDeCredito`,
+     * que probablemente representa una tarjeta de crédito. El método `Descontar` tiene la intención de deducir una cierta
+     * cantidad de la tarjeta de crédito en función de los parámetros proporcionados.
+     * @param a El parámetro `a` en el método `Descontar` parece ser de tipo `Asistencia`, que es
+     * probablemente un enum que representa diferentes tipos de asistencia. El enum `Asistencia` probablemente tiene
+     * valores como `Noasiste`, `Asiste` y `Otro` para indicar diferentes
+     * @return El método está devolviendo el monto total que se descontó de la tarjeta de crédito.
+     */
     public float Descontar(float monto, TarjetaDeCredito tarjeta, Asistencia a) {
         float totalDescontado = 0;
         switch (a) {

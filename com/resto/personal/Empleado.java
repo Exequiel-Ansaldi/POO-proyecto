@@ -32,7 +32,13 @@ public class Empleado extends Personal {
         this.reservas.add(r);
     }
 
-    //Métodos de Clase
+    
+    /**
+     * La función `accederReserva` imprime los detalles de una reserva como la fecha, la hora y
+     * el estado de asistencia.
+     *
+     * @param reserva Un objeto de reserva que contiene información como la fecha, la hora y el estado de asistencia.
+     */
     public void accederReserva(Reserva reserva){
         System.out.println("Accediendo a la reserva");
         System.out.println("Fecha: "+reserva.getFecha());

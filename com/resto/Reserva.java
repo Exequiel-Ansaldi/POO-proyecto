@@ -16,6 +16,8 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 import java.time.LocalTime;
+import java.net.Authenticator;
+import java.net.PasswordAuthentication;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -117,7 +119,13 @@ public class Reserva {
         this.mesa = mesa;
     }
 
-    //Métodos de Clase
+   
+    /**
+     * La función "hacerComentario" lee una línea de entrada del usuario y la devuelve como una cadena de caracteres.
+     *
+     * @return El método "hacerComentario" devuelve un valor de tipo String, que es la entrada del usuario para un
+     * comentario.
+     */
     public String hacerComentario(){
         Scanner lectura = new Scanner(System.in);
         String comentario = lectura.nextLine();
@@ -125,6 +133,10 @@ public class Reserva {
         return comentario;
     }
 
+    /**
+     * El método `confirmarReserva` comprueba si una mesa está disponible en una fecha y hora especificadas, y
+     * si es así, agrega la reserva a una lista.
+     */
     public void confirmarReserva(){
         // Verificar si la mesa está disponible en la fecha y hora
         boolean mesaDisponible = true;
@@ -147,6 +159,22 @@ public class Reserva {
         }
     }
 
+    /**
+     * El método `modificarReserva` itera a través de una lista de reservas y actualiza la fecha,
+     * hora y mesa de una reserva si se encuentra, mostrando un mensaje de éxito si se modificó o un mensaje de no
+     * encontrado si no.
+     *
+     * @param reserva Reserva es un objeto que representa una reserva en un restaurante.
+     * @param fecha El parámetro `fecha` representa la nueva fecha para la reserva.
+     * @param hora El parámetro `hora` en el método `modificarReserva` representa la nueva hora para
+     * la reserva. Es de tipo `LocalTime`, que es una clase en Java que representa una hora
+     * sin una fecha y zona horaria. Este parámetro se utiliza para actualizar la hora de la reserva
+     * especificada por
+     * @param mesa El parámetro `mesa` en el método `modificarReserva` representa la nueva mesa o
+     * disposición de asientos para la reserva que se está modificando. Es de tipo `Mesa`, que probablemente
+     * contiene información sobre la mesa como su número, capacidad, ubicación, etc. Al llamar
+     * a este método, usted
+     */
     public void modificarReserva(Reserva reserva, LocalDate fecha, LocalTime hora, Mesa mesa ){
         boolean reservaEncontrada = false;
         for(Reserva x : listaReservas){
@@ -163,6 +191,14 @@ public class Reserva {
         }
     }
 
+    /**
+     * La función `cancelarReserva` elimina una reserva de una lista de reservas e imprime un
+     * mensaje indicando si la reserva se eliminó correctamente o no.
+     *
+     * @param reserva El método `cancelarReserva` se utiliza para cancelar una reserva eliminándola de
+     * una lista de reservas (`listaReservas`). El método toma un objeto `Reserva` como parámetro para
+     * identificar qué reserva cancelar.
+     */
     public void cancelarReserva(Reserva reserva){
         boolean reservaEliminada = false;
         for(Reserva x : listaReservas){
@@ -176,7 +212,16 @@ public class Reserva {
             }
         }
     }
-
+    
+    /**
+     * El método `enviarRecordatorioReserva` envía un correo electrónico de recordatorio a una dirección de correo electrónico especificada
+     * con respecto a una reserva.
+     *
+     * @param correo El parámetro `correo` en el método `enviarRecordatorioReserva` representa la
+     * dirección de correo electrónico del destinatario al que se enviará el recordatorio de reserva. Este método configura
+     * un servidor SMTP, crea una sesión de correo, redacta un mensaje de correo electrónico con un
+     * contenido de recordatorio y lo envía a
+     */
     public void enviarRecordatorioReserva(String correo){
         // Configuración del servidor de correo
         String smtpHost = "smtp.gmail.com";
