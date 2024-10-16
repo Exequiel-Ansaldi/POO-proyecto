@@ -13,7 +13,13 @@ public class Pago {
     private Reserva reserva;
     private TarjetaDeCredito tarjeta;
 
-
+    public Pago(float monto){
+        this.monto = monto;
+    }
+    public Pago(Reserva reserva, TarjetaDeCredito tarjeta){
+        this.reserva = reserva;
+        this.tarjeta = tarjeta;
+    }
     public Pago(float monto,Reserva reserva, TarjetaDeCredito tarjeta) {
         this.monto = monto;
         this.reserva = reserva;

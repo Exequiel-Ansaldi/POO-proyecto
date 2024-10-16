@@ -20,7 +20,12 @@ public class Mesa {
     private Evento evento;
     private EstadoMesa estado;
     
-
+    public Mesa(){
+        this.reservas = new ArrayList<Reserva>();
+    }
+    public Mesa(List<Reserva> reservas){
+        this.reservas = reservas;
+    }
     public Mesa(int capacidad, String ubicacion, Evento evento, List<Reserva> reservas, EstadoMesa estado) {
         this.capacidad = capacidad;
         this.ubicacion = ubicacion;

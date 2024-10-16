@@ -15,6 +15,7 @@ public class TarjetaDeCredito {
     private float cantidad;
     private Pago pago;
 
+    public TarjetaDeCredito(){}
     public TarjetaDeCredito(String nombre, String emisor, String motivo, int nrotarjeta, float cantidad, Pago p) {
         this.nombre = nombre;
         this.emisor = emisor;

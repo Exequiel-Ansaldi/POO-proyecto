@@ -30,7 +30,12 @@ public class Cliente {
     private int numero;
     private List<Reserva> reservas;
 
-
+    public Cliente(){
+        this.reservas = new ArrayList<Reserva>();
+    }
+    public Cliente(List<Reserva> reservas){
+        this.reservas = reservas;
+    }
     public Cliente(String nombre, String correo, String contrasenia, int numero, List<Reserva> reservas) {
         this.nombre = nombre;
         this.correo = correo;
@@ -90,7 +95,7 @@ public class Cliente {
         this.nombre = lectura.nextLine();
         System.out.println("Ingrese su correo: ");
         this.correo = lectura.nextLine();
-        //Patron email son los valores validos que puede tomar una direcccion de correo
+        //Patron email son los valores válidos que puede tomar una direcccion de correo
         String patronemail = "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$";
         //pattern compila a patronemail
         Pattern patron = Pattern.compile(patronemail);
@@ -138,8 +143,7 @@ public class Cliente {
         lectura.nextLine();
         switch (opcion) {
             case 1:
-                String nuevonombre = lectura.nextLine();
-                this.nombre = nuevonombre;
+                this.nombre = lectura.nextLine();
                 System.out.println("Nombre actualizado");
                 break;
             case 2:
@@ -158,15 +162,13 @@ public class Cliente {
             
             case 3:
                 System.out.print("Ingrese la nueva contraseña: ");
-                String nuevaContrasenia = lectura.nextLine();
-                this.contrasenia = nuevaContrasenia;
+                this.contrasenia = lectura.nextLine();
                 System.out.println("Contraseña actualizada correctamente.");
                 break;
 
             case 4: 
                 System.out.println("Ingrese su nuevo numero de telefono: ");
-                int nuevotelefono = lectura.nextInt();
-                this.numero = nuevotelefono;
+                this.numero = lectura.nextInt();
                 System.out.println("Telefono actualizado");
                 break;
 
@@ -208,5 +210,12 @@ public class Cliente {
     }
 
     public void recuperarContrasenia(String c){
+        if(this.correo.equals(c)){
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Ingrese una nueva contraseña \n");
+            this.contrasenia = sc.nextLine();
+        }else{
+            System.out.println("ERROR, correo no Existente");
+        }
     }
 }

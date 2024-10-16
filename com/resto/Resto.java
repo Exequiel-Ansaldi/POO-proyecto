@@ -165,7 +165,7 @@ public class Resto {
                 if (mesasSolicitadas.contains(mesaReserva)) {
                     // Obtener la hora de inicio de la reserva existente
                     LocalTime inicioReserva = reserva.getHora();
-                    LocalTime finReserva = inicioReserva.plusHours(duracionHoras); // Puedes ajustar esto si hay un tiempo estándar
+                    LocalTime finReserva = inicioReserva.plusHours(duracionHoras);
 
                     // Verificar superposición de horarios
                     boolean horarioEnConflicto =
