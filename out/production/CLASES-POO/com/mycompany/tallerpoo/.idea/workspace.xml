@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc35265b-e20e-47ec-ab1c-2b6d08796871" name="Changes" comment="&#10;Crear cuenta en empleado, constructor en mesa, metodo desbloquear(continuarlo)">
-      <change beforePath="$PROJECT_DIR$/MainTaller.java" beforeDir="false" afterPath="$PROJECT_DIR$/MainTaller.java" afterDir="false" />
+    <list default="true" id="fc35265b-e20e-47ec-ab1c-2b6d08796871" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/com/resto/Agenda.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/resto/Agenda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/resto/Evento.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/resto/Evento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/resto/cliente/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/resto/cliente/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/resto/mesa/Mesa.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/resto/mesa/Mesa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/resto/personal/Administrador.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/resto/personal/Administrador.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +90,9 @@
       <workItem from="1729125057847" duration="194000" />
       <workItem from="1729127888128" duration="67000" />
       <workItem from="1729127987797" duration="63000" />
-      <workItem from="1729135834190" duration="315000" />
+      <workItem from="1729135834190" duration="1535000" />
+      <workItem from="1729173288825" duration="336000" />
+      <workItem from="1729173632387" duration="1131000" />
     </task>
     <task id="LOCAL-00001" summary="Metodo reservarMesa en cliente">
       <option name="closed" value="true" />
@@ -104,7 +110,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729111662540</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="&#10;probando en el main algunos metodos de Cliente">
+      <option name="closed" value="true" />
+      <created>1729137363874</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1729137363874</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,6 +138,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Metodo reservarMesa en cliente" />
     <MESSAGE value="&#10;Crear cuenta en empleado, constructor en mesa, metodo desbloquear(continuarlo)" />
-    <option name="LAST_COMMIT_MESSAGE" value="&#10;Crear cuenta en empleado, constructor en mesa, metodo desbloquear(continuarlo)" />
+    <MESSAGE value="&#10;probando en el main algunos metodos de Cliente" />
+    <option name="LAST_COMMIT_MESSAGE" value="&#10;probando en el main algunos metodos de Cliente" />
   </component>
 </project>

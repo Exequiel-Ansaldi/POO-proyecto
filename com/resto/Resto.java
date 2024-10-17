@@ -19,6 +19,10 @@ import java.time.LocalTime;
  * @author Exequiel
  */
 
+/**
+ * La clase `Resto` representa un restaurante con atributos como mapa, horarios de apertura y cierre,
+ * listado de clientes, agenda, eventos, administradores, mesas y reservas.
+ */
 public class Resto {
      private String mapa;
      private LocalTime apertura;
@@ -30,7 +34,9 @@ public class Resto {
      private List<Mesa> mesas;
      private List<Reserva> reservas;
 
-    //Constructores
+    /*Es un constructor para la clase `Resto` en Java. Este específico
+    el constructor es un constructor sin argumentos, lo que significa que no toma ningún parámetro al crear
+    una instancia de la clase `Resto`.*/
     public Resto(){
         this.clientes = new ArrayList<Cliente>();
         this.eventos = new ArrayList<Evento>();
@@ -38,6 +44,11 @@ public class Resto {
         this.mesas = new ArrayList<Mesa>();
         this.reservas = new ArrayList<Reserva>();
     }
+
+    /*El constructor `público Resto` con múltiples parámetros está inicializando un objeto `Resto` con
+    valores específicos para sus atributos. Cuando se llama a este constructor, establece los valores del
+    `mapa`, `apertura`, `cierre`, `clientes`, `agenda`, `eventos`, `admins`, `mesas` y `reservas`
+    atributos de la clase `Resto` basados ​​en los valores proporcionados como argumentos al constructor.*/
 
     public Resto(String mapa, LocalTime apertura, LocalTime cierre, List <Cliente> clientes, Agenda agenda, List <Evento> eventos, List<Administrador> admins, List<Mesa> mesas, List<Reserva> reservas) {
         this.mapa = mapa;
@@ -52,94 +63,219 @@ public class Resto {
     }
 
     //Getters & Setters
+    /**
+     * La función `getApertura()` devuelve el valor LocalTime del campo `apertura`.
+     * 
+     * @return El método `getApertura()` devuelve un objeto `LocalTime`, específicamente el
+     * horario de apertura del restaurant.
+     */
     public LocalTime getApertura() {
         return this.apertura;
     }
 
+   /**
+    * La función `setApertura` establece el tiempo de apertura para un objeto específico.
+    * 
+    * @param apertura Variable LocalTime que representa la hora de apertura del restaurant. 
+    */
     public void setApertura(LocalTime apertura) {
         this.apertura = apertura;
     }
 
+  /**
+    * La función `getCierre` en Java devuelve la hora de cierre almacenada en la variable `cierre`.
+    * 
+    * @return El método `getCierre` devuelve el objeto LocalTime `cierre`. Especificamente el
+    * horario de cierre del restaurant.
+    */
     public LocalTime getCierre() {
         return this.cierre;
     }
 
+  /**
+    * La función `setCierre` establece la hora de cierre del restaurant.
+    * 
+    * @param cierre El parámetro `cierre` representa la hora de cierre del restaurant.
+    * Es de tipo `LocalTime`, que es una clase en Java que representa una hora sin fecha ni hora
+    * zona.
+    */
     public void setCierre(LocalTime cierre) {
         this.cierre = cierre;
     }
 
+    // El método `getMapa()` es un método getter en Java que devuelve el valor del atributo `mapa`
+    // en la clase `Resto`. Simplemente recupera el valor del atributo "mapa".
     public String getMapa() {
         return this.mapa;
     }
 
+   /**
+     * Esta función Java establece el valor de la variable llamada "mapa".
+     * 
+     * @param mapa El parámetro "mapa" en el método "setMapa" es de tipo String que representa el
+     * mapa por configurar.
+     */
     public void setMapa(String mapa) {
         this.mapa = mapa;
     }
 
+   /**
+     * La función "agregarCliente" agrega un objeto cliente a una lista de clientes.
+     * 
+     * @param c El parámetro `c` en el método `agregarCliente` representa un objeto del `Cliente`
+     * clase, que se está agregando a la lista de clientes ("clientes") en el objeto actual.
+     */
     public void agregarCliente(Cliente c){
         this.clientes.add(c);
     }
+
+ /**
+   * Esta función Java establece una lista de objetos Cliente en una variable de clase.
+   * 
+   * @param clientes El parámetro "clientes" es una Lista de objetos de tipo Cliente. el metodo
+   * "setCliente" se utiliza para establecer la Lista de objetos Cliente en una variable de clase llamada "clientes".
+   */
 
     public void setCliente(List <Cliente> clientes){
         this.clientes = clientes;
     }
 
+  /**
+    * La función devuelve una lista de objetos Cliente.
+    * 
+    * @return Se devuelve una lista de objetos Cliente.
+    */
     public List <Cliente> getClientes(){
         return this.clientes;
     }
 
+    /**
+     * La función `getAgenda()` devuelve el objeto de agenda.
+     * 
+     * @return Se devuelve un objeto `Agenda`.
+     */
     public Agenda getAgenda() {
         return this.agenda;
     }
 
+   /**
+    * Esta función de Java establece la agenda para el restaurant.
+    * 
+    * @param agenda El método `setAgenda` es un método de establecimiento utilizado para asignar un valor a la `agenda`
+    *variable de instancia de la clase. El parámetro `Agenda agenda` especifica que el método espera
+    * un objeto de tipo `Agenda` que se pasará como argumento. Este objeto será asignado a
+    */
     public void setAgenda(Agenda agenda) {
         this.agenda = agenda;
     }
 
+   /**
+     * La función "agregarEvento" agrega un objeto Evento a una lista de eventos.
+     * 
+     * @param c El parámetro `c` en el método `agregarEvento` representa un objeto `Evento` que
+     *quiero agregar a la lista de eventos (`eventos`).
+     */
     public void agregarEvento(Evento c){
         this.eventos.add(c);
     }
  
+   /**
+    * La función establece una lista de objetos Evento en una variable de clase.
+    * 
+    * @param eventos El parámetro "eventos" es una Lista de objetos de tipo "Evento". el metodo
+    * "setEvento" se utiliza para establecer el valor de la variable de instancia "eventos" en la Lista de eventos proporcionada.
+    * Objetos de eventos.
+    */
     public void setEvento(List <Evento> eventos){
         this.eventos = eventos;
     }
 
+    /**
+     * La función `getEventos` devuelve una lista de objetos `Evento`.
+     * 
+     * @return Se devuelve una lista de objetos Evento.
+     */
     public List<Evento> getEventos(){
         return this.eventos;
     }
 
+  /**
+    * La función "agregarAdmin" agrega un objeto Administrador a una lista de administradores.
+    * 
+    * @param c El parámetro `c` en el método `agregarAdmin` es un objeto de tipo `Administrador`,
+    * que representa un administrador. Este método agrega el administrador especificado a una colección.
+    * de administradores (`admins`).
+    */
     public void agregarAdmin(Administrador c){
         this.admins.add(c);
     }
  
+  /**
+    * La función establece una lista de objetos Administrador en una variable de clase.
+    * 
+    * @param admins El parámetro `admins` es una Lista de objetos de tipo `Administrador`, que es
+    * una clase que representa a los administradores en el sistema. El método `setAdmin` se utiliza para configurar la
+    * lista de administradores para un objeto o instancia en particular.
+    */
     public void setAdmin(List <Administrador> admins){
         this.admins = admins;
     }
 
+    /**
+     * La función devuelve una lista de objetos Administrador.
+     * 
+     * @return Se devuelve una lista de objetos de Administrador.
+     */
     public List<Administrador> geAdministradores(){
         return this.admins;
     }
 
-    public void agregarMesa(Mesa c){
-        this.mesas.add(c);
-    }
  
+    /**
+     * La función setMesa establece la lista de objetos Mesa para una instancia determinada.
+     * 
+     * @param mesas El parámetro `mesas` en el método `setMesa` es una Lista de objetos de tipo `Mesa`.
+     * Este método se utiliza para establecer la lista de objetos `Mesa` para la instancia actual de la clase.
+     */
     public void setMesa(List <Mesa> mesas){
         this.mesas = mesas;
     }
 
+   /**
+     * La función `getMesas` devuelve una lista de objetos Mesa.
+     * 
+     * @return Se devuelve una lista de objetos de Mesa.
+     */
     public List<Mesa> getMesas(){
         return this.mesas;
     }
 
+   /**
+    * La función "agregarReserva" añade un objeto de reserva a una lista de reservas.
+    * 
+    * @param c El parámetro "c" en el método "agregarReserva" representa un objeto de tipo "Reserva"
+    *que se desea agregar a la lista de reservas.
+    */
     public void agregarReserva(Reserva c){
         this.reservas.add(c);
     }
  
+   /**
+    * La función establece una lista de reservas para un objeto determinado.
+    * 
+    * @param reservas El método `setReserva`es un método de establecimiento para configurar una lista de
+    * Objetos `Reserva`. El parámetro `reservas` es una Lista de objetos `Reserva` que se desea configurar
+    * para el objeto actual. Al llamar a este método y pasar una Lista de `Reserva`.
+    */
     public void setReserva(List <Reserva> reservas){
         this.reservas = reservas;
     }
 
+   /**
+    * La función `getReservas` devuelve una lista de objetos `Reserva`.
+    * 
+    * @return Se devuelve una lista de objetos Reserva.
+    */
     public List<Reserva> getReservas(){
         return this.reservas;
     }
