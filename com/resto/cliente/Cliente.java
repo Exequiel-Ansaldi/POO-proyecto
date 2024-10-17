@@ -132,7 +132,6 @@ public class Cliente {
         }
 
         System.out.println("Registro exitoso");
-        lectura.close();
 
     }
 
@@ -177,7 +176,7 @@ public class Cliente {
                 String patronemail = "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$";
                 Pattern patron = Pattern.compile(patronemail);
                 Matcher matcheo = patron.matcher(nuevocorreo);
-                while (!matcheo.matches()){
+                while (!matcheo.matches()) {
                     System.out.println("Ingrese nuevamente su correo");
                     nuevocorreo = lectura.nextLine();
                     matcheo = patron.matcher(nuevocorreo);
@@ -185,14 +184,14 @@ public class Cliente {
                 this.correo = nuevocorreo;
                 System.out.println("Correo actualizado");
                 break;
-            
+
             case 3:
                 System.out.print("Ingrese la nueva contraseña: ");
                 this.contrasenia = lectura.nextLine();
                 System.out.println("Contraseña actualizada correctamente.");
                 break;
 
-            case 4: 
+            case 4:
                 System.out.println("Ingrese su nuevo numero de telefono: ");
                 this.numero = lectura.nextInt();
                 System.out.println("Telefono actualizado");
@@ -201,7 +200,6 @@ public class Cliente {
             default:
                 break;
         }
-        lectura.close();
     }
     /**
      * La función `historialReserva` crea una copia ordenada de una lista de reservas basada en la fecha

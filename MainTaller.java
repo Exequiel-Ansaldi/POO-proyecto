@@ -5,6 +5,7 @@
 package com.mycompany.tallerpoo;
 
 import com.mycompany.tallerpoo.com.resto.Reserva;
+import com.mycompany.tallerpoo.com.resto.cliente.Cliente;
 
 import java.time.LocalDate;
 
@@ -19,10 +20,17 @@ public class MainTaller {
         System.out.println("Hello World!");
 
         //Método enviarRecordatorio
-        Reserva reserva = new Reserva();
+        /*Reserva reserva = new Reserva();
         LocalDate fechaEspecifica = LocalDate.of(2023, 3, 15);
         reserva.setFecha(fechaEspecifica);
-        reserva.enviarRecordatorioReserva("carolinaittermann@gmail.com");
+        reserva.enviarRecordatorioReserva("carolinaittermann@gmail.com");*/
+        Cliente c1 = new Cliente();
+        c1.registrarse();
+        System.out.println(c1.toString());
+        c1.actualizarInfo();
+        System.out.println(c1.toString());
+        c1.recuperarContrasenia(c1.getCorreo());
+
     }
 
 }
