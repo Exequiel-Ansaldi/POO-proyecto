@@ -6,9 +6,9 @@ package com.mycompany.tallerpoo.com.resto;
 
 import com.mycompany.tallerpoo.com.resto.mesa.Mesa;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Date;
 import java.time.LocalTime;
 
 /**
@@ -19,7 +19,7 @@ import java.time.LocalTime;
 public class Evento {
     private String nombre;
     private String descripcion;
-    private Date dia;
+    private LocalDate dia;
     private LocalTime horainicio;
     private LocalTime horafin;
     private List<Mesa> mesas;
@@ -29,7 +29,7 @@ public class Evento {
         this.mesas = new ArrayList<Mesa>();
     }
 
-    public Evento(String nombre, String descripcion, Date dia, LocalTime horainicio, LocalTime horafin, List<Mesa> mesas) {
+    public Evento(String nombre, String descripcion, LocalDate dia, LocalTime horainicio, LocalTime horafin, List<Mesa> mesas) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.dia = dia;
@@ -55,11 +55,11 @@ public class Evento {
         this.descripcion = descripcion;
     }
 
-    public Date getDia() {
+    public LocalDate getDia() {
         return this.dia;
     }
 
-    public void setDia(Date dia) {
+    public void setDia(LocalDate dia) {
         this.dia = dia;
     }
 

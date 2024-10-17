@@ -1,6 +1,8 @@
 package com.mycompany.tallerpoo.com.resto.personal;
 
+import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.List;
 import java.util.Scanner;
 
 import com.mycompany.tallerpoo.com.resto.Resto;
@@ -60,15 +62,28 @@ public class Administrador extends Personal {
         lectura.close();
     }
 
-        
-    public void BloquearMesa(){
-//TERMINAR METODO
+
+    public void bloquearMesa(List<Mesa> mesasABloquear, LocalDate fecha, LocalTime horaInicio, LocalTime horaFin) {
+        for (Mesa mesa : mesasABloquear) {
+            if (mesa.getEstado() == EstadoMesa.Disponible) {
+                mesa.setEstado(EstadoMesa.No_Disponible);
+                System.out.println("Mesa " + mesa.getUbicacion() + " bloqueada desde " + horaInicio + " hasta " + horaFin + " en la fecha " + fecha);
+            } else {
+                System.out.println("La mesa " + mesa.getUbicacion() + " ya está bloqueada.");
+            }
+        }
     }
 
-    public void desbloquearMesa(){
-//TERMINAR METODO
+    public void desbloquearMesa(List<Mesa> mesasADesbloquear) {
+        for (Mesa mesa : mesasADesbloquear) {
+            if (mesa.getEstado() == EstadoMesa.No_Disponible) {
+                mesa.setEstado(EstadoMesa.Disponible);
+                System.out.println("Mesa " + mesa.getUbicacion() + " desbloqueada.");
+            } else {
+                System.out.println("La mesa " + mesa.getUbicacion() + " ya está disponible.");
+            }
+        }
     }
-
     
     public void asignarRol(CodRol rol){
         super.setRol(rol); 

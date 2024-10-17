@@ -27,7 +27,7 @@ public class Cliente {
     private String nombre;
     private String correo;
     private String contrasenia;
-    private int numero;
+    private String numero;
     private List<Reserva> reservas;
 
     public Cliente(){
@@ -36,7 +36,7 @@ public class Cliente {
     public Cliente(List<Reserva> reservas){
         this.reservas = reservas;
     }
-    public Cliente(String nombre, String correo, String contrasenia, int numero, List<Reserva> reservas) {
+    public Cliente(String nombre, String correo, String contrasenia, String numero, List<Reserva> reservas) {
         this.nombre = nombre;
         this.correo = correo;
         this.contrasenia = contrasenia;
@@ -68,11 +68,11 @@ public class Cliente {
         this.contrasenia = contrasenia;
     }
 
-    public int getNumero() {
+    public String getNumero() {
         return this.numero;
     }
 
-    public void setNumero(int numero) {
+    public void setNumero(String numero) {
         this.numero = numero;
     }
 
@@ -96,7 +96,7 @@ public class Cliente {
     }
 
     /**
-     * El método `registrarse` en Java solicita al usuario que ingrese su nombre, correo electrónico y contraseña,
+     * El método `registrarse` en Java solicita al usuario que ingrese su nombre, correo electrónico, numero de telefono y contraseña
      * valida el formato del correo electrónico y asegura la confirmación de la contraseña antes de registrar
      * con éxito al usuario.
      */
@@ -118,7 +118,18 @@ public class Cliente {
             this.correo = lectura.nextLine();
             matcheo = patron.matcher(this.correo);
         }
-        
+
+        System.out.println("Ingrese su número de teléfono: ");
+        this.numero = lectura.nextLine();
+        String patronTelefono = "^[+]?\\d+$";
+        Pattern patronT = Pattern.compile(patronTelefono);
+        Matcher matcheoT = patronT.matcher(this.numero);
+        while (!matcheoT.matches()) {
+            System.out.println("Número de teléfono inválido. Ingrese nuevamente su número de teléfono:");
+            this.numero = lectura.nextLine();
+            matcheoT = patron.matcher(this.numero);
+        }
+
         while (true){
             System.out.println("Ingrese su contraseña: ");
             this.contrasenia = lectura.nextLine();
@@ -193,7 +204,7 @@ public class Cliente {
 
             case 4:
                 System.out.println("Ingrese su nuevo numero de telefono: ");
-                this.numero = lectura.nextInt();
+                this.numero = lectura.nextLine();
                 System.out.println("Telefono actualizado");
                 break;
 

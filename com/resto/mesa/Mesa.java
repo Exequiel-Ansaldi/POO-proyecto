@@ -97,10 +97,10 @@ public class Mesa {
     * especificados de tener una capacidad mayor o igual al valor de capacidad proporcionado y estar
     * ubicadas en la ubicación especificada.
     */
-    public List<Mesa> filtrarMesas(List<Mesa> mesas, int capacidad, String ubicacion){ //PODRIA HACRESE UNA CLASE ENUMERACION PARA CAPACIDAD Y UBICACION
+    public List<Mesa> filtrarMesas(List<Mesa> mesas, int capacidad, String ubicacion){
         List<Mesa> mesasFiltradas = new ArrayList<>();
         for (Mesa mesa : mesas) {
-            if (mesa.getCapacidad() >= capacidad && mesa.getUbicacion().equalsIgnoreCase(ubicacion)) {
+            if (mesa.getCapacidad() >= capacidad && mesa.getUbicacion().equalsIgnoreCase(ubicacion) && mesa.getEstado() == EstadoMesa.Disponible){
                 mesasFiltradas.add(mesa);
             }
         }

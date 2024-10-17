@@ -9,16 +9,16 @@ package com.mycompany.tallerpoo.com.resto;
  * @author Exequiel
  */
 
+import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.Date;
 
 public class Agenda {
-    private Date fecha;
+    private LocalDate fecha;
     private LocalTime horainicio;
     private LocalTime horafin;
 
     //Constructores
-    public Agenda(Date fecha, LocalTime horainicio, LocalTime horafin) {
+    public Agenda(LocalDate fecha, LocalTime horainicio, LocalTime horafin) {
         this.fecha = fecha;
         this.horainicio = horainicio;
         this.horafin = horafin;
@@ -26,11 +26,11 @@ public class Agenda {
     public Agenda(){}
 
     //Getters & Setters
-    public Date getFecha() {
+    public LocalDate getFecha() {
         return this.fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
     }
 
