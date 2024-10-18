@@ -6,6 +6,7 @@ package com.mycompany.tallerpoo.com.resto;
 
 
 import com.mycompany.tallerpoo.com.resto.cliente.Cliente;
+import com.mycompany.tallerpoo.com.resto.mesa.EstadoMesa;
 import com.mycompany.tallerpoo.com.resto.mesa.Mesa;
 import com.mycompany.tallerpoo.com.resto.personal.Administrador;
 
@@ -103,8 +104,9 @@ public class Resto {
         this.cierre = cierre;
     }
 
-    // El método `getMapa()` es un método getter en Java que devuelve el valor del atributo `mapa`
-    // en la clase `Resto`. Simplemente recupera el valor del atributo "mapa".
+    /*
+    El método `getMapa()` es un método getter en Java que devuelve el valor del atributo `mapa`
+     */
     public String getMapa() {
         return this.mapa;
     }
@@ -330,5 +332,35 @@ public class Resto {
         }
         return true;
     }
+
+    public void crearMapa(List<Mesa>MesasResto){
+        List<Mesa>mesasPatioDisponible = new ArrayList<Mesa>();
+        List<Mesa>mesasInternoDisponible = new ArrayList<Mesa>();
+        List<Mesa>mesasPatioNoDisponible = new ArrayList<Mesa>();
+        List<Mesa>mesasInternoNoDisponible = new ArrayList<Mesa>();
+
+        //Catalogo por Ubicación y Estado para mostrarlas en conjunto.
+        for(Mesa m:MesasResto){
+            if(m.getUbicacion().equals("Patio")){
+                if(m.getEstado().equals(EstadoMesa.Disponible)){
+                    mesasPatioDisponible.add(m);
+                }else {
+                    mesasPatioNoDisponible.add(m);
+                }
+            } else if (m.getUbicacion().equals("Interno")){
+                if(m.getEstado().equals(EstadoMesa.Disponible)){
+                    mesasInternoDisponible.add(m);
+                }else{
+                    mesasInternoNoDisponible.add(m);
+                }
+            }
+        }
+
+        //Seguir el resto con interfaz.
+    }
+
+
+
+
 }
 

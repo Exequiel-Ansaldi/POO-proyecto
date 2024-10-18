@@ -24,6 +24,8 @@ public class MainTaller {
         LocalDate fechaEspecifica = LocalDate.of(2023, 3, 15);
         reserva.setFecha(fechaEspecifica);
         reserva.enviarRecordatorioReserva("carolinaittermann@gmail.com");*/
+
+        //Método registrarse, actualizarInfo, recuperarContrasenia (Cliente Class)
         Cliente c1 = new Cliente();
         c1.registrarse();
         System.out.println(c1.toString());
