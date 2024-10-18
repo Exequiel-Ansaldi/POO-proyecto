@@ -25,7 +25,6 @@ import java.time.LocalTime;
  * listado de clientes, agenda, eventos, administradores, mesas y reservas.
  */
 public class Resto {
-     private String mapa;
      private LocalTime apertura;
      private LocalTime cierre;
      private List<Cliente> clientes;
@@ -51,8 +50,7 @@ public class Resto {
     `mapa`, `apertura`, `cierre`, `clientes`, `agenda`, `eventos`, `admins`, `mesas` y `reservas`
     atributos de la clase `Resto` basados ​​en los valores proporcionados como argumentos al constructor.*/
 
-    public Resto(String mapa, LocalTime apertura, LocalTime cierre, List <Cliente> clientes, Agenda agenda, List <Evento> eventos, List<Administrador> admins, List<Mesa> mesas, List<Reserva> reservas) {
-        this.mapa = mapa;
+    public Resto(LocalTime apertura, LocalTime cierre, List <Cliente> clientes, Agenda agenda, List <Evento> eventos, List<Administrador> admins, List<Mesa> mesas, List<Reserva> reservas) {
         this.apertura = apertura;
         this.cierre = cierre;
         this.clientes = clientes;
@@ -102,23 +100,6 @@ public class Resto {
     */
     public void setCierre(LocalTime cierre) {
         this.cierre = cierre;
-    }
-
-    /*
-    El método `getMapa()` es un método getter en Java que devuelve el valor del atributo `mapa`
-     */
-    public String getMapa() {
-        return this.mapa;
-    }
-
-   /**
-     * Esta función Java establece el valor de la variable llamada "mapa".
-     * 
-     * @param mapa El parámetro "mapa" en el método "setMapa" es de tipo String que representa el
-     * mapa por configurar.
-     */
-    public void setMapa(String mapa) {
-        this.mapa = mapa;
     }
 
    /**
