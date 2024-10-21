@@ -45,4 +45,11 @@ public class Empleado extends Personal {
         System.out.println("Hora: "+reserva.getHora());
         System.out.println("Asistencia: "+reserva.getAsistencia());
     }
+
+    @Override
+    public String toString() {
+        return "Empleado{" +
+                "reservas=" + reservas +
+                '}';
+    }
 }

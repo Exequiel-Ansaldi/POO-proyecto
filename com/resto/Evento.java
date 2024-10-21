@@ -91,4 +91,15 @@ public class Evento {
         return this.mesas;
     }
 
+    @Override
+    public String toString() {
+        return "Evento{" +
+                "nombre='" + nombre + '\'' +
+                ", descripcion='" + descripcion + '\'' +
+                ", dia=" + dia +
+                ", horainicio=" + horainicio +
+                ", horafin=" + horafin +
+                ", mesas=" + mesas +
+                '}';
+    }
 }

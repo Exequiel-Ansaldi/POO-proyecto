@@ -106,4 +106,15 @@ public class Mesa {
         }
         return mesasFiltradas;
     }
+
+    @Override
+    public String toString() {
+        return "Mesa{" +
+                "capacidad=" + capacidad +
+                ", ubicacion='" + ubicacion + '\'' +
+                ", reservas=" + reservas +
+                ", evento=" + evento +
+                ", estado=" + estado +
+                '}';
+    }
 }

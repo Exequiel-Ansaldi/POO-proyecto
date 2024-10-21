@@ -270,6 +270,8 @@ public class Cliente {
         }
     }
 
+
+
     /**
      * El método `recuperarContrasenia` en Java permite a un usuario restablecer su contraseña si proporciona
      * la dirección de correo electrónico correcta.
@@ -286,5 +288,17 @@ public class Cliente {
         }else{
             System.out.println("ERROR, correo no Existente");
         }
+
+
+    }
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "nombre='" + nombre + '\'' +
+                ", correo='" + correo + '\'' +
+                ", contrasenia='" + contrasenia + '\'' +
+                ", numero='" + numero + '\'' +
+                ", reservas=" + reservas +
+                '}';
     }
 }

@@ -79,4 +79,13 @@ public class Pago {
         }
         return totalDescontado;
     }
+
+    @Override
+    public String toString() {
+        return "Pago{" +
+                "monto=" + monto +
+                ", reserva=" + reserva +
+                ", tarjeta=" + tarjeta +
+                '}';
+    }
 }

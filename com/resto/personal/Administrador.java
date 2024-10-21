@@ -31,15 +31,6 @@ public class Administrador extends Personal {
     }
 
 
-    @Override
-    // El método `toString()` en la clase `Administrador` está sobrescribiendo el método `toString()` 
-    // predeterminado heredado de la clase `Object`.
-
-    public String toString() {
-        return "Restaurant administrado: " + getResto();
-    }
-
-
     /**
      * El método `gestionHorario` gestiona las horas de apertura y cierre de un restaurante tomando la
      * entrada del usuario para los horarios de apertura y cierre, y actualiza el horario del restaurante
@@ -150,5 +141,12 @@ public class Administrador extends Personal {
         rol = CodRol.valueOf(rolString);
         Empleado empleado_nuevo = new Empleado(id, rol);
 
+    }
+
+    @Override
+    public String toString() {
+        return "Administrador{" +
+                "resto=" + resto +
+                '}';
     }
 }

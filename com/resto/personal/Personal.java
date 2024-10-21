@@ -28,4 +28,11 @@ public class Personal {
         this.idPersonal = idPersonal;
     }
 
+    @Override
+    public String toString() {
+        return "Personal{" +
+                "idPersonal=" + idPersonal +
+                ", rol=" + rol +
+                '}';
+    }
 }

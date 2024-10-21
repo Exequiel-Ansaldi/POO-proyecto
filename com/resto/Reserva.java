@@ -262,4 +262,18 @@ public class Reserva {
             System.out.println("Error al enviar recordatorio: " + e.getMessage());
         }
     }
+
+    @Override
+    public String toString() {
+        return "Reserva{" +
+                "fecha=" + fecha +
+                ", hora=" + hora +
+                ", asistencia=" + asistencia +
+                ", cliente=" + cliente +
+                ", mesa=" + mesa +
+                ", empleados=" + empleados +
+                ", pagos=" + pagos +
+                ", listaReservas=" + listaReservas +
+                '}';
+    }
 }

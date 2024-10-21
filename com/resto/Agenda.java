@@ -98,4 +98,12 @@ public class Agenda {
         this.horafin = horafin;
     }
 
+    @Override
+    public String toString() {
+        return "Agenda{" +
+                "fecha=" + fecha +
+                ", horainicio=" + horainicio +
+                ", horafin=" + horafin +
+                '}';
+    }
 }

@@ -314,6 +314,20 @@ public class Resto {
         return true;
     }
 
+    @Override
+    public String toString() {
+        return "Resto{" +
+                "apertura=" + apertura +
+                ", cierre=" + cierre +
+                ", clientes=" + clientes +
+                ", agenda=" + agenda +
+                ", eventos=" + eventos +
+                ", admins=" + admins +
+                ", mesas=" + mesas +
+                ", reservas=" + reservas +
+                '}';
+    }
+
     public void crearMapa(List<Mesa>MesasResto){
         List<Mesa>mesasPatioDisponible = new ArrayList<Mesa>();
         List<Mesa>mesasInternoDisponible = new ArrayList<Mesa>();
