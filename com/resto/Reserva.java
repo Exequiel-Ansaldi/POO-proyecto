@@ -26,7 +26,8 @@ import java.util.Scanner;
 
 public class Reserva {
     private LocalDate fecha;
-    private LocalTime hora;
+    private LocalTime horainicioreserva;
+    private LocalTime horafinalreserva;
     private Asistencia asistencia;
     private Cliente cliente;
     private Mesa mesa;
@@ -35,16 +36,18 @@ public class Reserva {
     private List<Reserva> listaReservas;
 
     //Constructores
-    public Reserva(LocalDate f, Asistencia asistencia, LocalTime h, Mesa m, Cliente c){
+    public Reserva(LocalDate f, Asistencia asistencia, LocalTime h, LocalTime hf, Mesa m, Cliente c){
         this.fecha = f;
-        this.hora = h;
+        this.horainicioreserva = h;
         this.asistencia = asistencia;
         this.mesa = m;
         this.cliente = c;
+        this.horafinalreserva = hf;
     }
-    public Reserva(LocalDate f, Asistencia asistencia, LocalTime h, Mesa m, Cliente c, List<Empleado> e, List <Pago> p, List<Reserva> lR) {
+    public Reserva(LocalDate f, Asistencia asistencia, LocalTime h, LocalTime hf, Mesa m, Cliente c, List<Empleado> e, List <Pago> p, List<Reserva> lR) {
         this.fecha = f;
-        this.hora = h;
+        this.horainicioreserva = h;
+        this.horafinalreserva = hf;
         this.asistencia = asistencia;
         this.mesa = m;
         this.cliente = c;
@@ -80,12 +83,29 @@ public class Reserva {
     }
 
     public LocalTime getHora() {
-        return this.hora;
+        return this.horainicioreserva;
     }
 
-    public void setHora(LocalTime hora) {
-        this.hora = hora;
+    public void setHora(LocalTime horainicioreserva) {
+        this.horainicioreserva = horainicioreserva;
     }
+
+    public LocalTime getHorafinalreserva() {
+        return this.horafinalreserva;
+    }
+
+    public void setHorafinalreserva(LocalTime horafinalreserva) {
+        this.horafinalreserva = horafinalreserva;
+    }
+
+    public List<Reserva> getListaReservas() {
+        return this.listaReservas;
+    }
+
+    public void setListaReservas(List<Reserva> listaReservas) {
+        this.listaReservas = listaReservas;
+    }
+
 
     public Asistencia getAsistencia() {
         return this.asistencia;
@@ -134,7 +154,7 @@ public class Reserva {
     }
 
     /**
-     * El método `confirmarReserva` comprueba si una mesa está disponible en una fecha y hora especificadas, y
+     * El método `confirmarReserva` comprueba si una mesa está disponible en una fecha y horainicioreserva especificadas, y
      * si es así, agrega la reserva a una lista.
      */
     public void confirmarReserva(){
@@ -144,7 +164,8 @@ public class Reserva {
         for (Reserva reserva : listaReservas) {
             if (reserva.getMesa().equals(this.mesa) &&
                     reserva.getFecha().equals(this.fecha) &&
-                    reserva.getHora().equals(this.hora)) {
+                    reserva.getHora().equals(this.horainicioreserva)&&
+                    reserva.getHorafinalreserva().equals(this.horafinalreserva)) {
                 mesaDisponible = false;
                 break;
             }
@@ -153,34 +174,34 @@ public class Reserva {
         if (mesaDisponible) {
             // Si la mesa está disponible, agregar la reserva a la lista
             listaReservas.add(this);
-            System.out.println("Reserva confirmada para " + cliente.getNombre() + " el " + fecha + " a las " + hora);
+            System.out.println("Reserva confirmada para " + cliente.getNombre() + " el " + fecha + " a las " + horainicioreserva);
         } else {
-            System.out.println("La mesa no está disponible en la fecha y hora seleccionadas.");
+            System.out.println("La mesa no está disponible en la fecha y horainicioreserva seleccionadas.");
         }
     }
 
     /**
      * El método `modificarReserva` itera a través de una lista de reservas y actualiza la fecha,
-     * hora y mesa de una reserva si se encuentra, mostrando un mensaje de éxito si se modificó o un mensaje de no
+     * horainicioreserva y mesa de una reserva si se encuentra, mostrando un mensaje de éxito si se modificó o un mensaje de no
      * encontrado si no.
      *
      * @param reserva Reserva es un objeto que representa una reserva en un restaurante.
      * @param fecha El parámetro `fecha` representa la nueva fecha para la reserva.
-     * @param hora El parámetro `hora` en el método `modificarReserva` representa la nueva hora para
-     * la reserva. Es de tipo `LocalTime`, que es una clase en Java que representa una hora
-     * sin una fecha y zona horaria. Este parámetro se utiliza para actualizar la hora de la reserva
-     * especificada por
+     * @param horainicioreserva El parámetro `horainicioreserva` en el método `modificarReserva` representa la nueva horainicioreserva para
+     * la reserva. Es de tipo `LocalTime`, que es una clase en Java que representa una horainicioreserva
+     * sin una fecha y zona horaria. Este parámetro se utiliza para actualizar la horainicioreserva de la reserva
+     * especificada
      * @param mesa El parámetro `mesa` en el método `modificarReserva` representa la nueva mesa o
      * disposición de asientos para la reserva que se está modificando. Es de tipo `Mesa`, que probablemente
      * contiene información sobre la mesa como su número, capacidad, ubicación, etc. Al llamar
      * a este método, usted
      */
-    public void modificarReserva(Reserva reserva, LocalDate fecha, LocalTime hora, Mesa mesa ){
+    public void modificarReserva(Reserva reserva, LocalDate fecha, LocalTime horainicioreserva, Mesa mesa ){
         boolean reservaEncontrada = false;
         for(Reserva x : listaReservas){
             if(x.equals(reserva)){
                 x.setFecha(fecha);
-                x.setHora(hora);
+                x.setHora(horainicioreserva);
                 x.setMesa(mesa);
                 reservaEncontrada = true;
                 System.out.println("La reserva fue modificada exitosamente");
@@ -267,7 +288,8 @@ public class Reserva {
     public String toString() {
         return "Reserva{" +
                 "fecha=" + fecha +
-                ", hora=" + hora +
+                ", hora de inicio de la reserva=" + horainicioreserva +
+                ", hora final de la reserva= " + horafinalreserva + 
                 ", asistencia=" + asistencia +
                 ", cliente=" + cliente +
                 ", mesa=" + mesa +

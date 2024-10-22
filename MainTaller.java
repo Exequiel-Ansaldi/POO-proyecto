@@ -32,6 +32,7 @@ public class MainTaller {
         c1.actualizarInfo();
         System.out.println(c1.toString());
         c1.recuperarContrasenia(c1.getCorreo());
+        System.out.println(c1);
 
     }
 

@@ -81,14 +81,14 @@ public class Reporte {
         }
         return clientesNoAsistidos;
     }
-    /*public List<Reserva> ReservaDetallada(LocalDate fechaInicio, LocalDate fechaFin) {
+    public List<Reserva> ReservaDetallada(LocalDate fechaInicio, LocalDate fechaFin) {
         List<Reserva> reservasEnRango = new ArrayList<>();
         for (Reserva reserva : resto.getReservas()) {
             if (!reserva.getFecha().isBefore(fechaInicio) && !reserva.getFecha().isAfter(fechaFin)) {
                 String detalleReserva = "Mesa: " + reserva.getMesa()+
                         ", Fecha: " + reserva.getFecha() +
                         ", Hora de comienzo: " + reserva.getHora() +
-                        ", Hora de fin: " + reserva.getHoraFin() +
+                        ", Hora de fin: " + reserva.getHorafinalreserva() +
                         ", Cliente: " + reserva.getCliente().getNombre() +
                         ", Cantidad de comensales: " + reserva.getMesa().getCapacidad();
                 reservasDetalladas.add(detalleReserva);
@@ -96,7 +96,7 @@ public class Reporte {
         }
         return reservasEnRango;
     }
-    */
+    
     public String MayorConcurrenciaPorEstacion() {
         int primavera = 0, verano = 0, otonio = 0, invierno = 0;
 

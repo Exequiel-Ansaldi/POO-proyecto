@@ -149,14 +149,13 @@ public class Cliente {
     /**
      * La función `iniciarSesion` verifica si el correo electrónico y la contraseña proporcionados coinciden con los valores almacenados
      * e imprime un mensaje de éxito si lo hacen, de lo contrario imprime un mensaje de error.
-     *
-     * @param c El parámetro `c` en el método `iniciarSesion` representa la dirección de correo electrónico ingresada por
-     * el usuario para iniciar sesión.
-     * @param contra El parámetro "contra" en el método "iniciarSesion" representa la contraseña que
-     * es proporcionada por el usuario al intentar iniciar sesión. El método compara esta contraseña con la almacenada
-     * contraseña (this.contrasenia) para determinar si el intento de inicio de sesión es exitoso.
      */
-    public void iniciarSesion(String c, String contra){
+    public void iniciarSesion(){
+        Scanner lectura = new Scanner(System.in);
+        System.out.println("Ingrese su correo");
+        String c = lectura.nextLine();
+        System.out.println("Ingrese su contraseña");
+        String contra = lectura.nextLine();
         if (this.correo.equals(c) && this.contrasenia.equals(contra)) {
             System.out.println("Inicio de sesión exitoso.");
         } else {
