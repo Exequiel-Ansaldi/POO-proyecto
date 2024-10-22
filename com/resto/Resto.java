@@ -272,7 +272,7 @@ public class Resto {
      * disponibilidad de mesas para realizar una reserva.
      * @param horaInicio El parámetro `horaInicio` representa la hora de inicio de la reserva. 
      * Es un objeto `LocalTime` que indica la hora a la que se programa el inicio de la reserva.
-     * @param duracionHoras El parámetro `duracionHoras` representa la duración en horas para la que se solicitan
+     * @param horafinal El parámetro `duracionHoras` representa la duración en horas para la que se solicitan
      * las mesas por parte del cliente. Se utiliza para calcular la hora de finalización en función de la hora de inicio proporcionada por el cliente.
      * Esta duración se utiliza para verificar la disponibilidad y los conflictos con las reservas existentes.
      * @return El método `verificarDisponibilidad` devuelve un valor booleano. Devuelve `true` si las mesas solicitadas están disponibles para reservar
@@ -281,7 +281,7 @@ public class Resto {
      */
     public boolean verificarDisponibilidad(List<Mesa> mesasSolicitadas, LocalDate fecha, LocalTime horaInicio, LocalTime horafinal) {
         // Comprobar que las horas de inicio y fin estén dentro del horario de apertura y cierre
-        if (horaInicio.isBefore(apertura) || horaFinal.isAfter(cierre)) {
+        if (horaInicio.isBefore(apertura) || horafinal.isAfter(cierre)) {
             return false; // No está disponible dentro del horario
         }
 
@@ -300,7 +300,7 @@ public class Resto {
 
                     // Verificar superposición de horarios
                     boolean horarioEnConflicto =
-                            (horaInicio.isBefore(finReserva) && horaFinal.isAfter(inicioReserva));
+                            (horaInicio.isBefore(finReserva) && horafinal.isAfter(inicioReserva));
 
                     if (horarioEnConflicto) {
                         return false; 
