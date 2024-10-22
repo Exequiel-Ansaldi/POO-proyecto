@@ -261,7 +261,7 @@ public class Cliente {
         if (disponibles) {
             for (Mesa mesa : mesasSolicitadas) {
                 // Crear una nueva reserva para cada mesa
-                Reserva nuevaReserva = new Reserva(fecha, Asistencia.Asiste, horaInicio, mesa, this);
+                Reserva nuevaReserva = new Reserva(fecha, Asistencia.Asiste, horaInicio,horafinal,mesa,this);
                 this.reservas.add(nuevaReserva);
             }
         }
