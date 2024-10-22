@@ -279,10 +279,7 @@ public class Resto {
      * en la fecha y hora especificadas sin ningún conflicto de programación, y `false` si hay conflictos con las reservas existentes o si la hora solicitada
      * está fuera del horario de apertura del establecimiento.
      */
-    public boolean verificarDisponibilidad(List<Mesa> mesasSolicitadas, LocalDate fecha, LocalTime horaInicio, int duracionHoras) {
-        // Calcular la hora final basándose en la duración especificada por el cliente
-        LocalTime horaFinal = horaInicio.plusHours(duracionHoras);
-
+    public boolean verificarDisponibilidad(List<Mesa> mesasSolicitadas, LocalDate fecha, LocalTime horaInicio, LocalTime horafinal) {
         // Comprobar que las horas de inicio y fin estén dentro del horario de apertura y cierre
         if (horaInicio.isBefore(apertura) || horaFinal.isAfter(cierre)) {
             return false; // No está disponible dentro del horario
@@ -299,7 +296,7 @@ public class Resto {
                 if (mesasSolicitadas.contains(mesaReserva)) {
                     // Obtener la hora de inicio de la reserva existente
                     LocalTime inicioReserva = reserva.getHora();
-                    LocalTime finReserva = inicioReserva.plusHours(duracionHoras);
+                    LocalTime finReserva = reserva.getHorafinalreserva();
 
                     // Verificar superposición de horarios
                     boolean horarioEnConflicto =

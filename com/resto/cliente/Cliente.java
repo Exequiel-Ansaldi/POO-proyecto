@@ -254,12 +254,10 @@ public class Cliente {
      * @param horaInicio El parámetro `horaInicio` representa la hora de inicio de la reserva. Es de
      * tipo `LocalTime`, que es una clase en Java que representa una hora sin fecha ni zona horaria.
      * Almacena la hora, minuto, segundo y fracción de segundo.
-     * @param duracionHoras El parámetro "duracionHoras" representa la duración en horas para la cual
-     * se están reservando las mesas. Especifica cuánto tiempo durará la reserva, comenzando desde la
-     * "horaInicio" (hora de inicio) proporcionada en el método.
+     * @param horafinal El parámetro "horafinal" representa la hora hasta la cual se reservó determinada mesa
      */
-    public void reservarMesa(Resto resto, List<Mesa> mesasSolicitadas, LocalDate fecha, LocalTime horaInicio, int duracionHoras){
-        boolean disponibles = resto.verificarDisponibilidad(mesasSolicitadas, fecha, horaInicio, duracionHoras);
+    public void reservarMesa(Resto resto, List<Mesa> mesasSolicitadas, LocalDate fecha, LocalTime horaInicio, LocalTime horafinal){
+        boolean disponibles = resto.verificarDisponibilidad(mesasSolicitadas, fecha, horaInicio, horafinal);
         if (disponibles) {
             for (Mesa mesa : mesasSolicitadas) {
                 // Crear una nueva reserva para cada mesa
