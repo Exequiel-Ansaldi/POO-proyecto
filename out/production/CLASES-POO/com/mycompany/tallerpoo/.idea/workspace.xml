@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc35265b-e20e-47ec-ab1c-2b6d08796871" name="Changes" comment="Agregue data, carpeta que tiene los txt de las clases y probe la lista clientes en el main(seguir mismo formato para todas las que me faltan)">
-      <change beforePath="$PROJECT_DIR$/MainTaller.java" beforeDir="false" afterPath="$PROJECT_DIR$/MainTaller.java" afterDir="false" />
+    <list default="true" id="fc35265b-e20e-47ec-ab1c-2b6d08796871" name="Changes" comment="agregue Lista de Reservas csv">
+      <change beforePath="$PROJECT_DIR$/com/resto/Reserva/ListaReserva.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/resto/Reserva/ListaReserva.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/resto/finanza/TarjetaDeCredito.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/resto/finanza/TarjetaDeCredito.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +36,7 @@
   }
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -61,6 +62,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\GAMER\Documents\Taller POO\CLASES-POO\com\resto\data" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -104,7 +110,8 @@
       <workItem from="1729476176162" duration="2813000" />
       <workItem from="1729569140867" duration="2017000" />
       <workItem from="1729633548222" duration="3258000" />
-      <workItem from="1729651032142" duration="380000" />
+      <workItem from="1729651032142" duration="5006000" />
+      <workItem from="1729694120015" duration="1740000" />
     </task>
     <task id="LOCAL-00001" summary="Metodo reservarMesa en cliente">
       <option name="closed" value="true" />
@@ -170,7 +177,23 @@
       <option name="project" value="LOCAL" />
       <updated>1729651066927</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary=" probando la lista clientes en el main(seguir mismo formato para todas las que faltan)">
+      <option name="closed" value="true" />
+      <created>1729652558446</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1729652558446</updated>
+    </task>
+    <task id="LOCAL-00010" summary="agregue Lista de Reservas csv">
+      <option name="closed" value="true" />
+      <created>1729656007076</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1729656007076</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,7 +218,9 @@
     <MESSAGE value="Metodos ToString() y clase Reporte(faltan 3 metodos)" />
     <MESSAGE value="Metodos de reporte" />
     <MESSAGE value="Agregue data, carpeta que tiene los txt de las clases y probe la lista clientes en el main(seguir mismo formato para todas las que me faltan)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Agregue data, carpeta que tiene los txt de las clases y probe la lista clientes en el main(seguir mismo formato para todas las que me faltan)" />
+    <MESSAGE value=" probando la lista clientes en el main(seguir mismo formato para todas las que faltan)" />
+    <MESSAGE value="agregue Lista de Reservas csv" />
+    <option name="LAST_COMMIT_MESSAGE" value="agregue Lista de Reservas csv" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

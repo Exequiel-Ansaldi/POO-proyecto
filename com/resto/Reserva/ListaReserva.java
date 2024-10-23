@@ -2,8 +2,12 @@ package com.mycompany.tallerpoo.com.resto.Reserva;
 
 import com.mycompany.tallerpoo.com.resto.cliente.Cliente;
 import com.mycompany.tallerpoo.com.resto.finanza.Asistencia;
+import com.mycompany.tallerpoo.com.resto.finanza.Pago;
+import com.mycompany.tallerpoo.com.resto.finanza.TarjetaDeCredito;
 import com.mycompany.tallerpoo.com.resto.mesa.EstadoMesa;
 import com.mycompany.tallerpoo.com.resto.mesa.Mesa;
+import com.mycompany.tallerpoo.com.resto.personal.CodRol;
+import com.mycompany.tallerpoo.com.resto.personal.Empleado;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -61,8 +65,38 @@ public class ListaReserva {
                 Cliente cliente = new Cliente(campos[7],campos[8],campos[9],campos[10]);
                 reserva = new Reserva(fecha, asistencia, horaInicio, horaFinal, mesa, cliente); // Cliente se puede pasar como null o lo que necesites
 
-                // Agregar la reserva a la lista
-                this.agregarReserva(reserva); // Método que debes implementar para agregar reservas
+                List<Empleado> empleados = new ArrayList<>();
+                if (campos.length > 8 && !campos[8].isEmpty()) {
+                    String[] empleadosData = campos[8].split(" ,");
+                    for (String empData : empleadosData) {
+                        String[] empFields = empData.split(":");
+                        int id = Integer.parseInt(empFields[0]);
+                        String rolString = campos[7];
+                        CodRol rol = CodRol.valueOf(rolString);
+                        Empleado empleado = new Empleado(id, rol);
+                        empleados.add(empleado);
+                    }
+                }
+                reserva.setEmpleados(empleados);
+
+                List<Pago> pagos = new ArrayList<>();
+                if (campos.length > 9 && !campos[9].isEmpty()) {
+                    String[] pagosData = campos[9].split(" ,");
+                    for (String pagoData : pagosData) {
+                        String[] pagocampos = pagoData.split(":");
+                        float monto = Float.parseFloat(pagocampos[0]);
+                        String nombreTarjeta = pagocampos[1];
+                        String emisor = pagocampos[2];
+                        String motivo = pagocampos[3];
+                        int numeroTarjeta = Integer.parseInt(pagocampos[4]);
+                        float cantidad = Float.parseFloat(pagocampos[5]);
+                        TarjetaDeCredito tarjeta = new TarjetaDeCredito(nombreTarjeta, emisor, motivo, numeroTarjeta, cantidad);
+                        Pago pago = new Pago(monto, reserva, tarjeta);
+                        pagos.add(pago);
+                    }
+                    reserva.setPagos(pagos);
+                }
+                this.agregarReserva(reserva);
                 linea = br.readLine(); // Leer la siguiente línea
             }
         } finally {
@@ -88,6 +122,30 @@ public class ListaReserva {
                 linea += reserva.getMesa().getUbicacion() + separador;
                 linea += reserva.getMesa().getEstado() + separador; // Enum a String
                 linea+= reserva.getCliente().getNombre() + separador;
+
+                List<Empleado> empleados = reserva.getEmpleados();
+                if (empleados != null && !empleados.isEmpty()) {
+                    for (Empleado empleado : empleados) {
+                        linea += empleado.getRol().name() + ","; // Cambia esto si necesitas otro formato
+                    }
+                    // Eliminar la última coma
+                    if (linea.endsWith(",")) {
+                        linea = linea.substring(0, linea.length() - 1);
+                    }
+                }
+                linea += separador;
+
+                // Similar para los pagos
+                List<Pago> pagos = reserva.getPagos();
+                if (pagos != null && !pagos.isEmpty()) {
+                    for (Pago pago : pagos) {
+                        linea += pago.getMonto() + ":" + pago.getTarjeta().getNombre() + ":" + pago.getTarjeta().getEmisor() + ":" + pago.getTarjeta().getMotivo() + ":" + pago.getTarjeta().getNrotarjeta() + ",";
+                    }
+                    // Eliminar la última coma
+                    if (linea.endsWith(",")) {
+                        linea = linea.substring(0, linea.length() - 1);
+                    }
+                }
                 pw.println(linea);
             }
         } finally {
