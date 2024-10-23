@@ -4,6 +4,7 @@
 
 package com.mycompany.tallerpoo;
 
+import com.mycompany.tallerpoo.com.resto.Evento;
 import com.mycompany.tallerpoo.com.resto.mesa.ListaMesa;
 import com.mycompany.tallerpoo.com.resto.reserva.ListaReserva;
 import com.mycompany.tallerpoo.com.resto.reserva.Reserva;
@@ -54,16 +55,20 @@ public class MainTaller {
         // Crear listas de clientes y reservas
         ListaCliente listaCliente = new ListaCliente(new ArrayList<>());
         ListaReserva listaReserva = new ListaReserva();
+        Evento evento = new Evento();
 
         ListaMesa listaMesa = new ListaMesa();
         listaMesa.agregarMesa(mesa);
         listaMesa.agregarReservaAMesa(mesa, reserva);
+        listaMesa.agregarEventoAMesa(mesa, evento);
 
         // Añadir el cliente a la lista de clientes
         listaCliente.agregarCliente(cliente);
 
         // Añadir la reserva a la lista de reservas
         listaReserva.agregarReserva(reserva);
+
+        //reserva.confirmarReserva(listaReserva);
 
         // Guardar los datos del cliente en el archivo
         try {

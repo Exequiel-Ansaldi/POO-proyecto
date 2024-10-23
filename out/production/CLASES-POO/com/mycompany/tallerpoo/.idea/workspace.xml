@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc35265b-e20e-47ec-ab1c-2b6d08796871" name="Changes" comment="error de importacion que faltaba" />
+    <list default="true" id="fc35265b-e20e-47ec-ab1c-2b6d08796871" name="Changes" comment="agregue metodos para tomar instancias ya creadas en las otras listas">
+      <change beforePath="$PROJECT_DIR$/MainTaller.java" beforeDir="false" afterPath="$PROJECT_DIR$/MainTaller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/resto/data/mesas.csv" beforeDir="false" afterPath="$PROJECT_DIR$/com/resto/data/mesas.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/resto/reserva/ListaReserva.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/resto/reserva/ListaReserva.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/resto/reserva/Reserva.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/resto/reserva/Reserva.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/MainTaller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/MainTaller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/com/resto/Reserva/ListaReserva.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/com/resto/Reserva/ListaReserva.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/com/resto/cliente/ListaCliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/com/resto/cliente/ListaCliente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/com/resto/data/mesas.csv" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/com/resto/data/mesas.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/com/resto/mesa/ListaMesa.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/com/resto/mesa/ListaMesa.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -115,6 +125,8 @@
       <workItem from="1729698081769" duration="179000" />
       <workItem from="1729698304171" duration="614000" />
       <workItem from="1729699242162" duration="639000" />
+      <workItem from="1729699892974" duration="8373000" />
+      <workItem from="1729708409377" duration="522000" />
     </task>
     <task id="LOCAL-00001" summary="Metodo reservarMesa en cliente">
       <option name="closed" value="true" />
@@ -220,7 +232,39 @@
       <option name="project" value="LOCAL" />
       <updated>1729697482664</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="ListaAdmins">
+      <option name="closed" value="true" />
+      <created>1729705284326</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1729705284326</updated>
+    </task>
+    <task id="LOCAL-00015" summary="agregue lista de mesas y admins">
+      <option name="closed" value="true" />
+      <created>1729705581539</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1729705581539</updated>
+    </task>
+    <task id="LOCAL-00016" summary="agregue metodos para tomar instancias ya creadas">
+      <option name="closed" value="true" />
+      <created>1729706483554</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1729706483554</updated>
+    </task>
+    <task id="LOCAL-00017" summary="agregue metodos para tomar instancias ya creadas en las otras listas">
+      <option name="closed" value="true" />
+      <created>1729707471302</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1729707471302</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,7 +294,11 @@
     <MESSAGE value="Lista de reservas terminada" />
     <MESSAGE value="." />
     <MESSAGE value="error de importacioon" />
-    <option name="LAST_COMMIT_MESSAGE" value="error de importacioon" />
+    <MESSAGE value="ListaAdmins" />
+    <MESSAGE value="agregue lista de mesas y admins" />
+    <MESSAGE value="agregue metodos para tomar instancias ya creadas" />
+    <MESSAGE value="agregue metodos para tomar instancias ya creadas en las otras listas" />
+    <option name="LAST_COMMIT_MESSAGE" value="agregue metodos para tomar instancias ya creadas en las otras listas" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

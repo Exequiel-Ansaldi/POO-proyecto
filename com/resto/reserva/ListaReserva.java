@@ -50,6 +50,10 @@ public class ListaReserva {
         return false;
     }
 
+    public ArrayList<Reserva> getReservas() {
+        return reservas;
+    }
+
     public void leerArchivo(String archivo, String separador) throws IOException {
         BufferedReader br = null;
         Reserva reserva;
@@ -71,7 +75,7 @@ public class ListaReserva {
                 reserva = new Reserva(fecha, asistencia, horaInicio, horaFinal, mesa, cliente); // Cliente se puede pasar como null o lo que necesites
 
                 List<Empleado> empleados = new ArrayList<>();
-                if (campos.length > 8 && !campos[8].isEmpty()) {
+                if (!campos[8].isEmpty()) {
                     String[] empleadosData = campos[8].split(" ,");
                     for (String empData : empleadosData) {
                         String[] empFields = empData.split(":");
@@ -85,7 +89,7 @@ public class ListaReserva {
                 reserva.setEmpleados(empleados);
 
                 List<Pago> pagos = new ArrayList<>();
-                if (campos.length > 9 && !campos[9].isEmpty()) {
+                if (!campos[9].isEmpty()) {
                     String[] pagosData = campos[9].split(" ,");
                     for (String pagoData : pagosData) {
                         String[] pagocampos = pagoData.split(":");

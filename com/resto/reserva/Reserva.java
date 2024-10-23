@@ -15,6 +15,7 @@ import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+import java.io.IOException;
 import java.time.LocalTime;
 import javax.mail.Authenticator;
 import javax.mail.PasswordAuthentication;
@@ -157,11 +158,17 @@ public class Reserva {
      * El método `confirmarReserva` comprueba si una mesa está disponible en una fecha y horainicioreserva especificadas, y
      * si es así, agrega la reserva a una lista.
      */
-    public void confirmarReserva(){
-        // Verificar si la mesa está disponible en la fecha y hora
+    public void confirmarReserva(ListaReserva lista){
+        try {
+            lista.leerArchivo("com/resto/data/reservas.csv", ",");
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+
         boolean mesaDisponible = true;
 
-        for (Reserva reserva : listaReservas) {
+        for (Reserva reserva : lista.getReservas()) {
             if (reserva.getMesa().equals(this.mesa) &&
                     reserva.getFecha().equals(this.fecha) &&
                     reserva.getHora().equals(this.horainicioreserva)&&
@@ -173,7 +180,7 @@ public class Reserva {
 
         if (mesaDisponible) {
             // Si la mesa está disponible, agregar la reserva a la lista
-            listaReservas.add(this);
+            lista.agregarReserva(this);
             System.out.println("Reserva confirmada para " + cliente.getNombre() + " el " + fecha + " a las " + horainicioreserva);
         } else {
             System.out.println("La mesa no está disponible en la fecha y horainicioreserva seleccionadas.");
