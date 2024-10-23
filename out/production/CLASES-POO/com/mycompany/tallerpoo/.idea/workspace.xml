@@ -4,17 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc35265b-e20e-47ec-ab1c-2b6d08796871" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/com/resto/Agenda.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/resto/Agenda.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/resto/Evento.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/resto/Evento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/resto/cliente/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/resto/cliente/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/resto/mesa/Mesa.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/resto/mesa/Mesa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/resto/personal/Administrador.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/resto/personal/Administrador.java" afterDir="false" />
+    <list default="true" id="fc35265b-e20e-47ec-ab1c-2b6d08796871" name="Changes" comment="Metodos de reporte">
+      <change afterPath="$PROJECT_DIR$/com/resto/cliente/ListaCliente.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -31,6 +34,9 @@
     &quot;accountId&quot;: &quot;a6a10552-bc3c-4458-98c6-8b74d0099e25&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -45,12 +51,13 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/GAMER/tp4&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.qodana&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -92,7 +99,11 @@
       <workItem from="1729127987797" duration="63000" />
       <workItem from="1729135834190" duration="1535000" />
       <workItem from="1729173288825" duration="336000" />
-      <workItem from="1729173632387" duration="1131000" />
+      <workItem from="1729173632387" duration="1319000" />
+      <workItem from="1729200353388" duration="18000" />
+      <workItem from="1729476176162" duration="2813000" />
+      <workItem from="1729569140867" duration="2017000" />
+      <workItem from="1729633548222" duration="1229000" />
     </task>
     <task id="LOCAL-00001" summary="Metodo reservarMesa en cliente">
       <option name="closed" value="true" />
@@ -118,7 +129,31 @@
       <option name="project" value="LOCAL" />
       <updated>1729137363874</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="metodo de bloquear y desbloquear mesa +algunas correciones en tipos de variables">
+      <option name="closed" value="true" />
+      <created>1729174932400</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1729174932400</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Metodos ToString() y clase Reporte(faltan 3 metodos)">
+      <option name="closed" value="true" />
+      <created>1729478993298</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1729478993298</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Metodos de reporte">
+      <option name="closed" value="true" />
+      <created>1729571121551</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1729571121551</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,6 +174,13 @@
     <MESSAGE value="Metodo reservarMesa en cliente" />
     <MESSAGE value="&#10;Crear cuenta en empleado, constructor en mesa, metodo desbloquear(continuarlo)" />
     <MESSAGE value="&#10;probando en el main algunos metodos de Cliente" />
-    <option name="LAST_COMMIT_MESSAGE" value="&#10;probando en el main algunos metodos de Cliente" />
+    <MESSAGE value="metodo de bloquear y desbloquear mesa +algunas correciones en tipos de variables" />
+    <MESSAGE value="Metodos ToString() y clase Reporte(faltan 3 metodos)" />
+    <MESSAGE value="Metodos de reporte" />
+    <option name="LAST_COMMIT_MESSAGE" value="Metodos de reporte" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
