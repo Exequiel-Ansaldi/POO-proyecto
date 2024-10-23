@@ -4,6 +4,7 @@
 
 package com.mycompany.tallerpoo;
 
+import com.mycompany.tallerpoo.com.resto.mesa.ListaMesa;
 import com.mycompany.tallerpoo.com.resto.reserva.ListaReserva;
 import com.mycompany.tallerpoo.com.resto.reserva.Reserva;
 import com.mycompany.tallerpoo.com.resto.cliente.Cliente;
@@ -53,6 +54,7 @@ public class MainTaller {
         // Crear listas de clientes y reservas
         ListaCliente listaCliente = new ListaCliente(new ArrayList<>());
         ListaReserva listaReserva = new ListaReserva();
+        ListaMesa listaMesa = new ListaMesa();
 
         // Añadir el cliente a la lista de clientes
         listaCliente.agregarCliente(cliente);
