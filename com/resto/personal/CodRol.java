@@ -11,5 +11,5 @@ package com.mycompany.tallerpoo.com.resto.personal;
 public enum CodRol{
     Administrador,
     Maitre,
-    Mesero;
+    Mesero
 }
