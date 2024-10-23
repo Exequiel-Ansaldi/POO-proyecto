@@ -13,28 +13,40 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 /**
- * La clase Agenda representa un la agenda del restaurant con atributos de fecha, hora de inicio y hora de finalización.
+ * La clase Agenda representa la agenda del restaurant con atributos de fecha, hora de inicio y hora de finalización.
  */
 public class Agenda {
+    /** La fecha del evento. */
     private LocalDate fecha;
+
+    /** La hora de inicio del evento. */
     private LocalTime horainicio;
+
+    /** La hora de fin del evento. */
     private LocalTime horafin;
 
-    //Constructores
-    // Es un constructor para la clase `Agenda` en Java. este constructor
-    // toma tres parámetros: `fecha` de tipo `LocalDate`, `horainicio` de tipo `LocalTime`, y
-    // `horafin` de tipo `LocalTime`.
+    //------------------------------------------CONSTRUCTORES-------------------------------------------------
+
+    /**
+     * Constructor de la clase Agenda.
+     *
+     * @param fecha La fecha del evento en la agenda.
+     * @param horainicio La hora de inicio del evento.
+     * @param horafin La hora de finalización del evento.
+     */
     public Agenda(LocalDate fecha, LocalTime horainicio, LocalTime horafin) {
         this.fecha = fecha;
         this.horainicio = horainicio;
         this.horafin = horafin;
     }
-   // La línea `public Agenda(){}` es un constructor predeterminado para la clase `Agenda` en Java. Este
-   // el constructor no toma ningún parámetro e inicializa una instancia de la clase `Agenda` con
-   // valores predeterminados.
+
+    /**
+     * Constructor por defecto.
+     */
     public Agenda(){}
 
-    //Getters & Setters
+    //-----------------------------------------METODOS-------------------------------------------------------
+
    /**
     * Esta función Java devuelve la fecha almacenada en la variable de instancia "fecha".
     * 
@@ -98,6 +110,11 @@ public class Agenda {
         this.horafin = horafin;
     }
 
+    /**
+     * Devuelve una representación en forma de cadena de la instancia de Agenda.
+     *
+     * @return Una cadena que contiene la fecha, la hora de inicio y la hora de fin de la agenda.
+     */
     @Override
     public String toString() {
         return "Agenda{" +

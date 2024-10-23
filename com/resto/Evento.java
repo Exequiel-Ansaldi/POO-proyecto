@@ -11,33 +11,62 @@ import java.util.List;
 import java.util.ArrayList;
 import java.time.LocalTime;
 
-/**
- *
- * @author Exequiel
- */
+
 
 /**
 * La clase "Evento" representa un evento con un nombre, una descripción, una fecha, una hora de inicio, una hora de finalización y una
 * lista de mesas.
 */
 public class Evento {
+    /**
+     * Nombre del evento.
+     */
     private String nombre;
+
+    /**
+     * Descripción del evento.
+     */
     private String descripcion;
+
+    /**
+     * Día en que se realiza el evento.
+     */
     private LocalDate dia;
+
+    /**
+     * Hora de inicio del evento.
+     */
     private LocalTime horainicio;
+
+    /**
+     * Hora de finalización del evento.
+     */
     private LocalTime horafin;
+
+    /**
+     * Lista de mesas asociadas al evento.
+     */
     private List<Mesa> mesas;
 
-    //Constructores
+    //-----------------------------------------CONSTRUCTORES---------------------------------------------------------
+
+    /**
+     * Constructor por defecto que inicializa la lista de mesas.
+     */
     public Evento(){
         this.mesas = new ArrayList<Mesa>();
     }
 
-    // El constructor `public Evento` en la clase `Evento` está inicializando un nuevo objeto `Evento` con
-    // los parámetros proporcionados. Toma los siguientes parámetros: `nombre` (nombre del evento),
-    // `descripcion` (descripción del evento), `dia` (fecha del evento), `horainicio` (hora de inicio del
-    // evento), `horafin` (hora de finalización del evento) y `mesas` (una lista de objetos `Mesa`
-    // que representan mesas).
+    /**
+     * Constructor que inicializa todos los atributos del evento.
+     *
+     * @param nombre        El nombre del evento.
+     * @param descripcion   La descripción del evento.
+     * @param dia          El día en que se realiza el evento.
+     * @param horainicio    La hora de inicio del evento.
+     * @param horafin       La hora de finalización del evento.
+     * @param mesas         La lista de mesas asociadas al evento.
+     */
     public Evento(String nombre, String descripcion, LocalDate dia, LocalTime horainicio, LocalTime horafin, List<Mesa> mesas) {
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -47,7 +76,7 @@ public class Evento {
         this.mesas = mesas;
     }
 
-    //Getters & Setters
+    //--------------------------------------------METODOS-----------------------------------------------------
    /**
     * La función `getNombre()` en Java retorna el valor del atributo `nombre`.
     *
@@ -177,6 +206,11 @@ public class Evento {
         return this.mesas;
     }
 
+    /**
+     * Devuelve una representación en cadena del objeto Evento.
+     *
+     * @return una cadena que representa los atributos del evento.
+     */
     @Override
     public String toString() {
         return "Evento{" +
