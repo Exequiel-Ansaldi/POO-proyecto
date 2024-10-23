@@ -11,18 +11,50 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * La clase ListaMesa representa una colección de mesas en un restaurante.
+ * Permite agregar, eliminar y gestionar reservas y eventos para cada mesa.
+ */
 public class ListaMesa {
+
+    /** 
+     * Lista que contiene las mesas del restaurante.
+     */
     ArrayList<Mesa> mesas;
 
+    //-----------------------------------------CONSTRUCTORES--------------------------------------------------
+    /**
+     * Constructor por defecto que inicializa una nueva lista de mesas vacía.
+     */
     public ListaMesa(){
         this.mesas = new ArrayList<>();
     }
+
+     /**
+     * Constructor que inicializa la lista de mesas con una lista dada.
+     * 
+     * @param mesas La lista inicial de mesas.
+     */
     public ListaMesa(ArrayList<Mesa> mesas){
         this.mesas = mesas;
     }
+
+    //----------------------------------------MÉTODOS----------------------------------------------------
+    /**
+     * Agrega una mesa a la lista de mesas.
+     * 
+     * @param mesa La mesa a agregar.
+     */
     public void agregarMesa(Mesa mesa){
         mesas.add(mesa);
     }
+
+    /**
+     * Elimina una mesa de la lista si existe.
+     * 
+     * @param mesa La mesa a eliminar.
+     * @return true si la mesa fue eliminada, false si no estaba en la lista.
+     */
     public boolean eliminarMesa(Mesa mesa){
         if(mesas.contains(mesa)){
             mesas.remove(mesa);
@@ -30,6 +62,13 @@ public class ListaMesa {
         }
         return false;
     }
+
+     /**
+     * Agrega una reserva a una mesa específica si la mesa existe en la lista.
+     * 
+     * @param mesa   La mesa a la que se desea agregar la reserva.
+     * @param reserva La reserva a agregar a la mesa.
+     */
     public void agregarReservaAMesa(Mesa mesa, Reserva reserva) {
         if (mesas.contains(mesa)) {
             mesa.agregarReservas(reserva);
@@ -37,6 +76,13 @@ public class ListaMesa {
             System.out.println("La mesa no se encuentra en la lista.");
         }
     }
+
+    /**
+     * Agrega un evento a una mesa específica si la mesa existe en la lista.
+     * 
+     * @param mesa   La mesa a la que se desea agregar el evento.
+     * @param evento El evento a agregar a la mesa.
+     */
     public void agregarEventoAMesa(Mesa mesa, Evento evento) {
         if (mesas.contains(mesa)) {
             mesa.setEvento(evento);
@@ -44,7 +90,14 @@ public class ListaMesa {
             System.out.println("La mesa no se encuentra en la lista.");
         }
     }
-
+     /**
+     * Lee los datos de mesas desde un archivo y los agrega a la lista.
+     * Cada línea del archivo representa una mesa y puede contener datos de reservas y eventos.
+     * 
+     * @param archivo   El nombre del archivo de entrada.
+     * @param separador El separador de campos en el archivo.
+     * @throws IOException Si ocurre un error al leer el archivo.
+     */
     public void leerArchivo(String archivo, String separador) throws IOException {
         BufferedReader br = null;
         Mesa mesa;
@@ -109,6 +162,15 @@ public class ListaMesa {
             System.out.println(m.toString());
         }
     }
+
+    /**
+     * Escribe los datos de las mesas en un archivo.
+     * Cada mesa se guarda en una línea con sus reservas y eventos asociados.
+     * 
+     * @param archivo   El nombre del archivo de salida.
+     * @param separador El separador de campos en el archivo.
+     * @throws IOException Si ocurre un error al escribir en el archivo.
+     */
 
     public void escribirArchivo(String archivo, String separador) throws IOException {
         PrintWriter pw = null;

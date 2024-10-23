@@ -9,27 +9,58 @@ import com.mycompany.tallerpoo.com.resto.Resto;
 import com.mycompany.tallerpoo.com.resto.mesa.Mesa;
 import com.mycompany.tallerpoo.com.resto.mesa.EstadoMesa;
 
+/**
+ * La clase {@code Administrador} representa a un administrador del sistema.
+ * Extiende de la clase {@code Personal} e incluye un atributo que hace referencia
+ * al restaurante que administra.
+ */
+
 public class Administrador extends Personal {
+    /** 
+     * El restaurante asociado al administrador. 
+     */
     private Resto resto;
 
-
+    //-----------------------------------------CONSTRUCTORES--------------------------------------------------
+    /**
+     * Constructor que inicializa un administrador con un identificador
+     * y un rol específico.
+     * 
+     * @param id  El identificador del administrador.
+     * @param rol El rol que desempeña el administrador.
+     */
     public Administrador(int id, CodRol rol) {
         super (id, rol);
     }
 
+     /**
+     * Constructor que inicializa un administrador con un restaurante específico.
+     * 
+     * @param resto El restaurante único asociado al administrador.
+     */
     public Administrador(Resto resto) {
         this.resto = resto;
     }
 
+     /**
+     * Obtiene el restaurante asociado al administrador.
+     * 
+     * @return El restaurante asociado.
+     */
     public Resto getResto() {
         return this.resto;
     }
 
+    /**
+     * Establece el restaurante asociado al administrador.
+     * 
+     * @param resto El restaurante a asociar al administrador.
+     */
     public void setResto(Resto resto) {
         this.resto = resto;
     }
 
-
+    //----------------------------------------MÉTODOS----------------------------------------------------
     /**
      * El método `gestionHorario` gestiona las horas de apertura y cierre de un restaurante tomando la
      * entrada del usuario para los horarios de apertura y cierre, y actualiza el horario del restaurante
@@ -139,10 +170,17 @@ public class Administrador extends Personal {
         CodRol rol;
         rol = CodRol.valueOf(rolString);
         Empleado empleado_nuevo = new Empleado(id, rol);
+        
 
     }
 
     @Override
+    /**
+     * Devuelve una representación en forma de cadena del administrador,
+     * incluyendo el restaurante asociado.
+     * 
+     * @return Una cadena que representa al administrador y su restaurante.
+     */
     public String toString() {
         return "Administrador{" +
                 "resto=" + resto +

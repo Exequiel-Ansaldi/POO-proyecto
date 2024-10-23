@@ -14,18 +14,55 @@ import com.mycompany.tallerpoo.com.resto.Evento;
  * @author Exequiel
  */
 public class Mesa {
+    /**
+     * La capacidad máxima de la mesa.
+     */
     private int capacidad;
+
+     /**
+     * La ubicación de la mesa dentro del restaurante.
+     */
     private String ubicacion;
+
+    /**
+     * La lista de reservas asociadas a la mesa.
+     */
     private List<Reserva> reservas;
+
+    /**
+     * Un evento especial que puede estar asociado a la mesa.
+     */
     private Evento evento;
+
+    /**
+     * El estado actual de la mesa (disponible o no disponible).
+     */
     private EstadoMesa estado;
     
+     //-----------------------------------------CONSTRUCTORES--------------------------------------------------
+    /**
+     * Constructor por defecto que inicializa la lista de reservas.
+     */
     public Mesa(){
         this.reservas = new ArrayList<Reserva>();
     }
+
+     /**
+     * Constructor que inicializa la mesa con una lista de reservas.
+     * 
+     * @param reservas La lista de reservas asociadas a la mesa.
+     */
     public Mesa(List<Reserva> reservas){
         this.reservas = reservas;
     }
+
+     /**
+     * Constructor que inicializa la mesa con capacidad, ubicación y estado.
+     * 
+     * @param capacidad La capacidad máxima de la mesa.
+     * @param ubicacion La ubicación de la mesa.
+     * @param estado    El estado actual de la mesa.
+     */
 
     public Mesa(int capacidad, String ubicacion, EstadoMesa estado) {
         this.capacidad = capacidad;
@@ -33,6 +70,16 @@ public class Mesa {
         this.estado = estado;
         this.reservas = new ArrayList<>();
     }
+
+     /**
+     * Constructor que inicializa la mesa con capacidad, ubicación, evento, reservas y estado.
+     * 
+     * @param capacidad La capacidad máxima de la mesa.
+     * @param ubicacion La ubicación de la mesa.
+     * @param evento    El evento especial asociado a la mesa.
+     * @param reservas  La lista de reservas asociadas a la mesa.
+     * @param estado    El estado actual de la mesa.
+     */
 
     public Mesa(int capacidad, String ubicacion, Evento evento, List<Reserva> reservas, EstadoMesa estado) {
         this.capacidad = capacidad;
@@ -42,46 +89,102 @@ public class Mesa {
         this.estado = estado;
     }
 
+    //----------------------------------------MÉTODOS----------------------------------------------------
+    /**
+     * Devuelve la capacidad máxima de la mesa.
+     * 
+     * @return La capacidad de la mesa.
+     */
     public int getCapacidad() {
         return this.capacidad;
     }
 
+     /**
+     * Establece la capacidad máxima de la mesa.
+     * 
+     * @param capacidad La nueva capacidad de la mesa.
+     */
     public void setCapacidad(int capacidad) {
         this.capacidad = capacidad;
     }
 
+    /**
+     * Devuelve la ubicación de la mesa.
+     * 
+     * @return La ubicación de la mesa.
+     */
     public String getUbicacion() {
         return this.ubicacion;
     }
 
+     /**
+     * Establece la ubicación de la mesa.
+     * 
+     * @param ubicacion La nueva ubicación de la mesa.
+     */
     public void setUbicacion(String ubicacion) {
         this.ubicacion = ubicacion;
     }
 
+     /**
+     * Establece la lista de reservas asociadas a la mesa.
+     * 
+     * @param reservas La nueva lista de reservas.
+     */
     public void setReservas(List<Reserva> reservas) {
         this.reservas = reservas;
     }
 
+    /**
+     * Agrega una nueva reserva a la lista de reservas de la mesa.
+     * 
+     * @param r La reserva a agregar.
+     */
      public void agregarReservas(Reserva r){
          this.reservas.add(r);
     }
 
+    /**
+     * Devuelve la lista de reservas asociadas a la mesa.
+     * 
+     * @return La lista de reservas.
+     */
     public List<Reserva> getReservas(){
         return this.reservas;
     }
 
+    /**
+     * Devuelve el evento asociado a la mesa.
+     * 
+     * @return El evento de la mesa.
+     */
      public Evento getEvento(){
         return this.evento;
     }
 
-     public void setEvento(Evento evento){
+    /**
+     * Establece un evento especial para la mesa.
+     * 
+     * @param evento El nuevo evento asociado a la mesa.
+     */
+    public void setEvento(Evento evento){
         this.evento = evento;
     }
 
+    /**
+     * Devuelve el estado actual de la mesa.
+     * 
+     * @return El estado de la mesa.
+     */
     public EstadoMesa getEstado(){
         return this.estado;
     }
 
+    /**
+     * Establece el estado actual de la mesa.
+     * 
+     * @param estado El nuevo estado de la mesa.
+     */
     public void setEstado(EstadoMesa estado){
         this.estado = estado;
     }
@@ -113,8 +216,14 @@ public class Mesa {
         }
         return mesasFiltradas;
     }
-
+    
     @Override
+    /**
+     * Devuelve una representación en forma de cadena de la mesa.
+     * 
+     * @return Una cadena que representa los atributos de la mesa,
+     *         incluyendo capacidad, ubicación, reservas, evento y estado.
+     */
     public String toString() {
         return "Mesa{" +
                 "capacidad=" + capacidad +

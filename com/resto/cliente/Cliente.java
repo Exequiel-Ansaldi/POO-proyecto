@@ -23,22 +23,66 @@ import java.util.regex.Pattern;
  *
  * @author Exequiel
  */
+
+
+/**
+ * La clase `Cliente` representa un cliente con atributos como nombre, correo electrónico, contraseña, número de teléfono,
+ * y una lista de reservas.
+ */
 public class Cliente {
+        /**
+     * Nombre del cliente.
+     */
     private String nombre;
+
+    /**
+     * Correo electrónico del cliente.
+     */
     private String correo;
+
+    /**
+     * Contraseña del cliente.
+     */
     private String contrasenia;
+
+    /**
+     * Número de teléfono del cliente.
+     */
     private String numero;
+
+    /**
+     * Lista de reservas asociadas al cliente.
+     */
     private List<Reserva> reservas;
 
+    //-----------------------------------------CONSTRUCTORES--------------------------------------------------
+
+    /**
+     * Constructor por defecto de la clase Cliente.
+     * Inicializa la lista de reservas como una lista vacía.
+     */
     public Cliente(){
         this.reservas = new ArrayList<Reserva>();
     }
+
+    /**
+     * Constructor de la clase Cliente que inicializa un cliente con los datos proporcionados.
+     *
+     * @param nombre      el nombre del cliente.
+     * @param correo      el correo electrónico del cliente.
+     * @param contrasenia la contraseña del cliente.
+     * @param numero      el número de teléfono del cliente.    
+     */
     public Cliente(String nombre, String correo, String contrasenia, String numero){
         this.nombre = nombre;
         this.correo = correo;
         this.contrasenia = contrasenia;
         this.numero = numero;
     }
+    // Define un constructor para una clase llamada "Cliente". El constructor asume
+    // parámetros como `nombre` (nombre), `correo` (correo electrónico), `contrasenia` (contraseña), `numero`
+    // (número), y una lista de objetos `Reserva` llamados `reservas`. Dentro del constructor, los valores.
+    // de estos parámetros se asignan a las variables de instancia correspondientes de la clase `Cliente`.
     public Cliente(String nombre, String correo, String contrasenia, String numero, List<Reserva> reservas) {
         this.nombre = nombre;
         this.correo = correo;
@@ -47,42 +91,94 @@ public class Cliente {
         this.reservas = reservas;
     }
 
+    //----------------------------------------MÉTODOS----------------------------------------------------
+
+   /**
+    * La función `getNombre()` en Java devuelve el valor del atributo `nombre`.
+    * 
+    * @return Se está devolviendo el atributo `nombre`.
+    */
     public String getNombre() {
         return this.nombre;
     }
 
+    /**
+     * La función establece el valor de la variable "nombre" en una clase Java.
+     * 
+     * @param nombre El parámetro "nombre" es de tipo String que representa el nombre de un objeto o
+     * entidad. El método "setNombre" se utiliza para establecer el valor del atributo "nombre" de un objeto
+     * al valor de cadena proporcionado.
+     */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
+    /**
+     * Obtiene el correo del cliente.
+     * 
+     * @return el correo del cliente.
+     */
     public String getCorreo() {
         return this.correo;
     }
-
+    /**
+     * Establece el correo del cliente.
+     * 
+     * @param correo el correo a establecer para el cliente.
+     */
     public void setCorreo(String correo) {
         this.correo = correo;
     }
 
+    /**
+     * Obtiene la contraseña del cliente.
+     * 
+     * @return la contraseña del cliente.
+     */
     public String getContrasenia() {
         return this.contrasenia;
     }
 
+    /**
+     * Establece la contraseña del cliente.
+     * 
+     * @param contrasenia la contraseña a establecer para el cliente.
+     */
     public void setContrasenia(String contrasenia) {
         this.contrasenia = contrasenia;
     }
 
+    /**
+     * Obtiene el número de teléfono del cliente.
+     * 
+     * @return el número de teléfono del cliente.
+     */
     public String getNumero() {
         return this.numero;
     }
 
+    /**
+     * Establece el número de teléfono del cliente.
+     * 
+     * @param numero el número de teléfono a establecer para el cliente.
+     */
     public void setNumero(String numero) {
         this.numero = numero;
     }
 
+    /**
+     * Establece la lista de reservas del cliente.
+     * 
+     * @param reservas la lista de reservas a establecer para el cliente.
+     */
     public void setReservas(List<Reserva> reservas) {
         this.reservas = reservas;
     }
 
+    /**
+     * Obtiene la lista de reservas del cliente.
+     * 
+     * @return la lista de reservas del cliente.
+     */
     public List<Reserva> getReservas(){
         return this.reservas;
     }
@@ -291,6 +387,12 @@ public class Cliente {
 
 
     }
+    /**
+     * Devuelve una representación en forma de cadena de texto del objeto `Cliente`.
+     * Incluye el nombre, el correo, la contraseña, el número de teléfono y la lista de reservas.
+     *
+     * @return una cadena de texto que representa el objeto `Cliente` y sus atributos.
+     */
     @Override
     public String toString() {
         return "Cliente{" +

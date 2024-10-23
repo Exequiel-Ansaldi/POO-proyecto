@@ -13,21 +13,48 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Clase que representa una lista de clientes.
+ */
 public class ListaCliente {
+    /**
+     * Lista que almacena los clientes.
+     */
     ArrayList<Cliente> clientes;
 
+    //-----------------------------------------CONSTRUCTORES--------------------------------------------------
+    /**
+     * Constructor por defecto que inicializa la lista de clientes.
+     */
     public ListaCliente() {
         this.clientes = new ArrayList<>();
     }
 
+    /**
+     * Constructor que inicializa la lista de clientes con una lista existente.
+     *
+     * @param clientes Lista de clientes a inicializar.
+     */
     public ListaCliente(ArrayList<Cliente> clientes) {
         this.clientes = clientes;
     }
 
+    //----------------------------------------MÉTODOS----------------------------------------------------
+    /**
+     * Agrega un nuevo cliente a la lista.
+     *
+     * @param cliente Cliente a agregar.
+     */
     public void agregarCliente(Cliente cliente) {
         clientes.add(cliente);
     }
 
+    /**
+     * Agrega una reserva a un cliente específico en la lista.
+     *
+     * @param reserva Reserva a agregar.
+     * @param clienteP Cliente al que se le agrega la reserva.
+     */
     public void agregarReserva(Reserva reserva,Cliente clienteP) {
         for (Cliente cliente : clientes) {
             if (cliente.equals(clienteP)) {
@@ -38,6 +65,12 @@ public class ListaCliente {
         System.out.println("Cliente no encontrado: " );
     }
 
+     /**
+     * Elimina un cliente de la lista.
+     *
+     * @param cliente Cliente a eliminar.
+     * @return Verdadero si el cliente fue eliminado, falso en caso contrario.
+     */
     public boolean eliminarCliente(Cliente cliente) {
         if (clientes.contains(cliente)) {
             clientes.remove(cliente);
@@ -45,7 +78,13 @@ public class ListaCliente {
         }
         return false;
     }
-
+     /**
+     * Lee clientes y sus reservas desde un archivo.
+     *
+     * @param archivo Ruta del archivo a leer.
+     * @param separador Separador utilizado en el archivo.
+     * @throws IOException Si ocurre un error de entrada/salida al leer el archivo.
+     */
     public void leerArchivo(String archivo, String separador) throws IOException {
         BufferedReader br = null;
         Cliente cliente;
@@ -100,6 +139,13 @@ public class ListaCliente {
         }
     }
 
+    /**
+     * Escribe los clientes y sus reservas en un archivo.
+     *
+     * @param archivo Ruta del archivo donde se guardarán los datos.
+     * @param separador Separador utilizado para formatear la salida.
+     * @throws IOException Si ocurre un error de entrada/salida al escribir en el archivo.
+     */
     public void escribirArchivo(String archivo, String separador) throws IOException {
         PrintWriter pw = null;
         FileWriter nuevo = null;

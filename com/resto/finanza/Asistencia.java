@@ -8,8 +8,21 @@ package com.mycompany.tallerpoo.com.resto.finanza;
  *
  * @author Exequiel
  */
+
+ /**
+ * Enumeración que representa los posibles estados de asistencia.
+ */
 public enum Asistencia {
+    /**
+     * Indica que el cliente asistirá.
+     */
     Asiste,
+     /**
+     * Indica que el cliente no asistirá.
+     */
     Noasiste,
+    /**
+     * Indica que el estado de asistencia es otro.
+     */
     Otro;
 }
