@@ -117,7 +117,7 @@ public class ListaCliente {
                 if (reservas != null && !reservas.isEmpty()) {
                     for (Reserva reserva : reservas) {
                         linea += reserva.getFecha() + ",";
-                        linea += reserva.getHora() + ",";
+                        linea += reserva.getHorainicioreserva() + ",";
                         linea += reserva.getHorafinalreserva() + ",";
                         linea += reserva.getAsistencia() + ",";
                         linea += reserva.getMesa().getCapacidad() + ",";

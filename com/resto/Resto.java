@@ -337,7 +337,7 @@ public class Resto {
                 // Comprobar si la mesa de la reserva está en la lista de mesas solicitadas
                 if (mesasSolicitadas.contains(mesaReserva)) {
                     // Obtener la hora de inicio de la reserva existente
-                    LocalTime inicioReserva = reserva.getHora();
+                    LocalTime inicioReserva = reserva.getHorainicioreserva();
                     LocalTime finReserva = reserva.getHorafinalreserva();
 
                     // Verificar superposición de horarios

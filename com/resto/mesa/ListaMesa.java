@@ -125,26 +125,25 @@ public class ListaMesa {
                 List<Reserva> reservas = mesa.getReservas();
                 if (reservas != null && !reservas.isEmpty()) {
                     for (Reserva reserva : reservas) {
-                        linea += reserva.getFecha() + ",";
-                        linea += reserva.getHora() + ",";
-                        linea += reserva.getHorafinalreserva() + ",";
-                        linea += reserva.getAsistencia() + ",";
-                        linea += reserva.getMesa().getCapacidad() + ",";
-                        linea += reserva.getMesa().getUbicacion() + ",";
-                        linea += reserva.getMesa().getEstado() + ";";
+
+                        linea += reserva.getFecha() + "," +
+                                reserva.getHorainicioreserva() + "," +
+                                reserva.getHorafinalreserva() + "," +
+                                reserva.getAsistencia() + ";";
                     }
                 } else {
                     linea += "Sin reservas";
                 }
 
+                // Write event details if they exist
                 Evento evento = mesa.getEvento();
                 if (evento != null) {
-                    linea += evento.getDescripcion() + ",";
-                    linea += evento.getNombre() + ",";
-                    linea += evento.getMesas() + ",";
-                    linea += evento.getDia() + ",";
-                    linea += evento.getHorainicio() + ",";
-                    linea += evento.getHorafin() + ",";
+                    linea += evento.getDescripcion() + "," +
+                            evento.getNombre() + "," +
+                            evento.getMesas() + "," +
+                            evento.getDia() + "," +
+                            evento.getHorainicio() + "," +
+                            evento.getHorafin() + ",";
                 }
                 pw.println(linea);
             }
