@@ -27,6 +27,13 @@ public class Mesa {
     public Mesa(List<Reserva> reservas){
         this.reservas = reservas;
     }
+
+    public Mesa(int capacidad, String ubicacion, EstadoMesa estado) {
+        this.capacidad = capacidad;
+        this.ubicacion = ubicacion;
+        this.estado = estado;
+    }
+
     public Mesa(int capacidad, String ubicacion, Evento evento, List<Reserva> reservas, EstadoMesa estado) {
         this.capacidad = capacidad;
         this.ubicacion = ubicacion;

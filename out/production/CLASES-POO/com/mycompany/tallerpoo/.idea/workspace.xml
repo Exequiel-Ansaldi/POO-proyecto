@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc35265b-e20e-47ec-ab1c-2b6d08796871" name="Changes" comment="Metodos de reporte">
-      <change afterPath="$PROJECT_DIR$/com/resto/cliente/ListaCliente.java" afterDir="false" />
+    <list default="true" id="fc35265b-e20e-47ec-ab1c-2b6d08796871" name="Changes" comment="Agregue data, carpeta que tiene los txt de las clases y probe la lista clientes en el main(seguir mismo formato para todas las que me faltan)">
+      <change beforePath="$PROJECT_DIR$/MainTaller.java" beforeDir="false" afterPath="$PROJECT_DIR$/MainTaller.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +103,8 @@
       <workItem from="1729200353388" duration="18000" />
       <workItem from="1729476176162" duration="2813000" />
       <workItem from="1729569140867" duration="2017000" />
-      <workItem from="1729633548222" duration="1229000" />
+      <workItem from="1729633548222" duration="3258000" />
+      <workItem from="1729651032142" duration="380000" />
     </task>
     <task id="LOCAL-00001" summary="Metodo reservarMesa en cliente">
       <option name="closed" value="true" />
@@ -153,7 +154,23 @@
       <option name="project" value="LOCAL" />
       <updated>1729571121551</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Agregue data, carpeta que tiene los txt de las clases y probe la lista clientes en el main(seguir mismo formato para todas las que me faltan)">
+      <option name="closed" value="true" />
+      <created>1729636786990</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1729636786990</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Agregue data, carpeta que tiene los txt de las clases y probe la lista clientes en el main(seguir mismo formato para todas las que me faltan)">
+      <option name="closed" value="true" />
+      <created>1729651066927</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1729651066927</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,7 +194,8 @@
     <MESSAGE value="metodo de bloquear y desbloquear mesa +algunas correciones en tipos de variables" />
     <MESSAGE value="Metodos ToString() y clase Reporte(faltan 3 metodos)" />
     <MESSAGE value="Metodos de reporte" />
-    <option name="LAST_COMMIT_MESSAGE" value="Metodos de reporte" />
+    <MESSAGE value="Agregue data, carpeta que tiene los txt de las clases y probe la lista clientes en el main(seguir mismo formato para todas las que me faltan)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Agregue data, carpeta que tiene los txt de las clases y probe la lista clientes en el main(seguir mismo formato para todas las que me faltan)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
