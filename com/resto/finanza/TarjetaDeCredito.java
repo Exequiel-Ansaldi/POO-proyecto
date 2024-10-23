@@ -25,6 +25,14 @@ public class TarjetaDeCredito {
         this.pago = p;
     }
 
+    public TarjetaDeCredito(String nombre, String emisor, String motivo, int nrotarjeta, float cantidad) {
+        this.nombre = nombre;
+        this.emisor = emisor;
+        this.motivo = motivo;
+        this.nrotarjeta = nrotarjeta;
+        this.cantidad = cantidad;
+    }
+
     public String getNombre() {
         return this.nombre;
     }
