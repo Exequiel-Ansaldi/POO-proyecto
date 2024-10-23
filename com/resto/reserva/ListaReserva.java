@@ -34,6 +34,14 @@ public class ListaReserva {
         this.reservas.add(reserva);
     }
 
+    public void agregarMesa(Mesa mesa, Reserva reserva) {
+        for (Reserva reservas1 : reservas) {
+            if (reservas1.equals(reserva)){
+                reservas1.setMesa(reserva.getMesa());
+            }
+        }
+    }
+
     public boolean eliminarReserva(Reserva reserva) {
         if (reservas.contains(reserva)) {
             reservas.remove(reserva);

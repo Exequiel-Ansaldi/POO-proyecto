@@ -37,6 +37,13 @@ public class ListaMesa {
             System.out.println("La mesa no se encuentra en la lista.");
         }
     }
+    public void agregarEventoAMesa(Mesa mesa, Evento evento) {
+        if (mesas.contains(mesa)) {
+            mesa.setEvento(evento);
+        }else{
+            System.out.println("La mesa no se encuentra en la lista.");
+        }
+    }
 
     public void leerArchivo(String archivo, String separador) throws IOException {
         BufferedReader br = null;

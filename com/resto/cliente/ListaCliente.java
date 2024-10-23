@@ -28,6 +28,16 @@ public class ListaCliente {
         clientes.add(cliente);
     }
 
+    public void agregarReserva(Reserva reserva,Cliente clienteP) {
+        for (Cliente cliente : clientes) {
+            if (cliente.equals(clienteP)) {
+                cliente.getReservas().add(reserva);
+                return;
+            }
+        }
+        System.out.println("Cliente no encontrado: " );
+    }
+
     public boolean eliminarCliente(Cliente cliente) {
         if (clientes.contains(cliente)) {
             clientes.remove(cliente);
