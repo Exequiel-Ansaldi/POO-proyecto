@@ -70,9 +70,9 @@ public class ListaReserva {
                 Asistencia asistencia = Asistencia.valueOf(campos[1]); // Tipo de asistencia
                 LocalTime horaInicio = LocalTime.parse(campos[2]); // Hora de inicio
                 LocalTime horaFinal = LocalTime.parse(campos[3]); // Hora final
-                Mesa mesa = new Mesa(Integer.parseInt(campos[4]), campos[5], EstadoMesa.valueOf(campos[6])); // Crear la mesa, asumiendo que tienes un constructor
+                Mesa mesa = new Mesa(Integer.parseInt(campos[4]), campos[5], EstadoMesa.valueOf(campos[6])); 
                 Cliente cliente = new Cliente(campos[7],campos[8],campos[9],campos[10]);
-                reserva = new Reserva(fecha, asistencia, horaInicio, horaFinal, mesa, cliente); // Cliente se puede pasar como null o lo que necesites
+                reserva = new Reserva(fecha, asistencia, horaInicio, horaFinal, mesa, cliente); 
 
                 List<Empleado> empleados = new ArrayList<>();
                 if (!campos[8].isEmpty()) {
