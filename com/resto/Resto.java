@@ -5,6 +5,7 @@
 package com.mycompany.tallerpoo.com.resto;
 
 
+import com.mycompany.tallerpoo.com.resto.Reserva.Reserva;
 import com.mycompany.tallerpoo.com.resto.cliente.Cliente;
 import com.mycompany.tallerpoo.com.resto.mesa.EstadoMesa;
 import com.mycompany.tallerpoo.com.resto.mesa.Mesa;

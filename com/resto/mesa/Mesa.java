@@ -6,7 +6,7 @@ package com.mycompany.tallerpoo.com.resto.mesa;
 
 import java.util.ArrayList;
 import java.util.List;
-import com.mycompany.tallerpoo.com.resto.Reserva;
+import com.mycompany.tallerpoo.com.resto.Reserva.Reserva;
 import com.mycompany.tallerpoo.com.resto.mesa.EstadoMesa;
 import com.mycompany.tallerpoo.com.resto.Evento;
 

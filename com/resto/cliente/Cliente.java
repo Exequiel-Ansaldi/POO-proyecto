@@ -4,7 +4,7 @@
  */
 package com.mycompany.tallerpoo.com.resto.cliente;
 
-import com.mycompany.tallerpoo.com.resto.Reserva;
+import com.mycompany.tallerpoo.com.resto.Reserva.Reserva;
 import com.mycompany.tallerpoo.com.resto.Resto;
 import com.mycompany.tallerpoo.com.resto.finanza.Asistencia;
 import com.mycompany.tallerpoo.com.resto.mesa.Mesa;
@@ -33,8 +33,11 @@ public class Cliente {
     public Cliente(){
         this.reservas = new ArrayList<Reserva>();
     }
-    public Cliente(List<Reserva> reservas){
-        this.reservas = reservas;
+    public Cliente(String nombre, String correo, String contrasenia, String numero){
+        this.nombre = nombre;
+        this.correo = correo;
+        this.contrasenia = contrasenia;
+        this.numero = numero;
     }
     public Cliente(String nombre, String correo, String contrasenia, String numero, List<Reserva> reservas) {
         this.nombre = nombre;

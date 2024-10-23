@@ -4,7 +4,8 @@
 
 package com.mycompany.tallerpoo;
 
-import com.mycompany.tallerpoo.com.resto.Reserva;
+import com.mycompany.tallerpoo.com.resto.Reserva.ListaReserva;
+import com.mycompany.tallerpoo.com.resto.Reserva.Reserva;
 import com.mycompany.tallerpoo.com.resto.cliente.Cliente;
 import com.mycompany.tallerpoo.com.resto.cliente.ListaCliente;
 import com.mycompany.tallerpoo.com.resto.finanza.Asistencia;
@@ -33,29 +34,37 @@ public class MainTaller {
         reserva.setFecha(fechaEspecifica);
         reserva.enviarRecordatorioReserva("carolinaittermann@gmail.com");*/
 
+        // Crear un cliente
         Cliente cliente = new Cliente("Juan", "juan@example.com", "1234", "987654321", new ArrayList<>());
 
-        // Crear una mesa (supón que tienes un constructor adecuado en la clase Mesa)
-        Mesa mesa = new Mesa(4, "Patio", EstadoMesa.Disponible); // Supón que la mesa se identifica con un número
+        // Crear una mesa
+        Mesa mesa = new Mesa(4, "Patio", EstadoMesa.Disponible);
 
         // Crear una reserva
         LocalDate fecha = LocalDate.now();
-        LocalTime horaInicio = LocalTime.of(12, 0); // 12:00 PM
-        LocalTime horaFin = LocalTime.of(14, 0); // 2:00 PM
-        Asistencia asistencia = Asistencia.Asiste; // Supón que CONFIRMADA es un valor de la enumeración Asistencia
+        LocalTime horaInicio = LocalTime.of(12, 0);
+        LocalTime horaFin = LocalTime.of(14, 0);
+        Asistencia asistencia = Asistencia.Asiste;
 
         Reserva reserva = new Reserva(fecha, asistencia, horaInicio, horaFin, mesa, cliente);
 
         // Agregar la reserva a la lista de reservas del cliente
         cliente.getReservas().add(reserva);
 
-        // Añadir el cliente a la lista de clientes
+        // Crear listas de clientes y reservas
         ListaCliente listaCliente = new ListaCliente(new ArrayList<>());
+        ListaReserva listaReserva = new ListaReserva();
+
+        // Añadir el cliente a la lista de clientes
         listaCliente.agregarCliente(cliente);
+
+        // Añadir la reserva a la lista de reservas
+        listaReserva.agregarReserva(reserva);
 
         // Guardar los datos del cliente en el archivo
         try {
-            listaCliente.escribirArchivo("C:\\Users\\GAMER\\Documents\\Taller POO\\CLASES-POO\\com\\resto\\data\\clientes.csv", "," );
+            listaCliente.escribirArchivo("C:\\Users\\GAMER\\Documents\\Taller POO\\CLASES-POO\\com\\resto\\data\\clientes.csv", ",");
+            listaReserva.escribirArchivo("C:\\Users\\GAMER\\Documents\\Taller POO\\CLASES-POO\\com\\resto\\data\\reservas.csv", ",");
         } catch (IOException e) {
             e.printStackTrace();
         }
