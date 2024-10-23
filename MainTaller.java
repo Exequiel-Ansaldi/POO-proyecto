@@ -4,8 +4,8 @@
 
 package com.mycompany.tallerpoo;
 
-import com.mycompany.tallerpoo.com.resto.Reserva.ListaReserva;
-import com.mycompany.tallerpoo.com.resto.Reserva.Reserva;
+import com.mycompany.tallerpoo.com.resto.Reserva.Reserva.ListaReserva;
+import com.mycompany.tallerpoo.com.resto.Reserva.Reserva.Reserva;
 import com.mycompany.tallerpoo.com.resto.cliente.Cliente;
 import com.mycompany.tallerpoo.com.resto.cliente.ListaCliente;
 import com.mycompany.tallerpoo.com.resto.finanza.Asistencia;
@@ -16,7 +16,6 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  *

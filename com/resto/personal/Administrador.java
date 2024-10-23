@@ -16,11 +16,9 @@ public class Administrador extends Personal {
     public Administrador() {
     }
 
-
     public Administrador(Resto resto) {
         this.resto = resto;
     }
-
 
     public Resto getResto() {
         return this.resto;

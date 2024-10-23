@@ -1,19 +1,16 @@
 package com.mycompany.tallerpoo.com.resto.cliente;
-import com.mycompany.tallerpoo.com.resto.Reserva.Reserva;
+import com.mycompany.tallerpoo.com.resto.Reserva.Reserva.Reserva;
 import com.mycompany.tallerpoo.com.resto.finanza.Asistencia;
 import com.mycompany.tallerpoo.com.resto.mesa.Mesa;
 import com.mycompany.tallerpoo.com.resto.mesa.EstadoMesa;
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class ListaCliente {
