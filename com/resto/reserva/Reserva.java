@@ -161,6 +161,7 @@ public class Reserva {
     public void confirmarReserva(ListaReserva lista){
         try {
             lista.leerArchivo("com/resto/data/reservas.csv", ",");
+            System.out.println("Reservas cargadas: " + lista.getReservas().size());
         } catch (IOException e) {
             e.printStackTrace();
             return;
@@ -169,10 +170,17 @@ public class Reserva {
         boolean mesaDisponible = true;
 
         for (Reserva reserva : lista.getReservas()) {
+            boolean fechasCoinciden = reserva.getFecha().equals(this.fecha);
+
+            //solapamiento de horas
+            boolean horaInicioDentroRango = !this.horainicioreserva.isBefore(reserva.getHora()) && this.horainicioreserva.isBefore(reserva.getHorafinalreserva());
+            boolean horaFinDentroRango = !this.horafinalreserva.isBefore(reserva.getHora()) && this.horafinalreserva.isBefore(reserva.getHorafinalreserva());
+
+
             if (reserva.getMesa().equals(this.mesa) &&
-                    reserva.getFecha().equals(this.fecha) &&
-                    reserva.getHora().equals(this.horainicioreserva)&&
-                    reserva.getHorafinalreserva().equals(this.horafinalreserva)) {
+                    fechasCoinciden &&
+                    //Se comprueba si la nueva hora de inicio o fin de la reserva cae dentro del rango de alguna reserva ya existente para esa mesa.
+                    (horaInicioDentroRango || horaFinDentroRango)) {
                 mesaDisponible = false;
                 break;
             }

@@ -68,7 +68,7 @@ public class MainTaller {
         // Añadir la reserva a la lista de reservas
         listaReserva.agregarReserva(reserva);
 
-        //reserva.confirmarReserva(listaReserva);
+        reserva.confirmarReserva(listaReserva);
 
         // Guardar los datos del cliente en el archivo
         try {
