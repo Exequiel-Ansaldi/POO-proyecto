@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc35265b-e20e-47ec-ab1c-2b6d08796871" name="Changes" comment="agregue Lista de Reservas csv">
-      <change beforePath="$PROJECT_DIR$/com/resto/Reserva/ListaReserva.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/resto/Reserva/ListaReserva.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/com/resto/finanza/TarjetaDeCredito.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/resto/finanza/TarjetaDeCredito.java" afterDir="false" />
-    </list>
+    <list default="true" id="fc35265b-e20e-47ec-ab1c-2b6d08796871" name="Changes" comment="error de importacion que faltaba" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,6 +19,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -111,7 +109,12 @@
       <workItem from="1729569140867" duration="2017000" />
       <workItem from="1729633548222" duration="3258000" />
       <workItem from="1729651032142" duration="5006000" />
-      <workItem from="1729694120015" duration="1740000" />
+      <workItem from="1729694120015" duration="2989000" />
+      <workItem from="1729697155377" duration="450000" />
+      <workItem from="1729697622388" duration="445000" />
+      <workItem from="1729698081769" duration="179000" />
+      <workItem from="1729698304171" duration="614000" />
+      <workItem from="1729699242162" duration="639000" />
     </task>
     <task id="LOCAL-00001" summary="Metodo reservarMesa en cliente">
       <option name="closed" value="true" />
@@ -193,7 +196,31 @@
       <option name="project" value="LOCAL" />
       <updated>1729656007076</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Lista de reservas terminada">
+      <option name="closed" value="true" />
+      <created>1729696610793</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1729696610793</updated>
+    </task>
+    <task id="LOCAL-00012" summary=".">
+      <option name="closed" value="true" />
+      <created>1729697202501</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1729697202501</updated>
+    </task>
+    <task id="LOCAL-00013" summary="error de importacioon">
+      <option name="closed" value="true" />
+      <created>1729697482664</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1729697482664</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,7 +247,10 @@
     <MESSAGE value="Agregue data, carpeta que tiene los txt de las clases y probe la lista clientes en el main(seguir mismo formato para todas las que me faltan)" />
     <MESSAGE value=" probando la lista clientes en el main(seguir mismo formato para todas las que faltan)" />
     <MESSAGE value="agregue Lista de Reservas csv" />
-    <option name="LAST_COMMIT_MESSAGE" value="agregue Lista de Reservas csv" />
+    <MESSAGE value="Lista de reservas terminada" />
+    <MESSAGE value="." />
+    <MESSAGE value="error de importacioon" />
+    <option name="LAST_COMMIT_MESSAGE" value="error de importacioon" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

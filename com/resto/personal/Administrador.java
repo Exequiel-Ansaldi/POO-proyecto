@@ -13,7 +13,8 @@ public class Administrador extends Personal {
     private Resto resto;
 
 
-    public Administrador() {
+    public Administrador(int id, CodRol rol) {
+        super (id, rol);
     }
 
     public Administrador(Resto resto) {
