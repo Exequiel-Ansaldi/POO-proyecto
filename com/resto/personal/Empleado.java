@@ -1,5 +1,5 @@
 package com.mycompany.tallerpoo.com.resto.personal;
-import com.mycompany.tallerpoo.com.resto.Reserva.Reserva;
+import com.mycompany.tallerpoo.com.resto.reserva.Reserva;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,5 +1,5 @@
 package com.mycompany.tallerpoo.com.resto;
-import com.mycompany.tallerpoo.com.resto.Reserva.Reserva;
+import com.mycompany.tallerpoo.com.resto.reserva.Reserva;
 import com.mycompany.tallerpoo.com.resto.cliente.Cliente;
 import com.mycompany.tallerpoo.com.resto.finanza.Asistencia;
 import java.time.temporal.WeekFields;

@@ -1,5 +1,5 @@
 
-package com.mycompany.tallerpoo.com.resto.Reserva;
+package com.mycompany.tallerpoo.com.resto.reserva;
 
 /**
  *

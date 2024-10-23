@@ -1,5 +1,5 @@
 package com.mycompany.tallerpoo.com.resto.cliente;
-import com.mycompany.tallerpoo.com.resto.Reserva.Reserva.Reserva;
+import com.mycompany.tallerpoo.com.resto.reserva.Reserva;
 import com.mycompany.tallerpoo.com.resto.finanza.Asistencia;
 import com.mycompany.tallerpoo.com.resto.mesa.Mesa;
 import com.mycompany.tallerpoo.com.resto.mesa.EstadoMesa;

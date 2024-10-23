@@ -4,8 +4,8 @@
 
 package com.mycompany.tallerpoo;
 
-import com.mycompany.tallerpoo.com.resto.Reserva.Reserva.ListaReserva;
-import com.mycompany.tallerpoo.com.resto.Reserva.Reserva.Reserva;
+import com.mycompany.tallerpoo.com.resto.reserva.ListaReserva;
+import com.mycompany.tallerpoo.com.resto.reserva.Reserva;
 import com.mycompany.tallerpoo.com.resto.cliente.Cliente;
 import com.mycompany.tallerpoo.com.resto.cliente.ListaCliente;
 import com.mycompany.tallerpoo.com.resto.finanza.Asistencia;

@@ -1,4 +1,4 @@
-package com.mycompany.tallerpoo.com.resto.Reserva;
+package com.mycompany.tallerpoo.com.resto.reserva;
 
 import com.mycompany.tallerpoo.com.resto.cliente.Cliente;
 import com.mycompany.tallerpoo.com.resto.finanza.Asistencia;
@@ -10,16 +10,13 @@ import com.mycompany.tallerpoo.com.resto.personal.CodRol;
 import com.mycompany.tallerpoo.com.resto.personal.Empleado;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class ListaReserva {
