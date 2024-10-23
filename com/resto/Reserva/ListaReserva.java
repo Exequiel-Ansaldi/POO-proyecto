@@ -118,30 +118,30 @@ public class ListaReserva {
                 linea += reserva.getAsistencia() + separador;
                 linea += reserva.getHora() + separador;
                 linea += reserva.getHorafinalreserva() + separador;
-                linea += reserva.getMesa().getCapacidad() + separador; // Asegúrate de tener los métodos adecuados
+                linea += reserva.getMesa().getCapacidad() + separador;
                 linea += reserva.getMesa().getUbicacion() + separador;
-                linea += reserva.getMesa().getEstado() + separador; // Enum a String
+                linea += reserva.getMesa().getEstado() + separador;
                 linea+= reserva.getCliente().getNombre() + separador;
 
                 List<Empleado> empleados = reserva.getEmpleados();
                 if (empleados != null && !empleados.isEmpty()) {
                     for (Empleado empleado : empleados) {
-                        linea += empleado.getRol().name() + ","; // Cambia esto si necesitas otro formato
+                        linea += empleado.getRol().name() + ",";
                     }
-                    // Eliminar la última coma
+
                     if (linea.endsWith(",")) {
                         linea = linea.substring(0, linea.length() - 1);
                     }
                 }
                 linea += separador;
 
-                // Similar para los pagos
+
                 List<Pago> pagos = reserva.getPagos();
                 if (pagos != null && !pagos.isEmpty()) {
                     for (Pago pago : pagos) {
                         linea += pago.getMonto() + ":" + pago.getTarjeta().getNombre() + ":" + pago.getTarjeta().getEmisor() + ":" + pago.getTarjeta().getMotivo() + ":" + pago.getTarjeta().getNrotarjeta() + ",";
                     }
-                    // Eliminar la última coma
+
                     if (linea.endsWith(",")) {
                         linea = linea.substring(0, linea.length() - 1);
                     }
