@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.tallerpoo.com.resto.finanza;
-import com.mycompany.tallerpoo.com.resto.Reserva.Reserva.Reserva;
+import com.mycompany.tallerpoo.com.resto.Reserva.Reserva;
 /**
  *
  * @author Exequiel
