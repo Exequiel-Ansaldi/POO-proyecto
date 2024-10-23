@@ -26,18 +26,52 @@ import java.time.LocalTime;
  * listado de clientes, agenda, eventos, administradores, mesas y reservas.
  */
 public class Resto {
-     private LocalTime apertura;
-     private LocalTime cierre;
-     private List<Cliente> clientes;
-     private Agenda agenda;
-     private List<Evento> eventos;
-     private List<Administrador> admins;
-     private List<Mesa> mesas;
-     private List<Reserva> reservas;
+    /**
+     * Hora de apertura del restaurante.
+     */
+    private LocalTime apertura;
 
-    /*Es un constructor para la clase `Resto` en Java. Este específico
-    el constructor es un constructor sin argumentos, lo que significa que no toma ningún parámetro al crear
-    una instancia de la clase `Resto`.*/
+    /**
+     * Hora de cierre del restaurante.
+     */
+    private LocalTime cierre;
+
+    /**
+     * Lista de clientes asociados al restaurante.
+     */
+    private List<Cliente> clientes;
+
+    /**
+     * Agenda de reservas y eventos del restaurante.
+     */
+    private Agenda agenda;
+
+    /**
+     * Lista de eventos programados en el restaurante.
+     */
+    private List<Evento> eventos;
+
+    /**
+     * Lista de administradores del restaurante.
+     */
+    private List<Administrador> admins;
+
+    /**
+     * Lista de mesas disponibles en el restaurante.
+     */
+    private List<Mesa> mesas;
+
+    /**
+     * Lista de reservas realizadas en el restaurante.
+     */
+    private List<Reserva> reservas;
+
+//-----------------------------------------CONSTRUCTORES--------------------------------------------------
+
+    /**
+     * Constructor de la clase Resto.
+     * Inicializa las listas de clientes, eventos, administradores, mesas y reservas.
+     */
     public Resto(){
         this.clientes = new ArrayList<Cliente>();
         this.eventos = new ArrayList<Evento>();
@@ -46,11 +80,18 @@ public class Resto {
         this.reservas = new ArrayList<Reserva>();
     }
 
-    /*El constructor `público Resto` con múltiples parámetros está inicializando un objeto `Resto` con
-    valores específicos para sus atributos. Cuando se llama a este constructor, establece los valores del
-    `mapa`, `apertura`, `cierre`, `clientes`, `agenda`, `eventos`, `admins`, `mesas` y `reservas`
-    atributos de la clase `Resto` basados ​​en los valores proporcionados como argumentos al constructor.*/
-
+    /**
+     * Constructor de la clase Resto.
+     *
+     * @param apertura  Hora de apertura del restaurante.
+     * @param cierre    Hora de cierre del restaurante.
+     * @param clientes  Lista de clientes asociados al restaurante.
+     * @param agenda    Agenda para gestionar las reservas y eventos.
+     * @param eventos   Lista de eventos programados en el restaurante.
+     * @param admins    Lista de administradores del restaurante.
+     * @param mesas     Lista de mesas disponibles en el restaurante.
+     * @param reservas   Lista de reservas realizadas en el restaurante.
+     */
     public Resto(LocalTime apertura, LocalTime cierre, List <Cliente> clientes, Agenda agenda, List <Evento> eventos, List<Administrador> admins, List<Mesa> mesas, List<Reserva> reservas) {
         this.apertura = apertura;
         this.cierre = cierre;
@@ -62,7 +103,7 @@ public class Resto {
         this.reservas = reservas;
     }
 
-    //Getters & Setters
+    //----------------------------------------MÉTODOS----------------------------------------------------
     /**
      * La función `getApertura()` devuelve el valor LocalTime del campo `apertura`.
      * 
@@ -312,6 +353,13 @@ public class Resto {
         return true;
     }
 
+    /**
+     * Devuelve una representación en cadena del objeto Resto.
+     *
+     * @return una cadena que representa los atributos del restaurante, incluyendo
+     *         la hora de apertura, la hora de cierre, la lista de clientes,
+     *         la agenda, los eventos, los administradores, las mesas y las reservas.
+     */
     @Override
     public String toString() {
         return "Resto{" +
@@ -326,6 +374,12 @@ public class Resto {
                 '}';
     }
 
+    /**
+     * Crea un mapa de mesas del restaurante, organizándolas según su ubicación
+     * y estado (disponible o no disponible).
+     *
+     * @param MesasResto lista de mesas del restaurante que se deben clasificar.
+     */
     public void crearMapa(List<Mesa>MesasResto){
         List<Mesa>mesasPatioDisponible = new ArrayList<Mesa>();
         List<Mesa>mesasInternoDisponible = new ArrayList<Mesa>();
@@ -348,7 +402,6 @@ public class Resto {
                 }
             }
         }
-
         //Seguir el resto con interfaz.
     }
 
