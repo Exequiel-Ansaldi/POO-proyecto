@@ -30,6 +30,14 @@ public class ListaMesa {
         }
         return false;
     }
+    public void agregarReservaAMesa(Mesa mesa, Reserva reserva) {
+        if (mesas.contains(mesa)) {
+            mesa.agregarReservas(reserva);
+        } else {
+            System.out.println("La mesa no se encuentra en la lista.");
+        }
+    }
+
     public void leerArchivo(String archivo, String separador) throws IOException {
         BufferedReader br = null;
         Mesa mesa;

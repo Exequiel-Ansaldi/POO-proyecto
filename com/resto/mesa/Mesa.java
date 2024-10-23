@@ -31,6 +31,7 @@ public class Mesa {
         this.capacidad = capacidad;
         this.ubicacion = ubicacion;
         this.estado = estado;
+        this.reservas = new ArrayList<>();
     }
 
     public Mesa(int capacidad, String ubicacion, Evento evento, List<Reserva> reservas, EstadoMesa estado) {

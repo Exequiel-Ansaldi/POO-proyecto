@@ -54,7 +54,10 @@ public class MainTaller {
         // Crear listas de clientes y reservas
         ListaCliente listaCliente = new ListaCliente(new ArrayList<>());
         ListaReserva listaReserva = new ListaReserva();
+
         ListaMesa listaMesa = new ListaMesa();
+        listaMesa.agregarMesa(mesa);
+        listaMesa.agregarReservaAMesa(mesa, reserva);
 
         // Añadir el cliente a la lista de clientes
         listaCliente.agregarCliente(cliente);
@@ -66,6 +69,7 @@ public class MainTaller {
         try {
             listaCliente.escribirArchivo("C:\\Users\\GAMER\\Documents\\Taller POO\\CLASES-POO\\com\\resto\\data\\clientes.csv", ",");
             listaReserva.escribirArchivo("C:\\Users\\GAMER\\Documents\\Taller POO\\CLASES-POO\\com\\resto\\data\\reservas.csv", ",");
+            listaMesa.escribirArchivo("C:\\Users\\GAMER\\Documents\\Taller POO\\CLASES-POO\\com\\resto\\data\\mesas.csv", " , ");
         } catch (IOException e) {
             e.printStackTrace();
         }
