@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc35265b-e20e-47ec-ab1c-2b6d08796871" name="Changes" comment="ventanas de identificacion y verificacion de codigo de rol" />
+    <list default="true" id="fc35265b-e20e-47ec-ab1c-2b6d08796871" name="Changes" comment="probando interfaces" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,7 +19,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -48,7 +47,7 @@
   "keyToString": {
     "Application.MainTaller.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "4",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "453",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/GAMER/tp4",
@@ -126,6 +125,7 @@
       <workItem from="1729732141072" duration="2555000" />
       <workItem from="1729734897282" duration="53000" />
       <workItem from="1729785401435" duration="2497000" />
+      <workItem from="1729801645109" duration="1190000" />
     </task>
     <task id="LOCAL-00001" summary="Metodo reservarMesa en cliente">
       <option name="closed" value="true" />
@@ -327,7 +327,31 @@
       <option name="project" value="LOCAL" />
       <updated>1729789295988</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="probando interfaces">
+      <option name="closed" value="true" />
+      <created>1729802720478</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1729802720478</updated>
+    </task>
+    <task id="LOCAL-00027" summary="probando interfaces">
+      <option name="closed" value="true" />
+      <created>1729802740879</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1729802740879</updated>
+    </task>
+    <task id="LOCAL-00028" summary="probando interfaces">
+      <option name="closed" value="true" />
+      <created>1729802767272</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1729802767272</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -368,19 +392,11 @@
     <MESSAGE value="creadas" />
     <MESSAGE value="primer ventana hecha" />
     <MESSAGE value="ventanas de identificacion y verificacion de codigo de rol" />
-    <option name="LAST_COMMIT_MESSAGE" value="ventanas de identificacion y verificacion de codigo de rol" />
+    <MESSAGE value="probando interfaces" />
+    <option name="LAST_COMMIT_MESSAGE" value="probando interfaces" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/MainTaller.java</url>
-          <line>77</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="args" />

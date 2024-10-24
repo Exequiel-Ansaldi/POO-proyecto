@@ -13,18 +13,18 @@ public class VentanaIdentificacion extends JFrame {
     private JLabel Titulo;
 
     public VentanaIdentificacion() {
-        JFrame frame = new JFrame("Identificación");
-        frame.setContentPane(panel);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
+        setTitle("Identificación");
+        setContentPane(panel);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        pack();
+        setLocationRelativeTo(null);
+        setVisible(true);
 
         clienteButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //new VentanaReservas();
-                dispose();
+                VentanaIdentificacion.this.dispose();
             }
         });
 
@@ -33,7 +33,7 @@ public class VentanaIdentificacion extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new VentanaVerificarRol();
-                dispose();
+                VentanaIdentificacion.this.dispose();
             }
         });
     }
