@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc35265b-e20e-47ec-ab1c-2b6d08796871" name="Changes" comment="push" />
+    <list default="true" id="fc35265b-e20e-47ec-ab1c-2b6d08796871" name="Changes" comment="ventanas de identificacion y verificacion de codigo de rol" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,8 +46,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.MainTaller.executor": "Debug",
+    "Application.MainTaller.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "4",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/GAMER/tp4",
@@ -121,7 +122,10 @@
       <workItem from="1729724002306" duration="24000" />
       <workItem from="1729725364328" duration="99000" />
       <workItem from="1729727860961" duration="302000" />
-      <workItem from="1729728489794" duration="1071000" />
+      <workItem from="1729728489794" duration="2418000" />
+      <workItem from="1729732141072" duration="2555000" />
+      <workItem from="1729734897282" duration="53000" />
+      <workItem from="1729785401435" duration="2497000" />
     </task>
     <task id="LOCAL-00001" summary="Metodo reservarMesa en cliente">
       <option name="closed" value="true" />
@@ -275,7 +279,55 @@
       <option name="project" value="LOCAL" />
       <updated>1729727916122</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Empezando interfaz">
+      <option name="closed" value="true" />
+      <created>1729731798768</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1729731798768</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Empezando interfaz">
+      <option name="closed" value="true" />
+      <created>1729733161741</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1729733161741</updated>
+    </task>
+    <task id="LOCAL-00022" summary="borre las clases para arrancar devuelta">
+      <option name="closed" value="true" />
+      <created>1729733587992</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1729733587992</updated>
+    </task>
+    <task id="LOCAL-00023" summary="creadas">
+      <option name="closed" value="true" />
+      <created>1729733685252</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1729733685252</updated>
+    </task>
+    <task id="LOCAL-00024" summary="primer ventana hecha">
+      <option name="closed" value="true" />
+      <created>1729734713071</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1729734713071</updated>
+    </task>
+    <task id="LOCAL-00025" summary="ventanas de identificacion y verificacion de codigo de rol">
+      <option name="closed" value="true" />
+      <created>1729789295988</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1729789295988</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -311,7 +363,12 @@
     <MESSAGE value="agregue metodos para tomar instancias ya creadas en las otras listas" />
     <MESSAGE value="carga de datos csv, falta debugear para aplicarle los metodos" />
     <MESSAGE value="push" />
-    <option name="LAST_COMMIT_MESSAGE" value="push" />
+    <MESSAGE value="Empezando interfaz" />
+    <MESSAGE value="borre las clases para arrancar devuelta" />
+    <MESSAGE value="creadas" />
+    <MESSAGE value="primer ventana hecha" />
+    <MESSAGE value="ventanas de identificacion y verificacion de codigo de rol" />
+    <option name="LAST_COMMIT_MESSAGE" value="ventanas de identificacion y verificacion de codigo de rol" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="XDebuggerManager">
