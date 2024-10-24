@@ -87,7 +87,7 @@ public class Reserva {
         return this.horainicioreserva;
     }
 
-    public void setHora(LocalTime horainicioreserva) {
+    public void setHorainicioreserva(LocalTime horainicioreserva) {
         this.horainicioreserva = horainicioreserva;
     }
 
@@ -212,7 +212,7 @@ public class Reserva {
         for(Reserva x : listaReservas){
             if(x.equals(reserva)){
                 x.setFecha(fecha);
-                x.setHora(horainicioreserva);
+                x.setHorainicioreserva(horainicioreserva);
                 x.setMesa(mesa);
                 reservaEncontrada = true;
                 System.out.println("La reserva fue modificada exitosamente");
