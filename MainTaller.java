@@ -5,7 +5,7 @@
 package com.mycompany.tallerpoo;
 
 import com.mycompany.tallerpoo.com.resto.Evento;
-import com.mycompany.tallerpoo.com.resto.InterfazG.VentanaIdentificacion;
+import com.mycompany.tallerpoo.com.resto.InterfazG.VentanaI;
 import com.mycompany.tallerpoo.com.resto.mesa.ListaMesa;
 import com.mycompany.tallerpoo.com.resto.reserva.ListaReserva;
 import com.mycompany.tallerpoo.com.resto.reserva.Reserva;
@@ -78,7 +78,7 @@ public class MainTaller {
 
         reserva.confirmarReserva(listaReserva);
 
-        VentanaIdentificacion ventanaIdentificacion = new VentanaIdentificacion();
+        VentanaI ventanaIdentificacion = new VentanaI();
         ventanaIdentificacion.setVisible(true);
         // Guardar los datos del cliente en el archivo
         try {

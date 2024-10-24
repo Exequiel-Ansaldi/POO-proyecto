@@ -4,7 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc35265b-e20e-47ec-ab1c-2b6d08796871" name="Changes" comment="probando interfaces" />
+    <list default="true" id="fc35265b-e20e-47ec-ab1c-2b6d08796871" name="Changes" comment="mejora en las interfaces">
+      <change afterPath="$PROJECT_DIR$/com/resto/InterfazG/VentanaIdentificacionC/VentanaIdentificacionCliente.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/com/resto/InterfazG/VentanaIdentificacionC/VentanaIdentificacionCliente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/com/resto/InterfazG/VentanaIdentificacionC/VentanaInicio.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/com/resto/InterfazG/VentanaIdentificacionC/VentanaInicio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainTaller.java" beforeDir="false" afterPath="$PROJECT_DIR$/MainTaller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/resto/InterfazG/VentanaIdentificacion.form" beforeDir="false" afterPath="$PROJECT_DIR$/com/resto/InterfazG/VentanaI.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/resto/InterfazG/VentanaIdentificacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/resto/InterfazG/VentanaI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/resto/cliente/ListaCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/resto/cliente/ListaCliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/MainTaller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/MainTaller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/com/resto/InterfazG/VentanaIdentificacion$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/com/resto/InterfazG/VentanaIdentificacion$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/com/resto/InterfazG/VentanaIdentificacion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/com/resto/InterfazG/VentanaVerificarRol/VentanaVerificarRol$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/com/resto/InterfazG/VentanaVerificarRol/VentanaVerificarRol$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/com/resto/InterfazG/VentanaVerificarRol/VentanaVerificarRol.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/com/resto/InterfazG/VentanaVerificarRol/VentanaVerificarRol.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,7 +63,8 @@
   "keyToString": {
     "Application.MainTaller.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "453",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "true",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "48",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/GAMER/tp4",
@@ -126,6 +143,8 @@
       <workItem from="1729734897282" duration="53000" />
       <workItem from="1729785401435" duration="2497000" />
       <workItem from="1729801645109" duration="1190000" />
+      <workItem from="1729803668163" duration="721000" />
+      <workItem from="1729806362786" duration="2515000" />
     </task>
     <task id="LOCAL-00001" summary="Metodo reservarMesa en cliente">
       <option name="closed" value="true" />
@@ -351,7 +370,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729802767272</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="mejora en las interfaces">
+      <option name="closed" value="true" />
+      <created>1729804390274</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1729804390274</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -393,7 +420,8 @@
     <MESSAGE value="primer ventana hecha" />
     <MESSAGE value="ventanas de identificacion y verificacion de codigo de rol" />
     <MESSAGE value="probando interfaces" />
-    <option name="LAST_COMMIT_MESSAGE" value="probando interfaces" />
+    <MESSAGE value="mejora en las interfaces" />
+    <option name="LAST_COMMIT_MESSAGE" value="mejora en las interfaces" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="XDebuggerManager">

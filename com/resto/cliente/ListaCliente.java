@@ -20,7 +20,7 @@ public class ListaCliente {
     /**
      * Lista que almacena los clientes.
      */
-    ArrayList<Cliente> clientes;
+    static ArrayList<Cliente> clientes;
 
     //-----------------------------------------CONSTRUCTORES--------------------------------------------------
     /**
@@ -182,8 +182,6 @@ public class ListaCliente {
         }
         finally {
             try {
-                // Nuevamente aprovechamos el finally para
-                // asegurarnos que se cierra el fichero.
                 if (null != nuevo)
                     nuevo.close();
             } catch (Exception e2) {
@@ -191,5 +189,12 @@ public class ListaCliente {
             }
         }
     }
-
+    public static Cliente buscarCliente(String correo, String contrasenia) {
+        for (Cliente cliente : clientes) {
+            if (cliente.getCorreo().equals(correo) && cliente.getContrasenia().equals(contrasenia)) {
+                return cliente;
+            }
+        }
+        return null;
+    }
 }
