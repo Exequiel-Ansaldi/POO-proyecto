@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc35265b-e20e-47ec-ab1c-2b6d08796871" name="Changes" comment="carga de datos csv, falta debugear para aplicarle los metodos" />
+    <list default="true" id="2fc00740-3abc-4f65-b3e2-991c9e2adcb6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/MainTaller.java" beforeDir="false" afterPath="$PROJECT_DIR$/MainTaller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/resto/Resto.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/resto/Resto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/resto/reserva/ListaReserva.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/resto/reserva/ListaReserva.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/resto/reserva/Reserva.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/resto/reserva/Reserva.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/MainTaller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/MainTaller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/com/resto/Agenda.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/com/resto/Agenda.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/com/resto/Evento.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/com/resto/Evento.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/com/resto/Resto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/com/resto/Resto.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,288 +29,69 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
-  </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;Exequiel-Ansaldi&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Programacion-orientada-a-objetos-UNER/CLASES-POO.git&quot;,
-    &quot;accountId&quot;: &quot;a6a10552-bc3c-4458-98c6-8b74d0099e25&quot;
-  }
-}</component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 0
+  &quot;associatedIndex&quot;: 4
 }</component>
-  <component name="ProjectId" id="2nTub0hmD12GVVh2Jl8Pgpk5HQD" />
+  <component name="ProjectId" id="2nXWcC6Mssd9XrbmQSxk6erhc4E" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;Application.MainTaller.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MainTaller.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/GAMER/tp4&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/SANTI-PC/Desktop/others/FACULTAD/2do/poo/TALLER/clonarRep&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.qodana&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\GAMER\Documents\Taller POO\CLASES-POO\com\resto\data" />
-    </key>
-  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
       </set>
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="fc35265b-e20e-47ec-ab1c-2b6d08796871" name="Changes" comment="" />
-      <created>1729009454775</created>
+      <changelist id="2fc00740-3abc-4f65-b3e2-991c9e2adcb6" name="Changes" comment="" />
+      <created>1729119977501</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1729009454775</updated>
-      <workItem from="1729009456221" duration="120000" />
-      <workItem from="1729009582599" duration="288000" />
-      <workItem from="1729010201395" duration="429000" />
-      <workItem from="1729027334767" duration="37000" />
-      <workItem from="1729030868018" duration="81000" />
-      <workItem from="1729031137139" duration="11000" />
-      <workItem from="1729031152894" duration="103000" />
-      <workItem from="1729089546489" duration="372000" />
-      <workItem from="1729091319857" duration="2663000" />
-      <workItem from="1729106366519" duration="135000" />
-      <workItem from="1729107972822" duration="62000" />
-      <workItem from="1729108090110" duration="4182000" />
-      <workItem from="1729112427034" duration="51000" />
-      <workItem from="1729112644865" duration="1106000" />
-      <workItem from="1729114854112" duration="270000" />
-      <workItem from="1729115164103" duration="42000" />
-      <workItem from="1729115226218" duration="1360000" />
-      <workItem from="1729125057847" duration="194000" />
-      <workItem from="1729127888128" duration="67000" />
-      <workItem from="1729127987797" duration="63000" />
-      <workItem from="1729135834190" duration="1535000" />
-      <workItem from="1729173288825" duration="336000" />
-      <workItem from="1729173632387" duration="1319000" />
-      <workItem from="1729200353388" duration="18000" />
-      <workItem from="1729476176162" duration="2813000" />
-      <workItem from="1729569140867" duration="2017000" />
-      <workItem from="1729633548222" duration="3258000" />
-      <workItem from="1729651032142" duration="5006000" />
-      <workItem from="1729694120015" duration="2989000" />
-      <workItem from="1729697155377" duration="450000" />
-      <workItem from="1729697622388" duration="445000" />
-      <workItem from="1729698081769" duration="179000" />
-      <workItem from="1729698304171" duration="614000" />
-      <workItem from="1729699242162" duration="639000" />
-      <workItem from="1729699892974" duration="8373000" />
-      <workItem from="1729708409377" duration="2860000" />
+      <updated>1729119977501</updated>
+      <workItem from="1729119978621" duration="2649000" />
+      <workItem from="1729205949196" duration="1835000" />
+      <workItem from="1729261210840" duration="7669000" />
+      <workItem from="1729281200560" duration="2000" />
+      <workItem from="1729366248212" duration="5000" />
+      <workItem from="1729523894754" duration="1423000" />
+      <workItem from="1729525349221" duration="121000" />
+      <workItem from="1729599840866" duration="224000" />
+      <workItem from="1729628641606" duration="913000" />
+      <workItem from="1729630644364" duration="496000" />
+      <workItem from="1729635535145" duration="2000" />
+      <workItem from="1729650491197" duration="1575000" />
+      <workItem from="1729693742214" duration="19610000" />
+      <workItem from="1729719022401" duration="1318000" />
+      <workItem from="1729721439381" duration="601000" />
     </task>
-    <task id="LOCAL-00001" summary="Metodo reservarMesa en cliente">
-      <option name="closed" value="true" />
-      <created>1729094136189</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1729094136189</updated>
-    </task>
-    <task id="LOCAL-00002" summary="&#10;Crear cuenta en empleado, constructor en mesa, metodo desbloquear(continuarlo)">
-      <option name="closed" value="true" />
-      <created>1729111662540</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1729111662540</updated>
-    </task>
-    <task id="LOCAL-00003" summary="&#10;probando en el main algunos metodos de Cliente">
-      <option name="closed" value="true" />
-      <created>1729137363874</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1729137363874</updated>
-    </task>
-    <task id="LOCAL-00004" summary="metodo de bloquear y desbloquear mesa +algunas correciones en tipos de variables">
-      <option name="closed" value="true" />
-      <created>1729174932400</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1729174932400</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Metodos ToString() y clase Reporte(faltan 3 metodos)">
-      <option name="closed" value="true" />
-      <created>1729478993298</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1729478993298</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Metodos de reporte">
-      <option name="closed" value="true" />
-      <created>1729571121551</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1729571121551</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Agregue data, carpeta que tiene los txt de las clases y probe la lista clientes en el main(seguir mismo formato para todas las que me faltan)">
-      <option name="closed" value="true" />
-      <created>1729636786990</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1729636786990</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Agregue data, carpeta que tiene los txt de las clases y probe la lista clientes en el main(seguir mismo formato para todas las que me faltan)">
-      <option name="closed" value="true" />
-      <created>1729651066927</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1729651066927</updated>
-    </task>
-    <task id="LOCAL-00009" summary=" probando la lista clientes en el main(seguir mismo formato para todas las que faltan)">
-      <option name="closed" value="true" />
-      <created>1729652558446</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1729652558446</updated>
-    </task>
-    <task id="LOCAL-00010" summary="agregue Lista de Reservas csv">
-      <option name="closed" value="true" />
-      <created>1729656007076</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1729656007076</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Lista de reservas terminada">
-      <option name="closed" value="true" />
-      <created>1729696610793</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1729696610793</updated>
-    </task>
-    <task id="LOCAL-00012" summary=".">
-      <option name="closed" value="true" />
-      <created>1729697202501</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1729697202501</updated>
-    </task>
-    <task id="LOCAL-00013" summary="error de importacioon">
-      <option name="closed" value="true" />
-      <created>1729697482664</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1729697482664</updated>
-    </task>
-    <task id="LOCAL-00014" summary="ListaAdmins">
-      <option name="closed" value="true" />
-      <created>1729705284326</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1729705284326</updated>
-    </task>
-    <task id="LOCAL-00015" summary="agregue lista de mesas y admins">
-      <option name="closed" value="true" />
-      <created>1729705581539</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1729705581539</updated>
-    </task>
-    <task id="LOCAL-00016" summary="agregue metodos para tomar instancias ya creadas">
-      <option name="closed" value="true" />
-      <created>1729706483554</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1729706483554</updated>
-    </task>
-    <task id="LOCAL-00017" summary="agregue metodos para tomar instancias ya creadas en las otras listas">
-      <option name="closed" value="true" />
-      <created>1729707471302</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1729707471302</updated>
-    </task>
-    <task id="LOCAL-00018" summary="carga de datos csv, falta debugear para aplicarle los metodos">
-      <option name="closed" value="true" />
-      <created>1729709665573</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1729709665573</updated>
-    </task>
-    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Metodo reservarMesa en cliente" />
-    <MESSAGE value="&#10;Crear cuenta en empleado, constructor en mesa, metodo desbloquear(continuarlo)" />
-    <MESSAGE value="&#10;probando en el main algunos metodos de Cliente" />
-    <MESSAGE value="metodo de bloquear y desbloquear mesa +algunas correciones en tipos de variables" />
-    <MESSAGE value="Metodos ToString() y clase Reporte(faltan 3 metodos)" />
-    <MESSAGE value="Metodos de reporte" />
-    <MESSAGE value="Agregue data, carpeta que tiene los txt de las clases y probe la lista clientes en el main(seguir mismo formato para todas las que me faltan)" />
-    <MESSAGE value=" probando la lista clientes en el main(seguir mismo formato para todas las que faltan)" />
-    <MESSAGE value="agregue Lista de Reservas csv" />
-    <MESSAGE value="Lista de reservas terminada" />
-    <MESSAGE value="." />
-    <MESSAGE value="error de importacioon" />
-    <MESSAGE value="ListaAdmins" />
-    <MESSAGE value="agregue lista de mesas y admins" />
-    <MESSAGE value="agregue metodos para tomar instancias ya creadas" />
-    <MESSAGE value="agregue metodos para tomar instancias ya creadas en las otras listas" />
-    <MESSAGE value="carga de datos csv, falta debugear para aplicarle los metodos" />
-    <option name="LAST_COMMIT_MESSAGE" value="carga de datos csv, falta debugear para aplicarle los metodos" />
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
   </component>
 </project>

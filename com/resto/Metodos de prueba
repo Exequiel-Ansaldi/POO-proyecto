@@ -1,0 +1,6 @@
+Método enviarRecordatorio
+        Reserva reserva = new Reserva();
+        LocalDate fechaEspecifica = LocalDate.of(2023, 3, 15);
+        reserva.setFecha(fechaEspecifica);
+        reserva.enviarRecordatorioReserva("carolinaittermann@gmail.com");
+

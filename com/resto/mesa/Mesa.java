@@ -228,9 +228,11 @@ public class Mesa {
         return "Mesa{" +
                 "capacidad=" + capacidad +
                 ", ubicacion='" + ubicacion + '\'' +
+                ", numero="+
                 ", reservas=" + reservas +
                 ", evento=" + evento +
                 ", estado=" + estado +
+
                 '}';
     }
 }

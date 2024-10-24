@@ -83,7 +83,7 @@ public class Reserva {
         this.empleados = empleados;
     }
 
-    public LocalTime getHora() {
+    public LocalTime getHorainicioreserva() {
         return this.horainicioreserva;
     }
 
@@ -158,7 +158,7 @@ public class Reserva {
      * El método `confirmarReserva` comprueba si una mesa está disponible en una fecha y horainicioreserva especificadas, y
      * si es así, agrega la reserva a una lista.
      */
-    public void confirmarReserva(ListaReserva lista){
+    public void confirmarReserva(ListaReserva lista) {
         try {
             lista.leerArchivo("com/resto/data/reservas.csv", ",");
             System.out.println("Reservas cargadas: " + lista.getReservas().size());
@@ -172,26 +172,22 @@ public class Reserva {
         for (Reserva reserva : lista.getReservas()) {
             boolean fechasCoinciden = reserva.getFecha().equals(this.fecha);
 
-            //solapamiento de horas
-            boolean horaInicioDentroRango = !this.horainicioreserva.isBefore(reserva.getHora()) && this.horainicioreserva.isBefore(reserva.getHorafinalreserva());
-            boolean horaFinDentroRango = !this.horafinalreserva.isBefore(reserva.getHora()) && this.horafinalreserva.isBefore(reserva.getHorafinalreserva());
+            // Check for overlapping time
+            boolean overlaps = !this.horainicioreserva.isAfter(reserva.getHorafinalreserva()) &&
+                    !this.horafinalreserva.isBefore(reserva.getHorainicioreserva());
 
-
-            if (reserva.getMesa().equals(this.mesa) &&
-                    fechasCoinciden &&
-                    //Se comprueba si la nueva hora de inicio o fin de la reserva cae dentro del rango de alguna reserva ya existente para esa mesa.
-                    (horaInicioDentroRango || horaFinDentroRango)) {
+            if (reserva.getMesa().equals(this.mesa) && fechasCoinciden && overlaps) {
                 mesaDisponible = false;
                 break;
             }
         }
 
         if (mesaDisponible) {
-            // Si la mesa está disponible, agregar la reserva a la lista
+            // If the table is available, add the reservation to the list
             lista.agregarReserva(this);
             System.out.println("Reserva confirmada para " + cliente.getNombre() + " el " + fecha + " a las " + horainicioreserva);
         } else {
-            System.out.println("La mesa no está disponible en la fecha y horainicioreserva seleccionadas.");
+            System.out.println("La mesa no está disponible en la fecha y hora seleccionadas.");
         }
     }
 

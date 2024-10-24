@@ -29,14 +29,8 @@ public class MainTaller {
     public static void main(String[] args) throws IOException {
         System.out.println("Hello World!");
 
-        //Método enviarRecordatorio
-        /*Reserva reserva = new Reserva();
-        LocalDate fechaEspecifica = LocalDate.of(2023, 3, 15);
-        reserva.setFecha(fechaEspecifica);
-        reserva.enviarRecordatorioReserva("carolinaittermann@gmail.com");*/
-
         // Crear un cliente
-        Cliente cliente = new Cliente("Juan", "juan@example.com", "1234", "987654321", new ArrayList<>());
+        Cliente cliente = new Cliente("pedro", "juan@example.com", "1234", "987654321", new ArrayList<>());
 
         // Crear una mesa
         Mesa mesa = new Mesa(4, "Patio", EstadoMesa.Disponible);
@@ -55,12 +49,25 @@ public class MainTaller {
         // Crear listas de clientes y reservas
         ListaCliente listaCliente = new ListaCliente(new ArrayList<>());
         ListaReserva listaReserva = new ListaReserva();
-        Evento evento = new Evento();
+
+        LocalDate dia = LocalDate.of(2024, 10, 23);
+        LocalTime horainicio = LocalTime.of(12, 0);
+        LocalTime horafin = LocalTime.of(14, 0);
+        Evento evento = new Evento("Cumple", "prueba", dia, horainicio, horafin, new ArrayList<>());
+
+        mesa.setEvento(evento);
 
         ListaMesa listaMesa = new ListaMesa();
         listaMesa.agregarMesa(mesa);
         listaMesa.agregarReservaAMesa(mesa, reserva);
         listaMesa.agregarEventoAMesa(mesa, evento);
+
+        Evento eventoAsociado = mesa.getEvento(); // Get the associated event
+        if (eventoAsociado != null) {
+            System.out.println("Evento asociado a la mesa: " + eventoAsociado.toString());
+        } else {
+            System.out.println("No hay evento asociado a la mesa.");
+        }
 
         // Añadir el cliente a la lista de clientes
         listaCliente.agregarCliente(cliente);
@@ -72,9 +79,9 @@ public class MainTaller {
 
         // Guardar los datos del cliente en el archivo
         try {
-            listaCliente.escribirArchivo("C:\\Users\\GAMER\\Documents\\Taller POO\\CLASES-POO\\com\\resto\\data\\clientes.csv", ",");
-            listaReserva.escribirArchivo("C:\\Users\\GAMER\\Documents\\Taller POO\\CLASES-POO\\com\\resto\\data\\reservas.csv", ",");
-            listaMesa.escribirArchivo("C:\\Users\\GAMER\\Documents\\Taller POO\\CLASES-POO\\com\\resto\\data\\mesas.csv", " , ");
+            listaCliente.escribirArchivo("com/resto/data/clientes.csv", ",");
+            listaReserva.escribirArchivo("com/resto/data/reservas.csv", ",");
+            listaMesa.escribirArchivo("com/resto/data/mesas.csv", " , ");
         } catch (IOException e) {
             e.printStackTrace();
         }
