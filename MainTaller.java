@@ -36,6 +36,7 @@ public class MainTaller {
         // Crear una mesa
         Mesa mesa = new Mesa(4, "Patio", EstadoMesa.Disponible);
 
+        Cliente cliente1 = new Cliente("exe", "exeansaldi0@gmail.com", "12345", "987654321", new ArrayList<>());
         // Crear una reserva
         LocalDate fecha = LocalDate.now();
         LocalTime horaInicio = LocalTime.of(12, 0);
@@ -44,8 +45,16 @@ public class MainTaller {
 
         Reserva reserva = new Reserva(fecha, asistencia, horaInicio, horaFin, mesa, cliente);
 
+        LocalDate fecha1 = LocalDate.now();
+        LocalTime horaInicio1 = LocalTime.of(15, 0);
+        LocalTime horaFin1 = LocalTime.of(19, 0);
+        Asistencia asistencia1 = Asistencia.Asiste;
+
+        Reserva reserva1 = new Reserva(fecha1, asistencia1, horaInicio1, horaFin1, mesa, cliente1);
+
         // Agregar la reserva a la lista de reservas del cliente
         cliente.getReservas().add(reserva);
+        cliente1.getReservas().add(reserva1);
 
         // Crear listas de clientes y reservas
         ListaCliente listaCliente = new ListaCliente(new ArrayList<>());
@@ -72,9 +81,11 @@ public class MainTaller {
 
         // Añadir el cliente a la lista de clientes
         listaCliente.agregarCliente(cliente);
+        listaCliente.agregarCliente(cliente1);
 
         // Añadir la reserva a la lista de reservas
         listaReserva.agregarReserva(reserva);
+        listaReserva.agregarReserva(reserva1);
 
         reserva.confirmarReserva(listaReserva);
 
