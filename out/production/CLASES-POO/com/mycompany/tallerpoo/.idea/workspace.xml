@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc35265b-e20e-47ec-ab1c-2b6d08796871" name="Changes" comment="se pudo hacer el inicio de sesion, pero da error en la lectura de campos" />
+    <list default="true" id="fc35265b-e20e-47ec-ab1c-2b6d08796871" name="Changes" comment="empezando con la parte de reservas">
+      <change afterPath="$PROJECT_DIR$/com/resto/InterfazG/VentanaIdentificacionC/VentanaRegistrarse.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/com/resto/InterfazG/VentanaIdentificacionC/VentanaRegistrarse.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,8 +50,12 @@
   "keyToString": {
     "Application.MainTaller.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "true",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "466",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "true",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.STATE": "right",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "189",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "false",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.STATE": "left",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "279",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/GAMER/tp4",
@@ -131,6 +138,8 @@
       <workItem from="1729806362786" duration="2515000" />
       <workItem from="1729808899007" duration="1013000" />
       <workItem from="1729858588854" duration="2596000" />
+      <workItem from="1729876719200" duration="2027000" />
+      <workItem from="1729880569980" duration="1121000" />
     </task>
     <task id="LOCAL-00001" summary="Metodo reservarMesa en cliente">
       <option name="closed" value="true" />
@@ -380,7 +389,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729861209842</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="empezando con la parte de reservas">
+      <option name="closed" value="true" />
+      <created>1729878750786</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1729878750786</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -398,7 +415,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="&#10;probando en el main algunos metodos de Cliente" />
     <MESSAGE value="metodo de bloquear y desbloquear mesa +algunas correciones en tipos de variables" />
     <MESSAGE value="Metodos ToString() y clase Reporte(faltan 3 metodos)" />
     <MESSAGE value="Metodos de reporte" />
@@ -423,7 +439,8 @@
     <MESSAGE value="mejora en las interfaces" />
     <MESSAGE value="llegue hasta la ventana de inicio de sesion, hay que ver el metodo de leer archivo" />
     <MESSAGE value="se pudo hacer el inicio de sesion, pero da error en la lectura de campos" />
-    <option name="LAST_COMMIT_MESSAGE" value="se pudo hacer el inicio de sesion, pero da error en la lectura de campos" />
+    <MESSAGE value="empezando con la parte de reservas" />
+    <option name="LAST_COMMIT_MESSAGE" value="empezando con la parte de reservas" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -431,7 +448,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/MainTaller.java</url>
-          <line>85</line>
+          <line>96</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

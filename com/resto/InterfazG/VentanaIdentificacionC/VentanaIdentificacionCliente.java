@@ -27,7 +27,7 @@ public class VentanaIdentificacionCliente extends  JFrame{
         registro.addActionListener(new ActionListener() {
            @Override
            public void actionPerformed(ActionEvent e) {
-               //new Registrarse;
+               new VentanaRegistrarse();
                dispose();
            }
         });

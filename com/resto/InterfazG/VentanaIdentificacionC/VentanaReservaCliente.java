@@ -24,8 +24,8 @@ public class VentanaReservaCliente extends JFrame {
         pack();
         setLocationRelativeTo(null);
         setVisible(true);
-        modeloReservas = new DefaultListModel<>();
-        scroll.setModel(modeloReservas);
+        //modeloReservas = new DefaultListModel<>();
+        //scroll.setModel(modeloReservas);
         reservar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
