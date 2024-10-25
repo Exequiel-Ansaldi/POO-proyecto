@@ -12,12 +12,12 @@ public class VentanaVerificarRol extends JFrame {
     private JTextField ingreso;
     private JButton verificarButton;
     public VentanaVerificarRol() {
-        JFrame frame = new JFrame("Verificación");
-        frame.setContentPane(panel);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
+        setTitle("Verificacion");
+        setContentPane(panel);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        pack();
+        setLocationRelativeTo(null);
+        setVisible(true);
         verificarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -27,7 +27,7 @@ public class VentanaVerificarRol extends JFrame {
                 } else if (codigoRol.equalsIgnoreCase("Mesero") || codigoRol.equalsIgnoreCase("Maitre")) {
                     //new VentanaReservas();
                 } else {
-                    JOptionPane.showMessageDialog(null, "Código de rol no válido");
+                    JOptionPane.showMessageDialog(null, "Código de rol no válido", "ERROR" ,JOptionPane.ERROR_MESSAGE);
                 }
                 dispose();
             }
