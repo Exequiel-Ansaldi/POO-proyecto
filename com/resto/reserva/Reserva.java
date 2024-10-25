@@ -298,15 +298,11 @@ public class Reserva {
     @Override
     public String toString() {
         return "Reserva{" +
-                "fecha=" + fecha +
-                ", hora de inicio de la reserva=" + horainicioreserva +
-                ", hora final de la reserva= " + horafinalreserva + 
-                ", asistencia=" + asistencia +
-                ", cliente=" + cliente +
-                ", mesa=" + mesa +
-                ", empleados=" + empleados +
-                ", pagos=" + pagos +
-                ", listaReservas=" + listaReservas +
+                "fecha=" + getFecha() +
+                ", asistencia=" + getAsistencia() +
+                ", horaInicio=" + getHorainicioreserva() +
+                ", horaFinal=" + getHorafinalreserva()+
+                ", mesa=" + (mesa != null ? mesa : "null") + // Evitar referencia cíclica
                 '}';
     }
 }

@@ -395,12 +395,30 @@ public class Cliente {
      */
     @Override
     public String toString() {
+        StringBuilder reservasInfo = new StringBuilder();
+        if (reservas != null && !reservas.isEmpty()) {
+            reservasInfo.append("[");
+            for (Reserva reserva : reservas) {
+                // Aquí puedes elegir qué información de la reserva mostrar
+                reservasInfo.append("Reserva{fecha='").append(reserva.getFecha()).append("', ");
+                reservasInfo.append("horaInicio='").append(reserva.getHorainicioreserva()).append("', ");
+                reservasInfo.append("horaFinal='").append(reserva.getHorafinalreserva()).append("'}, ");
+            }
+            // Eliminar la última coma y espacio
+            if (!reservasInfo.isEmpty()) {
+                reservasInfo.setLength(reservasInfo.length() - 2);
+            }
+            reservasInfo.append("]");
+        } else {
+            reservasInfo.append("[]"); // Si no hay reservas
+        }
+
         return "Cliente{" +
                 "nombre='" + nombre + '\'' +
                 ", correo='" + correo + '\'' +
-                ", contrasenia='" + contrasenia + '\'' +
+                ", contrasenia='" + (contrasenia != null ? "****" : "null") + '\'' + // No imprimir contraseñas
                 ", numero='" + numero + '\'' +
-                ", reservas=" + reservas +
+                ", reservas=" + reservasInfo.toString() +
                 '}';
     }
-}
+    }

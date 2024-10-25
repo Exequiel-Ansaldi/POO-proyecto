@@ -3,11 +3,8 @@ import com.mycompany.tallerpoo.com.resto.reserva.Reserva;
 import com.mycompany.tallerpoo.com.resto.finanza.Asistencia;
 import com.mycompany.tallerpoo.com.resto.mesa.Mesa;
 import com.mycompany.tallerpoo.com.resto.mesa.EstadoMesa;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+
+import java.io.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -23,6 +20,7 @@ public class ListaCliente {
     static ArrayList<Cliente> clientes;
 
     //-----------------------------------------CONSTRUCTORES--------------------------------------------------
+
     /**
      * Constructor por defecto que inicializa la lista de clientes.
      */
@@ -40,6 +38,7 @@ public class ListaCliente {
     }
 
     //----------------------------------------MÉTODOS----------------------------------------------------
+
     /**
      * Agrega un nuevo cliente a la lista.
      *
@@ -52,20 +51,20 @@ public class ListaCliente {
     /**
      * Agrega una reserva a un cliente específico en la lista.
      *
-     * @param reserva Reserva a agregar.
+     * @param reserva  Reserva a agregar.
      * @param clienteP Cliente al que se le agrega la reserva.
      */
-    public void agregarReserva(Reserva reserva,Cliente clienteP) {
+    public void agregarReserva(Reserva reserva, Cliente clienteP) {
         for (Cliente cliente : clientes) {
             if (cliente.equals(clienteP)) {
                 cliente.getReservas().add(reserva);
                 return;
             }
         }
-        System.out.println("Cliente no encontrado: " );
+        System.out.println("Cliente no encontrado: ");
     }
 
-     /**
+    /**
      * Elimina un cliente de la lista.
      *
      * @param cliente Cliente a eliminar.
@@ -78,47 +77,67 @@ public class ListaCliente {
         }
         return false;
     }
-     /**
+
+    /**
      * Lee clientes y sus reservas desde un archivo.
      *
-     * @param archivo Ruta del archivo a leer.
+     * @param archivo   Ruta del archivo a leer.
      * @param separador Separador utilizado en el archivo.
      * @throws IOException Si ocurre un error de entrada/salida al leer el archivo.
      */
     public void leerArchivo(String archivo, String separador) throws IOException {
-        BufferedReader br = null;
-        Cliente cliente;
-
-        try {
-            br = new BufferedReader(new FileReader(archivo));
-
+        try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
             String linea = br.readLine();
 
-            while (null != linea) {
+            while (linea != null) {
+                linea = linea.trim(); // Limpiar la línea
+
+                // Imprimir la línea original para depuración
+                System.out.println("Procesando línea: " + linea);
+
                 String[] campos = linea.split(separador);
-                cliente = new Cliente();
+                if (campos.length < 4) {
+                    System.err.println("Error: Línea con menos de 4 campos: " + linea);
+                    linea = br.readLine();
+                    continue; // Saltar a la siguiente línea
+                }
+
+                Cliente cliente = new Cliente();
                 cliente.setNombre(campos[0]);
                 cliente.setCorreo(campos[1]);
                 cliente.setContrasenia(campos[2]);
                 cliente.setNumero(campos[3]);
                 List<Reserva> reservas = new ArrayList<>();
-                if (campos.length > 4 && !campos[4].isEmpty()) {
-                    // Supongamos que las reservas están en el campo 4 y separadas por '|'
-                    String[] reservasData = campos[4].split("\\|");
-                    for (String reservaData : reservasData) {
-                        // Supongamos que cada reserva está en el formato: fecha,asistencia,horainicio,horafinal,mesa_id
-                        String[] reservaCampos = reservaData.split(",");
-                        LocalDate fecha = LocalDate.parse(reservaCampos[0]);
-                        Asistencia asistencia = Asistencia.valueOf(reservaCampos[1]); // Asumiendo que Asistencia es un enum
-                        LocalTime horaInicio = LocalTime.parse(reservaCampos[2]);
-                        LocalTime horaFinal = LocalTime.parse(reservaCampos[3]);
 
-                        int capacidad = Integer.parseInt(reservaCampos[4]);
-                        String ubicacion = reservaCampos[5];
-                        EstadoMesa estadoMesa = EstadoMesa.valueOf(reservaCampos[6]);
-                        Mesa mesa = new Mesa(capacidad, ubicacion, estadoMesa);
-                        Reserva reserva = new Reserva(fecha, asistencia, horaInicio, horaFinal, mesa, cliente);
-                        reservas.add(reserva);
+                // Verificar si hay datos de reservas
+                if (campos.length > 4) {
+                    // Procesar las reservas a partir del quinto campo
+                    for (int i = 4; i < campos.length; i++) {
+                        String[] reservaCampos = campos[i].split(","); // Separar campos de reserva
+
+                        // Imprimir la línea de reserva para depuración
+                        System.out.println("Procesando reserva: " + campos[i]);
+
+                        if (reservaCampos.length < 7) {
+                            System.err.println("Error: Reserva con menos de 7 campos: " + campos[i]);
+                            continue; // Saltar a la siguiente reserva
+                        }
+
+                        try {
+                            LocalDate fecha = LocalDate.parse(reservaCampos[0]);
+                            Asistencia asistencia = Asistencia.valueOf(reservaCampos[1]);
+                            LocalTime horaInicio = LocalTime.parse(reservaCampos[2]);
+                            LocalTime horaFinal = LocalTime.parse(reservaCampos[3]);
+
+                            int capacidad = Integer.parseInt(reservaCampos[4]);
+                            String ubicacion = reservaCampos[5];
+                            EstadoMesa estadoMesa = EstadoMesa.valueOf(reservaCampos[6]);
+                            Mesa mesa = new Mesa(capacidad, ubicacion, estadoMesa);
+                            Reserva reserva = new Reserva(fecha, asistencia, horaInicio, horaFinal, mesa, cliente);
+                            reservas.add(reserva);
+                        } catch (Exception e) {
+                            System.err.println("Error al procesar la reserva: " + campos[i] + " - " + e.getMessage());
+                        }
                     }
                 }
 
@@ -126,26 +145,19 @@ public class ListaCliente {
                 this.agregarCliente(cliente);
                 linea = br.readLine();
             }
-        } catch (Exception e) {
-                System.out.println(e.getMessage());
-        } finally {
-            if (null!=br) {
-                br.close();
-            }
-        }
-        System.out.println("cant" + this.clientes.size());
-        for (Cliente clie: clientes) {
-            System.out.println(clie.toString());
+        } catch (FileNotFoundException e) {
+            System.err.println("Error: Archivo no encontrado: " + e.getMessage());
+        } catch (IOException e) {
+            System.err.println("Error al leer el archivo: " + e.getMessage());
         }
     }
-
-    /**
-     * Escribe los clientes y sus reservas en un archivo.
-     *
-     * @param archivo Ruta del archivo donde se guardarán los datos.
-     * @param separador Separador utilizado para formatear la salida.
-     * @throws IOException Si ocurre un error de entrada/salida al escribir en el archivo.
-     */
+         /**
+          * Escribe los clientes y sus reservas en un archivo.
+          *
+          * @param archivo Ruta del archivo donde se guardarán los datos.
+          * @param separador Separador utilizado para formatear la salida.
+          * @throws IOException Si ocurre un error de entrada/salida al escribir en el archivo.
+          */
     public void escribirArchivo(String archivo, String separador) throws IOException {
         PrintWriter pw = null;
         FileWriter nuevo = null;

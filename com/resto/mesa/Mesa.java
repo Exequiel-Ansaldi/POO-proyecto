@@ -216,23 +216,38 @@ public class Mesa {
         }
         return mesasFiltradas;
     }
-    
-    @Override
+
     /**
      * Devuelve una representación en forma de cadena de la mesa.
      * 
      * @return Una cadena que representa los atributos de la mesa,
      *         incluyendo capacidad, ubicación, reservas, evento y estado.
      */
+    @Override
     public String toString() {
+        StringBuilder reservasInfo = new StringBuilder();
+        if (reservas != null && !reservas.isEmpty()) {
+            reservasInfo.append("[");
+            for (Reserva reserva : reservas) {
+                reservasInfo.append("Reserva{fecha='").append(reserva.getFecha()).append("', ");
+                reservasInfo.append("horaInicio='").append(reserva.getHorainicioreserva()).append("', ");
+                reservasInfo.append("horaFinal='").append(reserva.getHorafinalreserva()).append("'}, ");
+            }
+            // Eliminar la última coma y espacio
+            if (!reservasInfo.isEmpty()) {
+                reservasInfo.setLength(reservasInfo.length() - 2);
+            }
+            reservasInfo.append("]");
+        } else {
+            reservasInfo.append("[]"); // Si no hay reservas
+        }
+
         return "Mesa{" +
                 "capacidad=" + capacidad +
                 ", ubicacion='" + ubicacion + '\'' +
-                ", numero="+
-                ", reservas=" + reservas +
-                ", evento=" + evento +
-                ", estado=" + estado +
-
+                ", reservas=" + reservasInfo.toString() +
+                ", evento='" + evento + '\'' +
+                ", estado='" + estado + '\'' +
                 '}';
     }
 }
