@@ -19,7 +19,7 @@ public class VentanaRegistrarse extends JFrame {
     private JLabel textoContrasenia;
     private JLabel textoNum;
     private JButton boton;
-    public VentanaRegistrarse(ListaCliente listaCliente) {
+    public VentanaRegistrarse() {
         setTitle("Inicio de Sesión");
         setContentPane(panel1);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -52,14 +52,11 @@ public class VentanaRegistrarse extends JFrame {
                    return;
                }
 
-               // Crear un nuevo cliente
-               Cliente nuevoCliente = new Cliente(nombre, correo, numero, contrasenia);
 
-
-               listaCliente.existeCliente(nuevoCliente.getCorreo());
+               Cliente cliente = ListaCliente.buscarCliente(correo, contrasenia);
 
                // Agregar el cliente a la lista y guardar en el archivo CSV
-               listaCliente.agregarCliente(nuevoCliente);
+               listaCliente.agregarCliente(cliente);
                try {
                    listaCliente.escribirArchivo("data/clientes.csv", ","); // Asegúrate de ajustar la ruta y el separador
                    JOptionPane.showMessageDialog(VentanaRegistrarse.this, "Registro exitoso.", "Éxito", JOptionPane.INFORMATION_MESSAGE);

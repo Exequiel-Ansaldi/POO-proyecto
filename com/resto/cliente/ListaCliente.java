@@ -209,12 +209,5 @@ public class ListaCliente {
         }
         return null;
     }
-    public boolean existeCliente(String correo) {
-        for (Cliente cliente : clientes) {
-            if (cliente.getCorreo().equalsIgnoreCase(correo)) {
-                return true; // Si el correo coincide, el cliente ya está registrado
-            }
-        }
-        return false; // No se encontró ningún cliente con el correo dado
-    }
+
 }
