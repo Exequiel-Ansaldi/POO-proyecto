@@ -95,8 +95,7 @@ public class MainTaller {
         // Guardar los datos del cliente en el archivo
         listaCliente.guardarEnArchivo("com/resto/data/clientes.csv");
         listaCliente.cargarDesdeArchivo("com/resto/data/clientes.csv");
-        //listaReserva.escribirArchivo("com/resto/data/reservas.csv", ",");
-        //listaMesa.escribirArchivo("com/resto/data/mesas.csv", " , ");
+
     }
 }
 
