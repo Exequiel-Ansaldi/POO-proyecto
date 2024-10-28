@@ -56,14 +56,10 @@ public class VentanaRegistrarse extends JFrame {
                Cliente cliente = ListaCliente.buscarCliente(correo, contrasenia);
 
                // Agregar el cliente a la lista y guardar en el archivo CSV
-               listaCliente.agregarCliente(cliente);
-               try {
-                   listaCliente.escribirArchivo("data/clientes.csv", ","); // Asegúrate de ajustar la ruta y el separador
-                   JOptionPane.showMessageDialog(VentanaRegistrarse.this, "Registro exitoso.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
-                   dispose(); // Cerrar la ventana de registro una vez que el usuario se haya registrado
-               } catch (IOException ex) {
-                   JOptionPane.showMessageDialog(VentanaRegistrarse.this, "Error al guardar los datos: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-               }
+               //listaCliente.agregarCliente(cliente);
+               //listaCliente.escribirArchivo("data/clientes.csv", ","); // Asegúrate de ajustar la ruta y el separador
+               JOptionPane.showMessageDialog(VentanaRegistrarse.this, "Registro exitoso.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+               dispose(); // Cerrar la ventana de registro una vez que el usuario se haya registrado
            }
         });
     }
