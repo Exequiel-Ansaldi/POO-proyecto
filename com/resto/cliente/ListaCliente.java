@@ -14,200 +14,66 @@ import java.util.List;
  * Clase que representa una lista de clientes.
  */
 public class ListaCliente {
-    /**
-     * Lista que almacena los clientes.
-     */
-    static ArrayList<Cliente> clientes;
+    private List<Cliente> clientes;
 
-    //-----------------------------------------CONSTRUCTORES--------------------------------------------------
-
-    /**
-     * Constructor por defecto que inicializa la lista de clientes.
-     */
+    // Constructor
     public ListaCliente() {
         this.clientes = new ArrayList<>();
     }
 
-    /**
-     * Constructor que inicializa la lista de clientes con una lista existente.
-     *
-     * @param clientes Lista de clientes a inicializar.
-     */
-    public ListaCliente(ArrayList<Cliente> clientes) {
-        this.clientes = clientes;
+    // Método para cargar clientes desde un archivo
+    public void cargarDesdeArchivo(String nombreArchivo) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(nombreArchivo))) {
+            String linea;
+            while ((linea = reader.readLine()) != null) {
+                String[] datos = linea.split(",");
+                if (datos.length == 4) { // Asegurarse de que hay 4 campos
+                    Cliente cliente = new Cliente(datos[0], datos[1], datos[2], datos[3]);
+                    clientes.add(cliente);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    //----------------------------------------MÉTODOS----------------------------------------------------
+    // Método para guardar clientes en un archivo
+    public void guardarEnArchivo(String nombreArchivo) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(nombreArchivo))) {
+            for (Cliente cliente : clientes) {
+                writer.write(cliente.getNombre() + "," + cliente.getCorreo() + "," +
+                        cliente.getContrasenia() + "," + cliente.getNumero());
+                writer.newLine();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
-    /**
-     * Agrega un nuevo cliente a la lista.
-     *
-     * @param cliente Cliente a agregar.
-     */
+    // Método para obtener la lista de clientes
+    public List<Cliente> getClientes() {
+        return clientes;
+    }
+
+    // Método para agregar un cliente a la lista
     public void agregarCliente(Cliente cliente) {
         clientes.add(cliente);
     }
 
-    /**
-     * Agrega una reserva a un cliente específico en la lista.
-     *
-     * @param reserva  Reserva a agregar.
-     * @param clienteP Cliente al que se le agrega la reserva.
-     */
-    public void agregarReserva(Reserva reserva, Cliente clienteP) {
+    public static Cliente buscarCliente(String correo) {
         for (Cliente cliente : clientes) {
-            if (cliente.equals(clienteP)) {
-                cliente.getReservas().add(reserva);
-                return;
+            if (cliente.getCorreo().equalsIgnoreCase(correo)) {
+                return cliente; // Retorna el cliente si se encuentra
             }
         }
-        System.out.println("Cliente no encontrado: ");
+        return null; // Retorna null si no se encuentra
     }
 
-    /**
-     * Elimina un cliente de la lista.
-     *
-     * @param cliente Cliente a eliminar.
-     * @return Verdadero si el cliente fue eliminado, falso en caso contrario.
-     */
-    public boolean eliminarCliente(Cliente cliente) {
-        if (clientes.contains(cliente)) {
-            clientes.remove(cliente);
-            return true;
-        }
-        return false;
-    }
-
-    /**
-     * Lee clientes y sus reservas desde un archivo.
-     *
-     * @param archivo   Ruta del archivo a leer.
-     * @param separador Separador utilizado en el archivo.
-     * @throws IOException Si ocurre un error de entrada/salida al leer el archivo.
-     */
-    public void leerArchivo(String archivo, String separador) throws IOException {
-        try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
-            String linea = br.readLine();
-
-            while (linea != null) {
-                linea = linea.trim(); // Limpiar la línea
-
-                // Imprimir la línea original para depuración
-                System.out.println("Procesando línea: " + linea);
-
-                String[] campos = linea.split(separador);
-                if (campos.length < 4) {
-                    System.err.println("Error: Línea con menos de 4 campos: " + linea);
-                    linea = br.readLine();
-                    continue; // Saltar a la siguiente línea
-                }
-
-                Cliente cliente = new Cliente();
-                cliente.setNombre(campos[0]);
-                cliente.setCorreo(campos[1]);
-                cliente.setContrasenia(campos[2]);
-                cliente.setNumero(campos[3]);
-                List<Reserva> reservas = new ArrayList<>();
-
-                // Verificar si hay datos de reservas
-                if (campos.length > 4) {
-                    // Procesar las reservas a partir del quinto campo
-                    for (int i = 4; i < campos.length; i++) {
-                        String[] reservaCampos = campos[i].split(","); // Separar campos de reserva
-
-                        // Imprimir la línea de reserva para depuración
-                        System.out.println("Procesando reserva: " + campos[i]);
-
-                        if (reservaCampos.length < 7) {
-                            System.err.println("Error: Reserva con menos de 7 campos: " + campos[i]);
-                            continue; // Saltar a la siguiente reserva
-                        }
-
-                        try {
-                            LocalDate fecha = LocalDate.parse(reservaCampos[0]);
-                            Asistencia asistencia = Asistencia.valueOf(reservaCampos[1]);
-                            LocalTime horaInicio = LocalTime.parse(reservaCampos[2]);
-                            LocalTime horaFinal = LocalTime.parse(reservaCampos[3]);
-
-                            int capacidad = Integer.parseInt(reservaCampos[4]);
-                            String ubicacion = reservaCampos[5];
-                            EstadoMesa estadoMesa = EstadoMesa.valueOf(reservaCampos[6]);
-                            Mesa mesa = new Mesa(capacidad, ubicacion, estadoMesa);
-                            Reserva reserva = new Reserva(fecha, asistencia, horaInicio, horaFinal, mesa, cliente);
-                            reservas.add(reserva);
-                        } catch (Exception e) {
-                            System.err.println("Error al procesar la reserva: " + campos[i] + " - " + e.getMessage());
-                        }
-                    }
-                }
-
-                cliente.setReservas(reservas);
-                this.agregarCliente(cliente);
-                linea = br.readLine();
-            }
-        } catch (FileNotFoundException e) {
-            System.err.println("Error: Archivo no encontrado: " + e.getMessage());
-        } catch (IOException e) {
-            System.err.println("Error al leer el archivo: " + e.getMessage());
-        }
-    }
-         /**
-          * Escribe los clientes y sus reservas en un archivo.
-          *
-          * @param archivo Ruta del archivo donde se guardarán los datos.
-          * @param separador Separador utilizado para formatear la salida.
-          * @throws IOException Si ocurre un error de entrada/salida al escribir en el archivo.
-          */
-    public void escribirArchivo(String archivo, String separador) throws IOException {
-        PrintWriter pw = null;
-        FileWriter nuevo = null;
-        try {
-            nuevo = new FileWriter(archivo);
-            pw = new PrintWriter(nuevo);
-            String linea;
-            for(Cliente cliente : clientes) {
-                linea = cliente.getNombre() + separador;
-                linea += cliente.getCorreo() + separador;
-                linea += cliente.getNumero() + separador;
-                linea += cliente.getContrasenia() + separador;
-
-                List<Reserva> reservas = cliente.getReservas();
-                if (reservas != null && !reservas.isEmpty()) {
-                    for (Reserva reserva : reservas) {
-                        linea += reserva.getFecha() + ",";
-                        linea += reserva.getHorainicioreserva() + ",";
-                        linea += reserva.getHorafinalreserva() + ",";
-                        linea += reserva.getAsistencia() + ",";
-                        linea += reserva.getMesa().getCapacidad() + ",";
-                        linea += reserva.getMesa().getUbicacion() + ",";
-                        linea += reserva.getMesa().getEstado() + ";";
-                    }
-                } else {
-                    linea += "Sin reservas";
-                }
-
-                pw.println(linea);
-
-            }
-        }catch (Exception e) {
-            e.printStackTrace();
-        }
-        finally {
-            try {
-                if (null != nuevo)
-                    nuevo.close();
-            } catch (Exception e2) {
-                e2.printStackTrace();
-            }
-        }
-    }
-    public static Cliente buscarCliente(String correo, String contrasenia) {
+    // Método para imprimir todos los clientes
+    public void imprimirClientes() {
         for (Cliente cliente : clientes) {
-            if (cliente.getCorreo().equals(correo) && cliente.getContrasenia().equals(contrasenia)) {
-                return cliente;
-            }
+            System.out.println(cliente);
         }
-        return null;
     }
 
 }

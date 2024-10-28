@@ -128,32 +128,30 @@ public class Administrador extends Personal {
      * @param mesasADesbloquear `mesasADesbloquear` es una lista de objetos `Mesa` que necesitan ser
      *                          desbloqueadas. El método `desbloquearMesa` itera sobre esta lista y cambia el estado de cada
      *                          objeto `Mesa` de "No_Disponible" a "Disponible".
-     * @return
      */
-    public String desbloquearMesa(List<Mesa> mesasADesbloquear) {
+    public void desbloquearMesa(List<Mesa> mesasADesbloquear) {
         for (Mesa mesa : mesasADesbloquear) {
             if (mesa.getEstado() == EstadoMesa.No_Disponible) {
                 mesa.setEstado(EstadoMesa.Disponible);
             }
         }
+    }
 
-        /**
-         * El método `asignarRol` asigna un rol a un objeto estableciendo el rol mediante el método `setRol`.
-         *
-         * @param rol El parámetro "rol" en el método "asignarRol" es de tipo "CodRol", que probablemente sea
-         * una clase que representa un rol o permiso en el sistema. El método asigna este rol a la clase
-         * superior usando el método "setRol".
-         */
-
-
+    /**
+     * El método `asignarRol` asigna un rol a un objeto estableciendo el rol mediante el método `setRol`.
+     *
+     * @param rol El parámetro "rol" en el método "asignarRol" es de tipo "CodRol", que probablemente sea
+     * una clase que representa un rol o permiso en el sistema. El método asigna este rol a la clase
+     * superior usando el método "setRol".
+     */
     public void asignarRol(CodRol rol){
         super.setRol(rol);
     }
 
-        /**
-         * La función "CrearCuenta" en Java solicita al administrador que ingrese el ID y el rol de un nuevo
-         * empleado, crea un objeto empleado con la información proporcionada.
-         */
+    /**
+     * La función "CrearCuenta" en Java solicita al administrador que ingrese el ID y el rol de un nuevo
+     * empleado, crea un objeto empleado con la información proporcionada.
+     */
     public void CrearCuenta() {
         Scanner scanner = new Scanner(System.in);
 
@@ -169,7 +167,7 @@ public class Administrador extends Personal {
         CodRol rol;
         rol = CodRol.valueOf(rolString);
         Empleado empleado_nuevo = new Empleado(id, rol);
-        }
+
         /**
          * Devuelve una representación en forma de cadena del administrador,
          * incluyendo el restaurante asociado.

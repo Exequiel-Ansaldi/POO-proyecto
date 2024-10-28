@@ -95,7 +95,7 @@ public class MainTaller {
         // Guardar los datos del cliente en el archivo
         try {
             listaCliente.escribirArchivo("com/resto/data/clientes.csv", ",");
-            listaCliente.leerArchivo("com/resto/data/clientes.csv", ",");
+            listaCliente.leezrArchivo("com/resto/data/clientes.csv", ",");
             //listaReserva.escribirArchivo("com/resto/data/reservas.csv", ",");
             //listaMesa.escribirArchivo("com/resto/data/mesas.csv", " , ");
         } catch (IOException e) {
