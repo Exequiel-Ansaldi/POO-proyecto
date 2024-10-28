@@ -2,6 +2,7 @@ package com.mycompany.tallerpoo.com.resto.InterfazG;
 
 import com.mycompany.tallerpoo.com.resto.InterfazG.VentanaVerificarRol.VentanaVerificarRol;
 import com.mycompany.tallerpoo.com.resto.InterfazG.VentanaIdentificacionC.VentanaIdentificacionCliente;
+import com.mycompany.tallerpoo.com.resto.cliente.ListaCliente;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -24,7 +25,7 @@ public class VentanaI extends JFrame {
         clienteButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new VentanaIdentificacionCliente();
+                new VentanaIdentificacionCliente(new ListaCliente());
                 VentanaI.this.dispose();
             }
         });

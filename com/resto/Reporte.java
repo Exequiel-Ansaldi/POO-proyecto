@@ -1,30 +1,62 @@
 package com.mycompany.tallerpoo.com.resto;
+
 import com.mycompany.tallerpoo.com.resto.reserva.Reserva;
 import com.mycompany.tallerpoo.com.resto.cliente.Cliente;
 import com.mycompany.tallerpoo.com.resto.finanza.Asistencia;
 import java.time.temporal.WeekFields;
-
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+/**
+ * Clase que representa un reporte de reservas en un restaurante.
+ * Proporciona métodos para obtener información sobre las reservas,
+ * clientes y estadísticas de ocupación.
+ */
 public class Reporte {
     private Resto resto;
 
+    /**
+     * Constructor por defecto.
+     */
     public Reporte() {
     }
+
+    /**
+     * Constructor que inicializa el objeto Reporte con un restaurante específico.
+     *
+     * @param resto El restaurante del cual se generarán los reportes.
+     */
     public Reporte(Resto resto) {
         this.resto = resto;
     }
+
+    /**
+     * Obtiene el restaurante asociado a este reporte.
+     *
+     * @return El restaurante.
+     */
     public Resto getResto() {
         return resto;
     }
+
+    /**
+     * Establece el restaurante asociado a este reporte.
+     *
+     * @param resto El restaurante a establecer.
+     */
     public void setResto(Resto resto) {
         this.resto = resto;
     }
 
+    /**
+     * Obtiene una lista de reservas futuras para un cliente específico.
+     *
+     * @param cliente El cliente del cual se quieren obtener las reservas futuras.
+     * @return Lista de reservas futuras del cliente.
+     */
     public List<Reserva> reservasFuturasCliente(Cliente cliente) {
         List<Reserva> reservasFuturas = new ArrayList<>();
         for (Reserva reserva : resto.getReservas()) {
@@ -35,6 +67,12 @@ public class Reporte {
         return reservasFuturas;
     }
 
+    /**
+     * Obtiene todas las reservas de un cliente específico.
+     *
+     * @param cliente El cliente del cual se quieren obtener las reservas.
+     * @return Lista de todas las reservas del cliente.
+     */
     public List<Reserva> reservasTotalesCliente(Cliente cliente) {
         List<Reserva> reservasTotales = new ArrayList<>();
         for (Reserva reserva : resto.getReservas()) {
@@ -45,6 +83,11 @@ public class Reporte {
         return reservasTotales;
     }
 
+    /**
+     * Obtiene el cliente con más reservas asistidas.
+     *
+     * @return El cliente que ha asistido a más reservas.
+     */
     public Cliente clienteConMasReservasAsistidas() {
         Cliente clienteConMasReservas = null;
         int maxReservas = 0;
@@ -63,6 +106,12 @@ public class Reporte {
         }
         return clienteConMasReservas;
     }
+
+    /**
+     * Obtiene una lista de clientes que no asistieron a sus reservas en el último año.
+     *
+     * @return Lista de clientes que no asistieron a sus reservas.
+     */
     public List<Cliente> clientesConReservasNoAsistidasUltimoAnio() {
         List<Cliente> clientesNoAsistidos = new ArrayList<>();
         LocalDate haceUnAnio = LocalDate.now().minusYears(1);
@@ -73,7 +122,7 @@ public class Reporte {
                 if (reserva.getCliente().equals(cliente) &&
                         reserva.getFecha().isAfter(haceUnAnio) &&
                         reserva.getAsistencia() == Asistencia.Noasiste) {
-                        noAsistio = true;
+                    noAsistio = true;
                     break;
                 }
             }
@@ -83,6 +132,14 @@ public class Reporte {
         }
         return clientesNoAsistidos;
     }
+
+    /**
+     * Obtiene una lista de reservas dentro de un rango de fechas específico.
+     *
+     * @param fechaInicio La fecha de inicio del rango.
+     * @param fechaFin La fecha de fin del rango.
+     * @return Lista de reservas dentro del rango de fechas.
+     */
     public List<Reserva> ReservaDetallada(LocalDate fechaInicio, LocalDate fechaFin) {
         List<Reserva> reservasEnRango = new ArrayList<>();
         for (Reserva reserva : resto.getReservas()) {
@@ -92,7 +149,12 @@ public class Reporte {
         }
         return reservasEnRango;
     }
-    
+
+    /**
+     * Determina la estación con mayor concurrencia de reservas.
+     *
+     * @return El nombre de la estación con mayor concurrencia.
+     */
     public String MayorConcurrenciaPorEstacion() {
         int primavera = 0, verano = 0, otonio = 0, invierno = 0;
 
@@ -125,6 +187,11 @@ public class Reporte {
         return estacionMayorConcurrencia;
     }
 
+    /**
+     * Genera un reporte de reservas por día.
+     *
+     * @return Lista de cadenas que representan las reservas por día.
+     */
     public List<String> reservasPorDia() {
         List<String> reportedia = new ArrayList<>();
         List<LocalDate> fechasReservas = new ArrayList<>();
@@ -147,6 +214,12 @@ public class Reporte {
 
         return reportedia;
     }
+
+    /**
+     * Genera un reporte de reservas por mes.
+     *
+     * @return Lista de cadenas que representan las reservas por mes.
+     */
     public List<String> reservasPorMes() {
         List<String> reporte = new ArrayList<>();
         List<Integer> meses = new ArrayList<>(); // Para almacenar los meses
@@ -185,64 +258,4 @@ public class Reporte {
 
         return reporte;
     }
-    public List<String> reservasPorSemana() {
-    List<String> reporte = new ArrayList<>();
-    List<Integer> semanas = new ArrayList<>(); // Para almacenar las semanas
-    List<Integer> conteoReservas = new ArrayList<>(); // Para contar reservas por semana
-
-    // Usar WeekFields para obtener la semana del año
-    WeekFields weekFields = WeekFields.of(Locale.getDefault());
-
-    // Contar reservas por semana
-        for (Reserva reserva : resto.getReservas()) {
-        LocalDate fecha = reserva.getFecha(); // Asumiendo que getFecha() devuelve LocalDateTime
-        int semana = fecha.get(weekFields.weekOfWeekBasedYear()); // Obtener el número de la semana
-        int year = fecha.getYear(); // Obtener el año
-
-        // Crear una clave única combinando el año y la semana
-        int clave = year * 100 + semana; // Combina el año y la semana
-
-        // Verificar si ya se registró la semana
-        int index = semanas.indexOf(clave);
-        if (index == -1) {
-            // Si no está, agregar la nueva semana y un conteo inicial
-            semanas.add(clave);
-            conteoReservas.add(1);
-        } else {
-            // Si ya está, incrementar el conteo
-            conteoReservas.set(index, conteoReservas.get(index) + 1);
-        }
-    }
-
-    // Generar el reporte de reservas
-        for (int i = 0; i < semanas.size(); i++) {
-        int clave = semanas.get(i);
-        int year = clave / 100; // Extraer el año
-        int semana = clave % 100; // Extraer el número de la semana
-        int numeroReservas = conteoReservas.get(i);
-        String detalle = "Año: " + year + ", Semana: " + semana + ", Reservas: " + numeroReservas;
-        reporte.add(detalle);
-    }
-
-        return reporte;
-    }
-
-    public double ocupacionMediaMesas() {
-        if (resto.getReservas().isEmpty()) {
-            return 0.0; // Evitar división por cero
-        }
-
-        int totalComensales = 0;
-        int totalMesasUsadas = 0;
-
-        for (Reserva reserva : resto.getReservas()) {
-            totalComensales += reserva.getMesa().getCapacidad(); // Asumiendo que getMesa() devuelve un objeto que tiene capacidad
-            totalMesasUsadas++;
-        }
-
-        // Calcular la ocupación media
-        return (double) totalComensales / totalMesasUsadas; // Devuelve la ocupación media
-    }
 }
-
-

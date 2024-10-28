@@ -26,17 +26,81 @@ import java.util.Properties;
 import java.util.Scanner;
 
 public class Reserva {
+    /**
+     * La fecha de la reserva.
+     *
+     * @param fecha La fecha en la que se realiza la reserva.
+     */
     private LocalDate fecha;
+
+    /**
+     * La hora de inicio de la reserva.
+     *
+     * @param horainicioreserva La hora en la que comienza la reserva.
+     */
     private LocalTime horainicioreserva;
+
+    /**
+     * La hora de finalización de la reserva.
+     *
+     * @param horafinalreserva La hora en la que finaliza la reserva.
+     */
     private LocalTime horafinalreserva;
+
+    /**
+     * Información sobre la asistencia asociada a la reserva.
+     *
+     * @param asistencia La asistencia relacionada con la reserva.
+     */
     private Asistencia asistencia;
+
+    /**
+     * El cliente que realiza la reserva.
+     *
+     * @param cliente El cliente que ha hecho la reserva.
+     */
     private Cliente cliente;
+
+    /**
+     * La mesa reservada.
+     *
+     * @param mesa La mesa que se ha reservado.
+     */
     private Mesa mesa;
+
+    /**
+     * Lista de empleados asignados a la reserva.
+     *
+     * @param empleados Lista de empleados que están involucrados en la reserva.
+     */
     private List<Empleado> empleados;
+
+    /**
+     * Lista de pagos realizados para la reserva.
+     *
+     * @param pagos Lista de pagos que se han realizado para esta reserva.
+     */
     private List<Pago> pagos;
+
+    /**
+     * Lista de reservas asociadas.
+     *
+     * @param listaReservas Lista de reservas que están relacionadas con esta reserva.
+     */
     private List<Reserva> listaReservas;
 
-    //Constructores
+    // Constructores
+
+    /**
+     * Constructor que inicializa una nueva reserva con los parámetros especificados.
+     *
+     * @param f La fecha de la reserva.
+     * @param asistencia La asistencia asociada a la reserva.
+     * @param h La hora de inicio de la reserva.
+     * @param hf La hora de finalización de la reserva.
+     * @param m La mesa reservada.
+     * @param c El cliente que realiza la reserva.
+     */
     public Reserva(LocalDate f, Asistencia asistencia, LocalTime h, LocalTime hf, Mesa m, Cliente c){
         this.fecha = f;
         this.horainicioreserva = h;
@@ -45,6 +109,20 @@ public class Reserva {
         this.cliente = c;
         this.horafinalreserva = hf;
     }
+
+    /**
+     * Constructor que inicializa una nueva reserva con todos los parámetros especificados.
+     *
+     * @param f La fecha de la reserva.
+     * @param asistencia La asistencia asociada a la reserva.
+     * @param h La hora de inicio de la reserva.
+     * @param hf La hora de finalización de la reserva.
+     * @param m La mesa reservada.
+     * @param c El cliente que realiza la reserva.
+     * @param e Lista de empleados asignados a la reserva.
+     * @param p Lista de pagos realizados para la reserva.
+     * @param lR Lista de reservas asociadas.
+     */
     public Reserva(LocalDate f, Asistencia asistencia, LocalTime h, LocalTime hf, Mesa m, Cliente c, List<Empleado> e, List <Pago> p, List<Reserva> lR) {
         this.fecha = f;
         this.horainicioreserva = h;
@@ -56,91 +134,189 @@ public class Reserva {
         this.pagos = p;
         this.listaReservas = lR;
     }
+
+    /**
+     * Constructor por defecto que inicializa listas vacías para empleados, pagos y reservas.
+     */
     public Reserva(){
         this.empleados = new ArrayList<Empleado>();
         this.pagos = new ArrayList<Pago>();
         this.listaReservas = new ArrayList<Reserva>();
     }
 
-    //Getters & Setters
+    // Getters & Setters
+
+    /**
+     * Obtiene la lista de pagos realizados para la reserva.
+     *
+     * @return Lista de pagos.
+     */
     public List<Pago> getPagos() {
         return pagos;
     }
 
+    /**
+     * Establece la lista de pagos realizados para la reserva.
+     *
+     * @param pagos Lista de pagos a establecer.
+     */
     public void setPagos(List<Pago> pagos){
         this.pagos = pagos;
     }
 
+    /**
+     * Agrega un pago a la lista de pagos realizados para la reserva.
+     *
+     * @param p El pago a agregar.
+     */
     public void agregarPagos(Pago p){
         this.pagos.add(p);
     }
 
+    /**
+     * Obtiene la lista de empleados asignados a la reserva.
+     *
+     * @return Lista de empleados.
+     */
     public List<Empleado> getEmpleados() {
         return empleados;
     }
 
+    /**
+     * Establece la lista de empleados asignados a la reserva.
+     *
+     * @param empleados Lista de empleados a establecer.
+     */
     public void setEmpleados(List<Empleado> empleados) {
         this.empleados = empleados;
     }
 
+    /**
+     * Obtiene la hora de inicio de la reserva.
+     *
+     * @return Hora de inicio de la reserva.
+     */
     public LocalTime getHorainicioreserva() {
         return this.horainicioreserva;
     }
 
+    /**
+     * Establece la hora de inicio de la reserva.
+     *
+     * @param horainicioreserva Hora de inicio a establecer.
+     */
     public void setHorainicioreserva(LocalTime horainicioreserva) {
         this.horainicioreserva = horainicioreserva;
     }
 
+    /**
+     * Obtiene la hora de finalización de la reserva.
+     *
+     * @return Hora de finalización de la reserva.
+     */
     public LocalTime getHorafinalreserva() {
         return this.horafinalreserva;
     }
 
+    /**
+     * Establece la hora de finalización de la reserva.
+     *
+     * @param horafinalreserva Hora de finalización a establecer.
+     */
     public void setHorafinalreserva(LocalTime horafinalreserva) {
         this.horafinalreserva = horafinalreserva;
     }
 
+    /**
+     * Obtiene la lista de reservas asociadas.
+     *
+     * @return Lista de reservas.
+     */
     public List<Reserva> getListaReservas() {
         return this.listaReservas;
     }
 
+    /**
+     * Establece la lista de reservas asociadas.
+     *
+     * @param listaReservas Lista de reservas a establecer.
+     */
     public void setListaReservas(List<Reserva> listaReservas) {
         this.listaReservas = listaReservas;
     }
 
-
+    /**
+     * Obtiene la asistencia asociada a la reserva.
+     *
+     * @return Asistencia de la reserva.
+     */
     public Asistencia getAsistencia() {
         return this.asistencia;
     }
 
+    /**
+     * Establece la asistencia asociada a la reserva.
+     *
+     * @param asistencia Asistencia a establecer.
+     */
     public void setAsistencia(Asistencia asistencia) {
         this.asistencia = asistencia;
     }
 
+    /**
+     * Obtiene la fecha de la reserva.
+     *
+     * @return Fecha de la reserva.
+     */
     public LocalDate getFecha() {
         return this.fecha;
     }
 
+    /**
+     * Establece la fecha de la reserva.
+     *
+     * @param fecha Fecha a establecer.
+     */
     public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
     }
 
+    /**
+     * Obtiene el cliente que realizó la reserva.
+     *
+     * @return Cliente de la reserva.
+     */
     public Cliente getCliente() {
         return cliente;
     }
 
+    /**
+     * Establece el cliente que realizó la reserva.
+     *
+     * @param cliente Cliente a establecer.
+     */
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
 
+    /**
+     * Obtiene la mesa reservada.
+     *
+     * @return Mesa de la reserva.
+     */
     public Mesa getMesa() {
         return mesa;
     }
 
+    /**
+     * Establece la mesa reservada.
+     *
+     * @param mesa Mesa a establecer.
+     */
     public void setMesa(Mesa mesa) {
         this.mesa = mesa;
     }
 
-   
     /**
      * La función "hacerComentario" lee una línea de entrada del usuario y la devuelve como una cadena de caracteres.
      *
