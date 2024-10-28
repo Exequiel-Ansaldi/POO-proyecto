@@ -69,11 +69,13 @@ public class ListaMesa {
      * @param mesa   La mesa a la que se desea agregar la reserva.
      * @param reserva La reserva a agregar a la mesa.
      */
-    public void agregarReservaAMesa(Mesa mesa, Reserva reserva) {
+    public boolean agregarReservaAMesa(Mesa mesa, Reserva reserva) {
         if (mesas.contains(mesa)) {
             mesa.agregarReservas(reserva);
+            return true;
         } else {
-            System.out.println("La mesa no se encuentra en la lista.");
+
+            return false;
         }
     }
 
@@ -83,11 +85,12 @@ public class ListaMesa {
      * @param mesa   La mesa a la que se desea agregar el evento.
      * @param evento El evento a agregar a la mesa.
      */
-    public void agregarEventoAMesa(Mesa mesa, Evento evento) {
+    public boolean agregarEventoAMesa(Mesa mesa, Evento evento) {
         if (mesas.contains(mesa)) {
             mesa.setEvento(evento);
+            return true;
         }else{
-            System.out.println("La mesa no se encuentra en la lista.");
+            return false;
         }
     }
      /**
@@ -117,10 +120,9 @@ public class ListaMesa {
                 if(campos.length > 3 && !campos[3].isEmpty()){
                     String[] reservasData = campos[3].split(",");
                     for (String reservaData : reservasData) {
-                        // Supongamos que cada reserva está en el formato: fecha,asistencia,horainicio,horafinal,mesa_id
                         String[] reservaCampos = reservaData.split(",");
                         LocalDate fecha = LocalDate.parse(reservaCampos[0]);
-                        Asistencia asistencia = Asistencia.valueOf(reservaCampos[1]); // Asumiendo que Asistencia es un enum
+                        Asistencia asistencia = Asistencia.valueOf(reservaCampos[1]);
                         LocalTime horaInicio = LocalTime.parse(reservaCampos[2]);
                         LocalTime horaFinal = LocalTime.parse(reservaCampos[3]);
 

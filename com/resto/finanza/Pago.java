@@ -138,11 +138,9 @@ public class Pago {
         switch (a) {
             case Noasiste:
                 tarjeta.setCantidad(tarjeta.getCantidad() - 50);
-                System.out.println("Se descontaron $50 por Inasistencia");
                 totalDescontado = 50;
             case Asiste:
                 tarjeta.setCantidad(tarjeta.getCantidad() - monto);
-                System.out.println("Se desconto: $" + monto);
                 totalDescontado = monto;
             case Otro:
         }

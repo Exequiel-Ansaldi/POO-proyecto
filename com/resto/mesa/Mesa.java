@@ -233,13 +233,13 @@ public class Mesa {
                 reservasInfo.append("horaInicio='").append(reserva.getHorainicioreserva()).append("', ");
                 reservasInfo.append("horaFinal='").append(reserva.getHorafinalreserva()).append("'}, ");
             }
-            // Eliminar la última coma y espacio
+
             if (!reservasInfo.isEmpty()) {
                 reservasInfo.setLength(reservasInfo.length() - 2);
             }
             reservasInfo.append("]");
         } else {
-            reservasInfo.append("[]"); // Si no hay reservas
+            reservasInfo.append("[]");
         }
 
         return "Mesa{" +

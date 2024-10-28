@@ -66,7 +66,7 @@ public class ListaReserva {
             while (linea != null) {
                 String[] campos = linea.split(separador);
                 if (campos.length < 2) {
-                    System.err.println("Invalid line format: " + linea);
+                    System.err.println("Formato de linea invalida: " + linea);
                     linea = br.readLine();
                     continue; // Skip this line and read the next one
                 }
@@ -77,10 +77,10 @@ public class ListaReserva {
                 if (campos.length > 1) {
                     Asistencia asistencia = Asistencia.valueOf(campos[1]); // Tipo de asistencia
                 } else {
-                    // Handle the case where asistencia is not provided
+
                 }
 
-                // Continue with the rest of your parsing logic...
+
                 linea = br.readLine(); // Leer la siguiente línea
             }
         } finally {
@@ -108,11 +108,10 @@ public class ListaReserva {
                 linea += reserva.getMesa().getEstado() + separador;
                 linea += reserva.getCliente().getNombre() + separador;
 
-                // Include additional fields for the client
-                linea += reserva.getCliente().getCorreo() + separador; // Email attribute
-                linea += reserva.getCliente().getContrasenia() + separador; // Password attribute
-                linea += reserva.getCliente().getNumero() + separador; // Telephone number attribute
 
+                linea += reserva.getCliente().getCorreo() + separador;
+                linea += reserva.getCliente().getContrasenia() + separador;
+                linea += reserva.getCliente().getNumero() + separador;
                 List<Empleado> empleados = reserva.getEmpleados();
                 if (empleados != null && !empleados.isEmpty()) {
                     for (Empleado empleado : empleados) {

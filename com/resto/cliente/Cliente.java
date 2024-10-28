@@ -326,11 +326,11 @@ public class Cliente {
         historial.sort(new Comparator<Reserva>() {
             @Override
             public int compare(Reserva r1, Reserva r2) {
-                // Obtener la fecha y hora de cada reserva
+
                 LocalDateTime fechaHora1 = LocalDateTime.of(r1.getFecha(), r1.getHorainicioreserva());
                 LocalDateTime fechaHora2 = LocalDateTime.of(r2.getFecha(), r2.getHorainicioreserva());
             
-                // Comparar las fechas y horas
+
                 return fechaHora1.compareTo(fechaHora2);
             }
         });

@@ -19,6 +19,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -60,7 +61,7 @@ public class MainTaller {
         ListaCliente listaCliente = new ListaCliente(new ArrayList<>());
         ListaReserva listaReserva = new ListaReserva();
 
-        LocalDate dia = LocalDate.of(2024, 10, 23);
+        LocalDate dia         = LocalDate.of(2024, 10, 23);
         LocalTime horainicio = LocalTime.of(12, 0);
         LocalTime horafin = LocalTime.of(14, 0);
         Evento evento = new Evento("Cumple", "prueba", dia, horainicio, horafin, new ArrayList<>());
