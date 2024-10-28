@@ -60,7 +60,7 @@ public class ListaCliente {
         clientes.add(cliente);
     }
 
-    public static Cliente buscarCliente(String correo) {
+    public Cliente buscarCliente(String correo) {
         for (Cliente cliente : clientes) {
             if (cliente.getCorreo().equalsIgnoreCase(correo)) {
                 return cliente; // Retorna el cliente si se encuentra

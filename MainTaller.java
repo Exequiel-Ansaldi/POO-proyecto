@@ -58,7 +58,7 @@ public class MainTaller {
         cliente1.getReservas().add(reserva1);
 
         // Crear listas de clientes y reservas
-        ListaCliente listaCliente = new ListaCliente(new ArrayList<>());
+        ListaCliente listaCliente = new ListaCliente();
         ListaReserva listaReserva = new ListaReserva();
 
         LocalDate dia         = LocalDate.of(2024, 10, 23);
@@ -91,16 +91,12 @@ public class MainTaller {
         reserva.confirmarReserva(listaReserva);
 
         VentanaI ventanaIdentificacion = new VentanaI();
-        ventanaIdentificacion.setVisible(true);
+
         // Guardar los datos del cliente en el archivo
-        try {
-            listaCliente.escribirArchivo("com/resto/data/clientes.csv", ",");
-            listaCliente.leezrArchivo("com/resto/data/clientes.csv", ",");
-            //listaReserva.escribirArchivo("com/resto/data/reservas.csv", ",");
-            //listaMesa.escribirArchivo("com/resto/data/mesas.csv", " , ");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        listaCliente.guardarEnArchivo("com/resto/data/clientes.csv");
+        listaCliente.cargarDesdeArchivo("com/resto/data/clientes.csv");
+        //listaReserva.escribirArchivo("com/resto/data/reservas.csv", ",");
+        //listaMesa.escribirArchivo("com/resto/data/mesas.csv", " , ");
     }
 }
 

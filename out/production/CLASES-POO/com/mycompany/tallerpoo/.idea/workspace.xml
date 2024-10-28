@@ -5,7 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc35265b-e20e-47ec-ab1c-2b6d08796871" name="Changes" comment="correciones">
-      <change beforePath="$PROJECT_DIR$/com/resto/personal/Personal.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/resto/personal/Personal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/com/resto/Evento.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/com/resto/InterfazG/VentanaIdentificacionC/VentanaIdentificacionCliente$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/com/resto/InterfazG/VentanaIdentificacionC/VentanaIdentificacionCliente$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/com/resto/InterfazG/VentanaIdentificacionC/VentanaIdentificacionCliente.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/com/resto/InterfazG/VentanaIdentificacionC/VentanaInicio$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/com/resto/InterfazG/VentanaIdentificacionC/VentanaInicio.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/com/resto/Reporte.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/com/resto/Reserva/ListaReserva.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/com/resto/Reserva/Reserva$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/com/resto/Reserva/Reserva.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/com/resto/Resto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/com/resto/cliente/Cliente$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/com/resto/cliente/Cliente.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/com/resto/cliente/ListaCliente.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/com/resto/finanza/Pago$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/com/resto/finanza/Pago.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/com/resto/finanza/TarjetaDeCredito.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/com/resto/mesa/Mesa.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/com/resto/personal/Administrador.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/com/resto/personal/Empleado.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/com/resto/personal/ListaAdmins.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CLASES-POO/com/mycompany/tallerpoo/com/resto/personal/Personal.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +165,7 @@
       <workItem from="1729880569980" duration="1736000" />
       <workItem from="1729882746972" duration="655000" />
       <workItem from="1730076059258" duration="2278000" />
-      <workItem from="1730078460069" duration="619000" />
+      <workItem from="1730078460069" duration="1447000" />
     </task>
     <task id="LOCAL-00001" summary="Metodo reservarMesa en cliente">
       <option name="closed" value="true" />
@@ -418,7 +439,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729883052379</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="correciones">
+      <option name="closed" value="true" />
+      <created>1730079715109</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1730079715109</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

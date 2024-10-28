@@ -31,7 +31,7 @@ public class VentanaInicio extends JFrame {
     public void iniciarSesion() {
         String correoIngresado = correo.getText();
         String contraseniaIngresada = new String(contrasenia.getPassword());
-        Cliente cliente = ListaCliente.buscarCliente(correoIngresado, contraseniaIngresada);
+        Cliente cliente = ListaCliente.buscarCliente(correoIngresado);
         if (cliente != null) {
             JOptionPane.showMessageDialog(this, "Inicio de sesión exitoso", "Éxito", JOptionPane.INFORMATION_MESSAGE);
             //new VentanaReservas();
