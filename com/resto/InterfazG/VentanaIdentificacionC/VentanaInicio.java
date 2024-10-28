@@ -13,14 +13,17 @@ public class VentanaInicio extends JFrame {
     private JPasswordField contrasenia;
     private JLabel texto;
     private JPanel panel;
+    private ListaCliente listaCliente; // Instancia de ListaCliente
 
-    public VentanaInicio() {
+    public VentanaInicio(ListaCliente listaCliente) { // Recibir la lista de clientes como parámetro
+        this.listaCliente = listaCliente; // Inicializar la lista de clientes
         setTitle("Inicio de Sesión");
         setContentPane(panel);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pack();
         setLocationRelativeTo(null);
         setVisible(true);
+
         boton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -28,14 +31,19 @@ public class VentanaInicio extends JFrame {
             }
         });
     }
+
     public void iniciarSesion() {
-        String correoIngresado = correo.getText();
-        String contraseniaIngresada = new String(contrasenia.getPassword());
-        Cliente cliente = ListaCliente.buscarCliente(correoIngresado);
-        if (cliente != null) {
+        String correoIngresado = correo.getText().trim();
+        String contraseniaIngresada = new String(contrasenia.getPassword()).trim();
+
+        // Buscar cliente en la lista
+        Cliente cliente = listaCliente.buscarCliente(correoIngresado);
+
+        // Validar que el cliente existe y la contraseña es correcta
+        if (cliente != null && cliente.getContrasenia().equals(contraseniaIngresada)) {
             JOptionPane.showMessageDialog(this, "Inicio de sesión exitoso", "Éxito", JOptionPane.INFORMATION_MESSAGE);
-            //new VentanaReservas();
-            dispose();
+            // Aquí puedes abrir la ventana de reservas, si es necesario
+            dispose(); // Cerrar la ventana de inicio de sesión
         } else {
             JOptionPane.showMessageDialog(this, "Correo o contraseña incorrectos", "Error", JOptionPane.ERROR_MESSAGE);
         }
