@@ -11,17 +11,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Clase que representa una lista de clientes.
+ * Clase que gestiona una lista de clientes.
  */
 public class ListaCliente {
     private List<Cliente> clientes;
 
-    // Constructor
+    /**
+     * Constructor que inicializa la lista de clientes.
+     */
     public ListaCliente() {
         this.clientes = new ArrayList<>();
     }
 
-    // Método para cargar clientes desde un archivo
+    /**
+     * Carga clientes desde un archivo CSV.
+     *
+     * @param nombreArchivo El nombre del archivo desde el cual se cargarán los clientes.
+     */
     public void cargarDesdeArchivo(String nombreArchivo) {
         try (BufferedReader reader = new BufferedReader(new FileReader(nombreArchivo))) {
             String linea;
@@ -37,7 +43,11 @@ public class ListaCliente {
         }
     }
 
-    // Método para guardar clientes en un archivo
+    /**
+     * Guarda la lista de clientes en un archivo CSV.
+     *
+     * @param nombreArchivo El nombre del archivo en el cual se guardarán los clientes.
+     */
     public void guardarEnArchivo(String nombreArchivo) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(nombreArchivo))) {
             for (Cliente cliente : clientes) {
@@ -50,16 +60,30 @@ public class ListaCliente {
         }
     }
 
-    // Método para obtener la lista de clientes
+    /**
+     * Obtiene la lista de clientes.
+     *
+     * @return La lista de clientes.
+     */
     public List<Cliente> getClientes() {
         return clientes;
     }
 
-    // Método para agregar un cliente a la lista
+    /**
+     * Agrega un cliente a la lista.
+     *
+     * @param cliente El cliente a añadir.
+     */
     public void agregarCliente(Cliente cliente) {
         clientes.add(cliente);
     }
 
+    /**
+     * Busca un cliente por su correo electrónico.
+     *
+     * @param correo El correo electrónico del cliente a buscar.
+     * @return El cliente encontrado o null si no se encuentra.
+     */
     public Cliente buscarCliente(String correo) {
         for (Cliente cliente : clientes) {
             if (cliente.getCorreo().equalsIgnoreCase(correo)) {
@@ -69,7 +93,9 @@ public class ListaCliente {
         return null; // Retorna null si no se encuentra
     }
 
-    // Método para imprimir todos los clientes
+    /**
+     * Imprime todos los clientes en consola.
+     */
     public void imprimirClientes() {
         for (Cliente cliente : clientes) {
             System.out.println(cliente);
