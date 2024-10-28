@@ -8,33 +8,44 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class VentanaInicio extends JFrame {
-    private JButton boton;
-    private JTextField correo;
-    private JPasswordField contrasenia;
-    private JLabel texto;
-    private JPanel panel;
-    private ListaCliente listaCliente; // Instancia de ListaCliente
 
+    private JButton boton; // Botón para iniciar sesión
+    private JTextField correo; // Campo de texto para ingresar el correo electrónico
+    private JPasswordField contrasenia; // Campo de texto para ingresar la contraseña
+    private JLabel texto; // Etiqueta para mostrar mensajes
+    private JPanel panel; // Panel que contiene los componentes de la ventana
+    private ListaCliente listaCliente; // Instancia de ListaCliente para gestionar los clientes
+
+    /**
+     * Constructor de la clase VentanaInicio.
+     *
+     * @param listaCliente La lista de clientes que se utilizará para validar el inicio de sesión.
+     */
     public VentanaInicio(ListaCliente listaCliente) { // Recibir la lista de clientes como parámetro
         this.listaCliente = listaCliente; // Inicializar la lista de clientes
-        setTitle("Inicio de Sesión");
-        setContentPane(panel);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        pack();
-        setLocationRelativeTo(null);
-        setVisible(true);
+        setTitle("Inicio de Sesión"); // Establecer el título de la ventana
+        setContentPane(panel); // Establecer el panel como contenido de la ventana
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Cerrar la aplicación al cerrar la ventana
+        pack(); // Ajustar el tamaño de la ventana según los componentes
+        setLocationRelativeTo(null); // Centrar la ventana en la pantalla
+        setVisible(true); // Hacer visible la ventana
 
+        // Agregar un ActionListener al botón para manejar el evento de clic
         boton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                iniciarSesion();
+                iniciarSesion(); // Llamar al método iniciarSesion al hacer clic en el botón
             }
         });
     }
 
+    /**
+     * Método que maneja el inicio de sesión del usuario.
+     * Valida el correo electrónico y la contraseña ingresados.
+     */
     public void iniciarSesion() {
-        String correoIngresado = correo.getText().trim();
-        String contraseniaIngresada = new String(contrasenia.getPassword()).trim();
+        String correoIngresado = correo.getText().trim(); // Obtener el correo ingresado
+        String contraseniaIngresada = new String(contrasenia.getPassword()).trim(); // Obtener la contraseña ingresada
 
         // Buscar cliente en la lista
         Cliente cliente = listaCliente.buscarCliente(correoIngresado);
