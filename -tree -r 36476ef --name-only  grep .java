@@ -1,0 +1,128 @@
+[33mbcdcc34[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m act
+[33m4cccd5b[m act
+[33m58c0b69[m act
+[33mb357815[m act
+[33m36476ef[m act
+[33mc21e588[m act
+[33mc8b82cb[m act
+[33m337cecc[m documentacion
+[33m549914d[m correciones
+[33mbef618f[m Merge remote-tracking branch 'origin/main'
+[33m53cd580[m correciones
+[33maf9fb8d[m comentarios
+[33mfc67f2d[m corrigiendo ashe
+[33meb06eaf[m correciones
+[33m2cef62b[m corrijo admin
+[33mc64bbf8[m correciones
+[33m157a378[m Descripción de los cambios realizados
+[33mb65644e[m qt
+[33m366d30b[m Merge remote-tracking branch 'origin/main'
+[33ma60caf1[m correciones
+[33mbaa0e47[m termine la venta de registro, no es funcional todavia
+[33m8cf89e4[m empezando con la parte de reservas
+[33madda2e8[m Merge remote-tracking branch 'origin/main'
+[33m7ca1237[m se pudo hacer el inicio de sesion, pero da error en la lectura de campos
+[33m9a568fa[m Merge remote-tracking branch 'origin/main'
+[33m693db74[m replace
+[33med6792d[m llegue hasta la ventana de inicio de sesion, hay que ver el metodo de leer archivo
+[33m723dbe1[m mejora en las interfaces
+[33m6750f80[m probando interfaces
+[33mb6f48d5[m Merge remote-tracking branch 'origin/main'
+[33m6e95ac4[m probando interfaces
+[33m1dd65fe[m probando interfaces
+[33m661abe2[m ventanas de identificacion y verificacion de codigo de rol
+[33md72c3d8[m primer ventana hecha
+[33md15c76f[m creadas
+[33mfd0a112[m borre las clases para arrancar devuelta
+[33m111d578[m Empezando interfaz
+[33mf212c28[m Empezando interfaz
+[33m4fac07a[m metodo reserva bug
+[33m558b828[m Eliminar archivos compilados y añadir a .gitignore
+[33m27ea3f2[m push
+[33ma51ce91[m debugging archivos
+[33m96caf13[m Documentacion de clases, faltan reserva y lista reservas
+[33m3bb4322[m comentarios Agenda, Evento
+[33m14e963c[m comment resto.class
+[33ma43b8b4[m mejora metodo disponibilidad en reserva
+[33m56c77e0[m carga de datos csv, falta debugear para aplicarle los metodos
+[33m84f0c2b[m agregue metodos para tomar instancias ya creadas en las otras listas
+[33m946642f[m agregue metodos para tomar instancias ya creadas
+[33mf69a785[m agregue lista de mesas y admins
+[33meb13643[m ListaAdmins
+[33m728470d[m listaMesa (demo)
+[33mb95fe18[m ListaMesa PENDIENTE
+[33m6fdac2d[m debug import (2)
+[33m873719b[m Debug import
+[33md59d3fb[m error de importacioon
+[33m1c249dc[m Merge branch 'main' of https://github.com/Programacion-orientada-a-objetos-UNER/CLASES-POO
+[33m22ee4ff[m Cambios antes del merge
+[33m79c9840[m .
+[33mddf46a3[m correccion importacion paquete (Reserva)
+[33m827f73c[m Union listaReserva y incorporacion con clase Reserva
+[33m0d7d7f8[m Merge remote-tracking branch 'origin/main'
+[33m157bd42[m Lista de reservas terminada
+[33m04d4afe[m Restaure clase Reserva
+[33ma8cffa4[m agregue Lista de Reservas csv
+[33mde65029[m  probando la lista clientes en el main(seguir mismo formato para todas las que faltan)
+[33m09337bc[m Agregue data, carpeta que tiene los txt de las clases y probe la lista clientes en el main(seguir mismo formato para todas las que me faltan)
+[33m9825079[m Agregue data, carpeta que tiene los txt de las clases y probe la lista clientes en el main(seguir mismo formato para todas las que me faltan)
+[33m1025498[m documentacion evento
+[33mf95a7b5[m Metodos de reporte
+[33m17860b9[m Actualizacion de metodos en base a los cambios en reserva
+[33mbb4ba81[m Correccion IniciarSesion y agruegue Atributos horafinal en reserva
+[33m5c3cc3d[m Metodos ToString() y clase Reporte(faltan 3 metodos)
+[33mcb77e22[m Cambios para mapa -> Incorporo crearMapa(), SEGUIR CON INTERFACES!
+[33m80cf05d[m Merge remote-tracking branch 'origin/main'
+[33m9e517bc[m Avances con respecto al Mapa, (Eliminacion del AtributoMapa, incorporacion crearMapa()
+[33meb219b5[m agregue comentarios en la clase administrador
+[33m1c3d051[m Documentacion en Resto y Agenda
+[33m4d3a4a5[m metodo de bloquear y desbloquear mesa +algunas correciones en tipos de variables
+[33m2cc7423[m probando en el main algunos metodos de Cliente
+[33m400ddab[m Incorporacion package lib, para importar las librerias externas.
+[33m8ff7370[m agregue comentarios en las clases resto-reserva-empleado-administrador-mesa-tarjetaDeCredito-pago-cliente
+[33m99a1701[m comentario metodo mesa y comentario en metodo cliente
+[33m8d7648d[m constructores (varias clases), metodo recuperarContrasenia()
+[33m746303d[m Crear cuenta en empleado, constructor en mesa, metodo desbloquear(continuarlo)
+[33mb5f60f8[m Metodo reservarMesa en cliente
+[33mee1be49[m Correccion un metodo cliente
+[33mab5c6a8[m Verificar disponibilidad
+[33m9582c43[m 2 metodos de la clase administrador
+[33m135aca4[m Verificar disponibilidad
+[33mcf0b478[m methods modificarReserva() & cancelarReserva() {Reserva.class
+[33m7d4cd73[m correcion metodo decontar()
+[33m3fc765c[m Realizacion metodo confirmarReserva() {Reserva
+[33m0b95bde[m Histroial reserva cliente
+[33mafa68b3[m Metodo Descontar
+[33m76f6c21[m debug metodo de actualizar
+[33m7e24b7a[m Atributo cantidad TDC
+[33m0540e5b[m Metodo filtrar por mesa
+[33m13c1cd3[m Metodo de actualizar informacion Cliente
+[33m2f39340[m Metodo iniciar sesion (puede mejorarse)
+[33m663e2ea[m Correciones Getters y Setters de las listas como atributos
+[33mc977703[m Mejora en el metodo Registrarse
+[33m8bcd5a4[m método enviarRecordatorio (Reserva) libreria JavaEmail
+[33md72e5c7[m Metodo registrarse Cliente
+[33m4f199ad[m comentarios Set&Get, Constructores, Métodos de Clase
+[33m64e1178[m Agregar metodos para la lista de Reservas en la clase Empleado
+[33madbf996[m correccion al anterior commit, Clase agregada Pago
+[33m0f35018[m Clase agregada entre reserva y tarjeta de credito
+[33m7bf6e1c[m saque un import
+[33mae90383[m Asociaciones de resto definidas en resto
+[33m8ae41b7[m importacion correcta de clases, asociacion Empleado Reserva, correccion bug clase agregada Reserva(cliente mesa)
+[33m77e738d[m importacion correcta de clases, asociacion Empleado Reserva, correccion bug clase agregada Reserva(cliente mesa)
+[33m5c57f58[m Guardando mis avances antes del pull
+[33m18b2cdf[m Asociacion bidireccional mesa y evento
+[33m199038e[m Asociacion resto y cliente
+[33mb0f31b9[m agregado de this. a todos los get
+[33mbe9f65e[m Mover archivo
+[33ma155add[m clase cliente a carpeta cliente
+[33m42ea184[m Add files via upload
+[33mcc3b710[m Agregar Mesa y Cliente a Reserva
+[33md51c6b7[m eliminacion de verificacion en Tarjeta de Credito
+[33m8418ed4[m cambio nombre de main
+[33m3fb3c6a[m org Paquetes
+[33mf718349[m actualizacion clases desde version final de UML
+[33m0aacbbc[m actualizacion clases desde version final de UML
+[33m3393987[m actualizacion clases desde version final de UML
+[33m03801f1[m Prueba añadir clase Administrador
+[33m3929ecf[m Add files via upload
