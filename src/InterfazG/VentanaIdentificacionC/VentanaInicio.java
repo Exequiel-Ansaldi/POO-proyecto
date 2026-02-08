@@ -24,6 +24,21 @@ public class VentanaInicio extends JFrame {
     public VentanaInicio(ListaCliente listaCliente) { // Recibir la lista de clientes como parámetro
         this.listaCliente = listaCliente; // Inicializar la lista de clientes
         setTitle("Inicio de Sesión"); // Establecer el título de la ventana
+        // Inicialización defensiva: si el panel generado por GUI builder es null, crear una UI mínima
+        if (panel == null) {
+            panel = new JPanel();
+            panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+            texto = new JLabel("Inicio de Sesión");
+            correo = new JTextField(20);
+            contrasenia = new JPasswordField(20);
+            boton = new JButton("Entrar");
+            panel.add(texto);
+            panel.add(new JLabel("Correo:"));
+            panel.add(correo);
+            panel.add(new JLabel("Contraseña:"));
+            panel.add(contrasenia);
+            panel.add(boton);
+        }
         setContentPane(panel); // Establecer el panel como contenido de la ventana
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Cerrar la aplicación al cerrar la ventana
         pack(); // Ajustar el tamaño de la ventana según los componentes

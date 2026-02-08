@@ -334,12 +334,24 @@ public class Reserva {
      * si es así, agrega la reserva a una lista.
      */
     public void confirmarReserva(ListaReserva lista) {
+        // Intentar varias rutas comunes para el archivo de reservas
         try {
-            lista.leerArchivo("com/resto/data/reservas.csv", ",");
+            lista.leerArchivo("src/data/reservas.csv", ",");
             System.out.println("Reservas cargadas: " + lista.getReservas().size());
-        } catch (IOException e) {
-            e.printStackTrace();
-            return;
+        } catch (IOException e1) {
+            try {
+                lista.leerArchivo("data/reservas.csv", ",");
+                System.out.println("Reservas cargadas: " + lista.getReservas().size());
+            } catch (IOException e2) {
+                try {
+                    lista.leerArchivo("com/resto/data/reservas.csv", ",");
+                    System.out.println("Reservas cargadas: " + lista.getReservas().size());
+                } catch (IOException e3) {
+                    // Si ninguna ruta funciona, mostrar el error y salir del método
+                    e3.printStackTrace();
+                    return;
+                }
+            }
         }
 
         boolean mesaDisponible = true;

@@ -90,8 +90,8 @@ public class MainTaller {
         VentanaI ventanaIdentificacion = new VentanaI();
 
         // Guardar los datos del cliente en el archivo
-        listaCliente.guardarEnArchivo("com/resto/data/clientes.csv");
-        listaCliente.cargarDesdeArchivo("com/resto/data/clientes.csv");
+        listaCliente.guardarEnArchivo("src/data/clientes.csv");
+        listaCliente.cargarDesdeArchivo("src/data/clientes.csv");
 
     }
 }

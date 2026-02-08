@@ -42,6 +42,17 @@ public class VentanaI extends JFrame {
      */
     public VentanaI() {
         setTitle("Identificación");
+        // Si el panel no fue inicializado (por ejemplo, si faltan componentes generados), crear una UI mínima
+        if (panel == null) {
+            panel = new JPanel();
+            panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+            clienteButton = new JButton("Cliente");
+            personalButton = new JButton("Personal");
+            Titulo = new JLabel("Identificación");
+            panel.add(Titulo);
+            panel.add(clienteButton);
+            panel.add(personalButton);
+        }
         setContentPane(panel);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pack();

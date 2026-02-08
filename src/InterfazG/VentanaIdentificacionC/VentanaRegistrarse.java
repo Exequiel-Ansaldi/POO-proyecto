@@ -23,8 +23,31 @@ public class VentanaRegistrarse extends JFrame {
 
     public VentanaRegistrarse(ListaCliente c) {
         // Recibir la lista de clientes como parámetro
-        this.listaCliente = listaCliente; // Inicializar la lista de clientes
+        this.listaCliente = c; // Inicializar la lista de clientes
         setTitle("Registro de Usuario");
+        // Inicialización defensiva: si el panel generado por GUI builder es null, crear una UI mínima
+        if (panel1 == null) {
+            panel1 = new JPanel();
+            panel1.setLayout(new BoxLayout(panel1, BoxLayout.Y_AXIS));
+            textoNombre = new JLabel("Nombre:");
+            JTextoNombre = new JTextField(20);
+            textoCorreo = new JLabel("Correo:");
+            JTextoCorreo = new JTextField(20);
+            textoContrasenia = new JLabel("Contraseña:");
+            jTextoContra = new JPasswordField(20);
+            textoNum = new JLabel("Teléfono:");
+            jTextNum = new JTextField(15);
+            boton = new JButton("Registrar");
+            panel1.add(textoNombre);
+            panel1.add(JTextoNombre);
+            panel1.add(textoCorreo);
+            panel1.add(JTextoCorreo);
+            panel1.add(textoContrasenia);
+            panel1.add(jTextoContra);
+            panel1.add(textoNum);
+            panel1.add(jTextNum);
+            panel1.add(boton);
+        }
         setContentPane(panel1);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pack();

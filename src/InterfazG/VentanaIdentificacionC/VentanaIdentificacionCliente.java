@@ -17,6 +17,17 @@ public class VentanaIdentificacionCliente extends JFrame {
     public VentanaIdentificacionCliente(ListaCliente listaCliente) { // Constructor que recibe la lista de clientes
         this.listaCliente = listaCliente; // Inicializar la lista de clientes
         setTitle("Verificación");
+        // Si el panel no fue inicializado (p. ej. falta código generado por GUI builder), crear una UI mínima
+        if (panel == null) {
+            panel = new JPanel();
+            panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+            texto = new JLabel("Verificación");
+            iniciarsesion = new JButton("Iniciar sesión");
+            registro = new JButton("Registrarse");
+            panel.add(texto);
+            panel.add(iniciarsesion);
+            panel.add(registro);
+        }
         setContentPane(panel);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pack();
