@@ -1,11 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package com.mycompany.tallerpoo.com.resto;
-
-import com.mycompany.tallerpoo.com.resto.mesa.Mesa;
-
+package src;
+import src.mesa.Mesa;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.ArrayList;

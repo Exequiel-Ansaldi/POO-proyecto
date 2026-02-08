@@ -1,13 +1,4 @@
-package com.mycompany.tallerpoo.com.resto.reserva;
-
-import com.mycompany.tallerpoo.com.resto.cliente.Cliente;
-import com.mycompany.tallerpoo.com.resto.finanza.Asistencia;
-import com.mycompany.tallerpoo.com.resto.finanza.Pago;
-import com.mycompany.tallerpoo.com.resto.finanza.TarjetaDeCredito;
-import com.mycompany.tallerpoo.com.resto.mesa.EstadoMesa;
-import com.mycompany.tallerpoo.com.resto.mesa.Mesa;
-import com.mycompany.tallerpoo.com.resto.personal.CodRol;
-import com.mycompany.tallerpoo.com.resto.personal.Empleado;
+package src.reserva;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -18,6 +9,11 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
+
+import src.finanza.Asistencia;
+import src.finanza.Pago;
+import src.mesa.Mesa;
+import src.personal.Empleado;
 
 public class ListaReserva {
     ArrayList<Reserva> reservas = new ArrayList<>();
@@ -75,7 +71,6 @@ public class ListaReserva {
 
                 // Ensure there are enough fields before accessing them
                 if (campos.length > 1) {
-                    Asistencia asistencia = Asistencia.valueOf(campos[1]); // Tipo de asistencia
                 } else {
 
                 }

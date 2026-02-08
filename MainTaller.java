@@ -2,19 +2,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package com.mycompany.tallerpoo;
-
-import com.mycompany.tallerpoo.com.resto.Evento;
-import com.mycompany.tallerpoo.com.resto.InterfazG.VentanaI;
-import com.mycompany.tallerpoo.com.resto.mesa.ListaMesa;
-import com.mycompany.tallerpoo.com.resto.reserva.ListaReserva;
-import com.mycompany.tallerpoo.com.resto.reserva.Reserva;
-import com.mycompany.tallerpoo.com.resto.cliente.Cliente;
-import com.mycompany.tallerpoo.com.resto.cliente.ListaCliente;
-import com.mycompany.tallerpoo.com.resto.finanza.Asistencia;
-import com.mycompany.tallerpoo.com.resto.mesa.EstadoMesa;
-import com.mycompany.tallerpoo.com.resto.mesa.Mesa;
-
+import src.Evento;
+import src.InterfazG.VentanaI;
+import src.cliente.Cliente;
+import src.cliente.ListaCliente;
+import src.finanza.Asistencia;
+import src.mesa.EstadoMesa;
+import src.mesa.Mesa;
+import src.mesa.ListaMesa;
+import src.reserva.ListaReserva;
+import src.reserva.Reserva;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;

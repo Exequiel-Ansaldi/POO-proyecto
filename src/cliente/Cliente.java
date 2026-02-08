@@ -2,13 +2,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.tallerpoo.com.resto.cliente;
+package src.cliente;
 
-import com.mycompany.tallerpoo.com.resto.reserva.Reserva;
-import com.mycompany.tallerpoo.com.resto.Resto;
-import com.mycompany.tallerpoo.com.resto.finanza.Asistencia;
-import com.mycompany.tallerpoo.com.resto.mesa.Mesa;
-
+import src.reserva.Reserva;
+import src.resto.Resto;
+import src.mesa.Mesa;
+import src.mesa.ListaMesa;
+import src.mesa.EstadoMesa;
+import src.finanza.Asistencia;
+import src.finanza.Pago;
+import src.finanza.TarjetaDeCredito;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -201,46 +204,46 @@ public class Cliente {
      */
     public void registrarse(){
 
-        Scanner lectura = new Scanner(System.in);
-        System.out.println("Ingrese su nombre: ");
-        this.nombre = lectura.nextLine();
-        System.out.println("Ingrese su correo: ");
-        this.correo = lectura.nextLine();
-        //Patron email son los valores válidos que puede tomar una direcccion de correo
-        String patronemail = "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$";
-        //pattern compila a patronemail
-        Pattern patron = Pattern.compile(patronemail);
-        //a partir del pattern se crea un matcher para verificar coincidencias
-        Matcher matcheo = patron.matcher(this.correo);
-        while (!matcheo.matches()){
-            System.out.println("Ingrese nuevamente su correo");
+        try (Scanner lectura = new Scanner(System.in)) {
+            System.out.println("Ingrese su nombre: ");
+            this.nombre = lectura.nextLine();
+            System.out.println("Ingrese su correo: ");
             this.correo = lectura.nextLine();
-            matcheo = patron.matcher(this.correo);
-        }
+            //Patron email son los valores válidos que puede tomar una direcccion de correo
+            String patronemail = "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$";
+            //pattern compila a patronemail
+            Pattern patron = Pattern.compile(patronemail);
+            //a partir del pattern se crea un matcher para verificar coincidencias
+            Matcher matcheo = patron.matcher(this.correo);
+            while (!matcheo.matches()){
+                System.out.println("Ingrese nuevamente su correo");
+                this.correo = lectura.nextLine();
+                matcheo = patron.matcher(this.correo);
+            }
 
-        System.out.println("Ingrese su número de teléfono: ");
-        this.numero = lectura.nextLine();
-        String patronTelefono = "^[+]?\\d+$";
-        Pattern patronT = Pattern.compile(patronTelefono);
-        Matcher matcheoT = patronT.matcher(this.numero);
-        while (!matcheoT.matches()) {
-            System.out.println("Número de teléfono inválido. Ingrese nuevamente su número de teléfono:");
+            System.out.println("Ingrese su número de teléfono: ");
             this.numero = lectura.nextLine();
-            matcheoT = patron.matcher(this.numero);
-        }
+            String patronTelefono = "^[+]?\\d+$";
+            Pattern patronT = Pattern.compile(patronTelefono);
+            Matcher matcheoT = patronT.matcher(this.numero);
+            while (!matcheoT.matches()) {
+                System.out.println("Número de teléfono inválido. Ingrese nuevamente su número de teléfono:");
+                this.numero = lectura.nextLine();
+                matcheoT = patron.matcher(this.numero);
+            }
 
-        while (true){
-            System.out.println("Ingrese su contraseña: ");
-            this.contrasenia = lectura.nextLine();
-            System.out.println("Confirme su contraseña");
-            String confirmarcontrasenia = lectura.nextLine();
-            if (!(this.contrasenia.equals(confirmarcontrasenia))){
-                System.out.println("Las contraseñas no coinciden, ingrese nuevamente");
-            }else{
-                break;
+            while (true){
+                System.out.println("Ingrese su contraseña: ");
+                this.contrasenia = lectura.nextLine();
+                System.out.println("Confirme su contraseña");
+                String confirmarcontrasenia = lectura.nextLine();
+                if (!(this.contrasenia.equals(confirmarcontrasenia))){
+                    System.out.println("Las contraseñas no coinciden, ingrese nuevamente");
+                }else{
+                    break;
+                }
             }
         }
-
         System.out.println("Registro exitoso");
 
     }
@@ -250,15 +253,16 @@ public class Cliente {
      * e imprime un mensaje de éxito si lo hacen, de lo contrario imprime un mensaje de error.
      */
     public void iniciarSesion(){
-        Scanner lectura = new Scanner(System.in);
-        System.out.println("Ingrese su correo");
-        String c = lectura.nextLine();
-        System.out.println("Ingrese su contraseña");
-        String contra = lectura.nextLine();
-        if (this.correo.equals(c) && this.contrasenia.equals(contra)) {
-            System.out.println("Inicio de sesión exitoso.");
-        } else {
-            System.out.println("Correo o contraseña incorrectos. Inténtelo de nuevo.");
+        try (Scanner lectura = new Scanner(System.in)) {
+            System.out.println("Ingrese su correo");
+            String c = lectura.nextLine();
+            System.out.println("Ingrese su contraseña");
+            String contra = lectura.nextLine();
+            if (this.correo.equals(c) && this.contrasenia.equals(contra)) {
+                System.out.println("Inicio de sesión exitoso.");
+            } else {
+                System.out.println("Correo o contraseña incorrectos. Inténtelo de nuevo.");
+            }
         }
     }
 
@@ -267,47 +271,48 @@ public class Cliente {
      * como el nombre, el correo electrónico, la contraseña y el número de teléfono con verificaciones de validación.
      */
     public void actualizarInfo(){
-        Scanner lectura = new Scanner(System.in);
-        System.out.println("Pulse según la información a actualizar: ");
-        System.out.println("1: Nombre");
-        System.out.println("2: Correo");
-        System.out.println("3: Contraseña");
-        System.out.println("4: Numero de telofono");
-        int opcion = lectura.nextInt();
-        lectura.nextLine();
-        switch (opcion) {
-            case 1:
-                this.nombre = lectura.nextLine();
-                System.out.println("Nombre actualizado");
-                break;
-            case 2:
-                String nuevocorreo = lectura.nextLine();
-                String patronemail = "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$";
-                Pattern patron = Pattern.compile(patronemail);
-                Matcher matcheo = patron.matcher(nuevocorreo);
-                while (!matcheo.matches()) {
-                    System.out.println("Ingrese nuevamente su correo");
-                    nuevocorreo = lectura.nextLine();
-                    matcheo = patron.matcher(nuevocorreo);
-                }
-                this.correo = nuevocorreo;
-                System.out.println("Correo actualizado");
-                break;
+        try (Scanner lectura = new Scanner(System.in)) {
+            System.out.println("Pulse según la información a actualizar: ");
+            System.out.println("1: Nombre");
+            System.out.println("2: Correo");
+            System.out.println("3: Contraseña");
+            System.out.println("4: Numero de telofono");
+            int opcion = lectura.nextInt();
+            lectura.nextLine();
+            switch (opcion) {
+                case 1:
+                    this.nombre = lectura.nextLine();
+                    System.out.println("Nombre actualizado");
+                    break;
+                case 2:
+                    String nuevocorreo = lectura.nextLine();
+                    String patronemail = "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$";
+                    Pattern patron = Pattern.compile(patronemail);
+                    Matcher matcheo = patron.matcher(nuevocorreo);
+                    while (!matcheo.matches()) {
+                        System.out.println("Ingrese nuevamente su correo");
+                        nuevocorreo = lectura.nextLine();
+                        matcheo = patron.matcher(nuevocorreo);
+                    }
+                    this.correo = nuevocorreo;
+                    System.out.println("Correo actualizado");
+                    break;
 
-            case 3:
-                System.out.print("Ingrese la nueva contraseña: ");
-                this.contrasenia = lectura.nextLine();
-                System.out.println("Contraseña actualizada correctamente.");
-                break;
+                case 3:
+                    System.out.print("Ingrese la nueva contraseña: ");
+                    this.contrasenia = lectura.nextLine();
+                    System.out.println("Contraseña actualizada correctamente.");
+                    break;
 
-            case 4:
-                System.out.println("Ingrese su nuevo numero de telefono: ");
-                this.numero = lectura.nextLine();
-                System.out.println("Telefono actualizado");
-                break;
+                case 4:
+                    System.out.println("Ingrese su nuevo numero de telefono: ");
+                    this.numero = lectura.nextLine();
+                    System.out.println("Telefono actualizado");
+                    break;
 
-            default:
-                break;
+                default:
+                    break;
+            }
         }
     }
     /**
@@ -366,7 +371,8 @@ public class Cliente {
         }
     }
 
-
+     /**
+     * La función `iniciarSesion` verifica si el correo electrónico y la contraseña proporcionados coinciden con los valores almacenados  
 
     /**
      * El método `recuperarContrasenia` en Java permite a un usuario restablecer su contraseña si proporciona
@@ -405,7 +411,7 @@ public class Cliente {
                 reservasInfo.append("horaFinal='").append(reserva.getHorafinalreserva()).append("'}, ");
             }
             // Eliminar la última coma y espacio
-            if (!reservasInfo.isEmpty()) {
+            if (reservasInfo.length() > 1) {
                 reservasInfo.setLength(reservasInfo.length() - 2);
             }
             reservasInfo.append("]");

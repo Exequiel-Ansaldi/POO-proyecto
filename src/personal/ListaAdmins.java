@@ -1,8 +1,9 @@
-package com.mycompany.tallerpoo.com.resto.personal;
-
-import com.mycompany.tallerpoo.com.resto.cliente.Cliente;
+package src.personal;
 
 import java.util.ArrayList;
+
+import src.cliente.Cliente;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;

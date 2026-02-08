@@ -1,8 +1,8 @@
-package com.mycompany.tallerpoo.com.resto.personal;
-import com.mycompany.tallerpoo.com.resto.reserva.Reserva;
-
+package src.personal;
 import java.util.ArrayList;
 import java.util.List;
+
+import src.reserva.Reserva;
 
 /**
  * La clase {@code Empleado} representa a un empleado dentro del sistema de reservas.

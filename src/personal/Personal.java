@@ -1,4 +1,4 @@
-package com.mycompany.tallerpoo.com.resto.personal;
+package src.personal;
 
 /**
  * La clase {@code Personal} representa a un empleado o personal del sistema.

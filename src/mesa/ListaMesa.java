@@ -1,15 +1,20 @@
-package com.mycompany.tallerpoo.com.resto.mesa;
+package src.mesa;
 
-import com.mycompany.tallerpoo.com.resto.Evento;
-import com.mycompany.tallerpoo.com.resto.cliente.Cliente;
-import com.mycompany.tallerpoo.com.resto.finanza.Asistencia;
-import com.mycompany.tallerpoo.com.resto.reserva.Reserva;
-
+import java.util.ArrayList;
+import java.util.List;
+import src.reserva.Reserva;
+import src.Evento;
+import src.cliente.Cliente; 
+import src.finanza.Asistencia;  
+import java.io.BufferedReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import src.mesa.Mesa;
+import java.io.FileReader;
 import java.io.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * La clase ListaMesa representa una colección de mesas en un restaurante.
@@ -115,7 +120,6 @@ public class ListaMesa {
                 mesa = new Mesa();
                 mesa.setCapacidad(Integer.parseInt(campos[0]));
                 mesa.setUbicacion(campos[1]);
-                EstadoMesa estado = EstadoMesa.valueOf(campos[2]);
                 List<Reserva> reservas = new ArrayList<>();
                 if(campos.length > 3 && !campos[3].isEmpty()){
                     String[] reservasData = campos[3].split(",");

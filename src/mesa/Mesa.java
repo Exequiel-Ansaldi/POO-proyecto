@@ -2,12 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.tallerpoo.com.resto.mesa;
+package src.mesa;
 
 import java.util.ArrayList;
 import java.util.List;
-import com.mycompany.tallerpoo.com.resto.reserva.Reserva;
-import com.mycompany.tallerpoo.com.resto.Evento;
+import src.reserva.Reserva;
+import src.Evento;
 
 /**
  *
@@ -234,7 +234,7 @@ public class Mesa {
                 reservasInfo.append("horaFinal='").append(reserva.getHorafinalreserva()).append("'}, ");
             }
 
-            if (!reservasInfo.isEmpty()) {
+            if (reservasInfo.length() > 0) {
                 reservasInfo.setLength(reservasInfo.length() - 2);
             }
             reservasInfo.append("]");

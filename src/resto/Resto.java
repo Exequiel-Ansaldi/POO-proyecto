@@ -2,18 +2,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.tallerpoo.com.resto;
+package src.resto;
 
-
-import com.mycompany.tallerpoo.com.resto.reserva.Reserva;
-import com.mycompany.tallerpoo.com.resto.cliente.Cliente;
-import com.mycompany.tallerpoo.com.resto.mesa.EstadoMesa;
-import com.mycompany.tallerpoo.com.resto.mesa.Mesa;
-import com.mycompany.tallerpoo.com.resto.personal.Administrador;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+
+import src.Agenda;
+import src.Evento;
+import src.cliente.Cliente;
+import src.mesa.EstadoMesa;
+import src.mesa.Mesa;
+import src.personal.Administrador;
+import src.reserva.Reserva;
+
 import java.time.LocalTime;
 
 /**

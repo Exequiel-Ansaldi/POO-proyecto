@@ -1,9 +1,11 @@
-package com.mycompany.tallerpoo.com.resto.InterfazG.VentanaIdentificacionC;
+package src.InterfazG.VentanaIdentificacionC;
 
-import com.mycompany.tallerpoo.com.resto.cliente.Cliente;
-import com.mycompany.tallerpoo.com.resto.reserva.Reserva;
 
 import javax.swing.*;
+
+import src.cliente.Cliente;
+import src.reserva.Reserva;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 

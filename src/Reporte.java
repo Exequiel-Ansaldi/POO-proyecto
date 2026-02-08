@@ -1,14 +1,14 @@
-package com.mycompany.tallerpoo.com.resto;
+package src;
 
-import com.mycompany.tallerpoo.com.resto.reserva.Reserva;
-import com.mycompany.tallerpoo.com.resto.cliente.Cliente;
-import com.mycompany.tallerpoo.com.resto.finanza.Asistencia;
-import java.time.temporal.WeekFields;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
+import src.cliente.Cliente;
+import src.finanza.Asistencia;
+import src.reserva.Reserva;
+import src.resto.Resto;
+
 
 /**
  * Clase que representa un reporte de reservas en un restaurante.

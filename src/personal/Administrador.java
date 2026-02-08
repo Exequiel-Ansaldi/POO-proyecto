@@ -1,13 +1,13 @@
-package com.mycompany.tallerpoo.com.resto.personal;
+package src.personal;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
 import java.util.Scanner;
-
-import com.mycompany.tallerpoo.com.resto.Resto;
-import com.mycompany.tallerpoo.com.resto.mesa.Mesa;
-import com.mycompany.tallerpoo.com.resto.mesa.EstadoMesa;
+import src.Evento;
+import src.mesa.EstadoMesa;
+import src.mesa.Mesa;
+import src.resto.Resto;
 
 /**
  * La clase {@code Administrador} representa a un administrador del sistema.
@@ -153,20 +153,20 @@ public class Administrador extends Personal {
      * empleado, crea un objeto empleado con la información proporcionada.
      */
     public void CrearCuenta() {
-        Scanner scanner = new Scanner(System.in);
+        try (Scanner scanner = new Scanner(System.in)) {
+            // Pedir al administrador que ingrese los datos del nuevo empleado
+            System.out.println("Ingrese el ID del nuevo empleado:");
+            int id = scanner.nextInt();
 
-        // Pedir al administrador que ingrese los datos del nuevo empleado
-        System.out.println("Ingrese el ID del nuevo empleado:");
-        int id = scanner.nextInt();
+            // Consumir la línea siguiente para evitar problemas con la lectura de cadenas
+            scanner.nextLine();
 
-        // Consumir la línea siguiente para evitar problemas con la lectura de cadenas
-        scanner.nextLine();
-
-        System.out.println("Ingrese el rol del empleado (Administrador, Maitre, Mesero):");
-        String rolString = scanner.nextLine().toUpperCase();
-        CodRol rol;
-        rol = CodRol.valueOf(rolString);
-        Empleado empleado_nuevo = new Empleado(id, rol);
+            System.out.println("Ingrese el rol del empleado (Administrador, Maitre, Mesero):");
+            String rolString = scanner.nextLine().toUpperCase();
+            CodRol rol;
+            rol = CodRol.valueOf(rolString);
+            Empleado empleado_nuevo = new Empleado(id, rol);
+        }
 
         /**
          * Devuelve una representación en forma de cadena del administrador,

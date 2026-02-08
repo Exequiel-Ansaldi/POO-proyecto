@@ -1,15 +1,14 @@
-
-package com.mycompany.tallerpoo.com.resto.reserva;
+package src.reserva;
 
 /**
  *
  * @author Exequiel
  */
-import com.mycompany.tallerpoo.com.resto.finanza.Asistencia;
-import com.mycompany.tallerpoo.com.resto.mesa.Mesa;
-import com.mycompany.tallerpoo.com.resto.personal.Empleado;
-import com.mycompany.tallerpoo.com.resto.cliente.Cliente;
-import com.mycompany.tallerpoo.com.resto.finanza.Pago;
+import src.finanza.Asistencia;
+import src.mesa.Mesa;
+import src.personal.Empleado;
+import src.cliente.Cliente;
+import src.finanza.Pago;
 
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;

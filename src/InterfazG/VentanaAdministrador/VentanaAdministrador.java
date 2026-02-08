@@ -1,4 +1,4 @@
-package com.mycompany.tallerpoo.com.resto.InterfazG.VentanaAdministrador;
+package src.InterfazG.VentanaAdministrador;
 
 import javax.swing.*;
 

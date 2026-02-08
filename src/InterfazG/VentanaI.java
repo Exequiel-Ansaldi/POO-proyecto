@@ -1,10 +1,11 @@
-package com.mycompany.tallerpoo.com.resto.InterfazG;
-
-import com.mycompany.tallerpoo.com.resto.InterfazG.VentanaVerificarRol.VentanaVerificarRol;
-import com.mycompany.tallerpoo.com.resto.InterfazG.VentanaIdentificacionC.VentanaIdentificacionCliente;
-import com.mycompany.tallerpoo.com.resto.cliente.ListaCliente;
+package src.InterfazG;
 
 import javax.swing.*;
+
+import src.InterfazG.VentanaIdentificacionC.VentanaIdentificacionCliente;
+import src.InterfazG.VentanaVerificarRol.VentanaVerificarRol;
+import src.cliente.ListaCliente;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 

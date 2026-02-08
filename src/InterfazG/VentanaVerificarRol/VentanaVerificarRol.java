@@ -1,8 +1,10 @@
-package com.mycompany.tallerpoo.com.resto.InterfazG.VentanaVerificarRol;
+package src.InterfazG.VentanaVerificarRol;
 
-import com.mycompany.tallerpoo.com.resto.InterfazG.VentanaAdministrador.VentanaAdministrador;
 
 import javax.swing.*;
+
+import src.InterfazG.VentanaAdministrador.VentanaAdministrador;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
