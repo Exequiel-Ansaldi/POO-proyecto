@@ -3,6 +3,7 @@ package src.InterfazG.VentanaIdentificacionC;
 import javax.swing.*;
 
 import src.cliente.ListaCliente;
+import src.InterfazG.VentanaMesasDisponibles;
 import src.cliente.Cliente;
 
 import java.awt.event.ActionEvent;
@@ -92,10 +93,12 @@ public class VentanaRegistrarse extends JFrame {
                 // Agregar el cliente a la lista
                 listaCliente.agregarCliente(cliente);
 
-                // Guardar en el archivo CSV
-                listaCliente.guardarEnArchivo("data/clientes.csv"); // Asegúrate de ajustar la ruta
+                // Guardar en el archivo CSV (ruta unificada)
+                listaCliente.guardarEnArchivo("src/data/clientes.csv");
                 JOptionPane.showMessageDialog(VentanaRegistrarse.this, "Registro exitoso.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
-                dispose(); // Cerrar la ventana de registro una vez que el usuario se haya registrado
+                // Abrir ventana de mesas disponibles y cerrar esta ventana
+                new VentanaMesasDisponibles();
+                VentanaRegistrarse.this.dispose();
             }
         });
     }

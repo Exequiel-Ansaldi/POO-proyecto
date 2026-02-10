@@ -62,7 +62,9 @@ public class VentanaI extends JFrame {
         clienteButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new VentanaIdentificacionCliente(new ListaCliente());
+                ListaCliente lista = new ListaCliente();
+                lista.cargarDesdeArchivo("src/data/clientes.csv");
+                new VentanaIdentificacionCliente(lista);
                 VentanaI.this.dispose();
             }
         });

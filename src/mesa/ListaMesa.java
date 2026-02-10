@@ -44,6 +44,14 @@ public class ListaMesa {
         this.mesas = mesas;
     }
 
+    /**
+     * Obtiene la lista de mesas.
+     * @return lista de mesas
+     */
+    public List<Mesa> getMesas(){
+        return this.mesas;
+    }
+
     //----------------------------------------MÉTODOS----------------------------------------------------
     /**
      * Agrega una mesa a la lista de mesas.
