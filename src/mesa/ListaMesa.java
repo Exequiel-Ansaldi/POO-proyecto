@@ -15,6 +15,7 @@ import java.io.FileReader;
 import java.io.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import src.mesa.EstadoMesa;
 
 /**
  * La clase ListaMesa representa una colección de mesas en un restaurante.
@@ -160,6 +161,17 @@ public class ListaMesa {
 
                     Evento evento = new Evento(nombre, descripcion, dia, horaInicio, horaFin, new ArrayList<>());
                     mesa.setEvento(evento);
+                }
+                // Establecer estado si está presente
+                if (campos.length > 2 && campos[2] != null && !campos[2].isEmpty()) {
+                    try {
+                        mesa.setEstado(EstadoMesa.valueOf(campos[2]));
+                    } catch (IllegalArgumentException iae) {
+                        // Si el valor no coincide con el enum, marcar como No_Disponible por defecto
+                        mesa.setEstado(EstadoMesa.No_Disponible);
+                    }
+                } else {
+                    mesa.setEstado(EstadoMesa.No_Disponible);
                 }
                 mesas.add(mesa);
                 linea = br.readLine();
